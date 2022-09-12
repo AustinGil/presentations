@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev -p 3000",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.35.5",
+    "@slidev/theme-default": "^0.21.2",
+    "@slidev/theme-seriph": "^0.21.3",
+    "prism-themes": "^1.9.0"
+  },
+  "name": "forms",
+  "devDependencies": {
+    "@iconify-json/bi": "^1.1.7",
+    "@iconify-json/emojione": "^1.1.1",
+    "@iconify-json/logos": "^1.1.14",
+    "@iconify-json/pepicons": "^1.1.5",
+    "playwright-chromium": "^1.25.1"
+  }
+}

@@ -1,0 +1,40 @@
+/**
+ * GENERAL STYLES
+ */
+@import 'prism-themes/themes/prism-vsc-dark-plus.css';
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker:wght@400&family=Manrope:wght@400;700&display=swap');
+
+#slide-container {
+  font-family: 'Manrope';
+}
+h1 {
+  font-family: 'Permanent Marker';
+}
+h2 {
+  font-family: 'Permanent Marker';
+}
+h3 {
+  font-family: 'Permanent Marker';
+}
+.dark #slide-content {
+  color: #333;
+}
+.dark #slide-content code {
+  color: #fff;
+}
+.dark #slide-content {
+  background-color: lavender;
+  background-image: url('/img/background.svg');
+  background-size: cover;
+}
+.slidev-layout h1 + p {
+  margin-top: unset;
+  margin-bottom: 1rem;
+  opacity: unset;
+}
+.dark #slide-content .slidev-code.language-js code {
+  color: aqua !important;
+}
+.dark #slide-content .slidev-code.language-css code {
+  color: white !important;
+}
