@@ -29,7 +29,7 @@ layout: statement
 
 # Plain and simple:
 
-Edge compute is the result of distributing the serverless functions to thousands of locations around the world to handle requests from as close to the user as possible.
+Edge compute is the result of distributing serverless functions to thousands of locations around the world to handle requests from as close to the user as possible.
 
 The result is programmable/dynamic/customizable responses with the least amount of latency (aka more speed).
 
@@ -58,7 +58,7 @@ layout: statement
 
 # What is "Compute"?
 
-What: compute = bleeps & bloops -> HTML, JSON, etc.
+What: compute = bleeps & bloops -> HTML
 
 Where: 
 
@@ -74,17 +74,27 @@ Where:
 
 Machine runs software you choose to execute code you write to return HTML.
 
+<div class="grid grid-cols-2">
 <v-clicks>
+<div>
 
-- Local (machine you own) or "cloud" (machine someone else owns)
-- Running 24x7 (ideally)
-- You pay even with no traffic
-- High traffic could expire resources (crash)
-- Scaling up/down requires planning (performance vs cost)
+### Pros
+- Predictable pricing
+- Unbounded run times
+- **You are in complete control**
+
+</div>
+<div>
+
+### Cons
+- You pay even for idle times
+- Complicated scaling up/down
 - Distance from users add latency
 - You maintain server software & application logic
 
+</div>
 </v-clicks>
+</div>
 
 ---
 layout: statement
@@ -102,16 +112,26 @@ layout: statement
 
 JavaScript (or WebAssembly) running in the user's browser generates HTML.
 
+<div class="grid grid-cols-2">
 <v-clicks>
+<div>
 
+### Pros
 - No latency because it's on device
 - Can work offline
-- Requires more JS for users to download
-- Can't keep secrets ("View source")
-- Performance greatly impacted by user's device
-- Seeing movements away from CSR (SEO, perf, a11y)
 
+</div>
+<div>
+
+### Cons
+- Requires user download more JS
+- Can't keep secrets ("View source")
+- No control over environment (x-browser issues)
+- Performance greatly dependent on user's device
+
+</div>
 </v-clicks>
+</div>
 
 ---
 layout: statement
@@ -130,13 +150,27 @@ layout: statement
 
 Generate all pages (HTML, CSS, JavaScript, etc.) ahead of time, into static folders and files.
 
-- Technically still SSR (not client)
-- Result is technically similar to hand-coding HTML
+(Technically still SSR)
+
+<div class="grid grid-cols-2">
+<v-clicks>
+<div>
+
+### Pros
 - Immediate response times
 - Works great with a CDN
 - Very fast, cheap, secure, and easy to host
-- Can't support dynamic content (without client-side)
+
+</div>
+<div>
+
+### Cons
+- Can't support dynamic content (without CSR)
 - Build times grow with number of pages
+
+</div>
+</v-clicks>
+</div>
 
 ---
 layout: statement
@@ -155,19 +189,28 @@ layout: statement
 Service providers route requests to the functions you provide.<br>
 (They manage machines and servers)
 
+<div class="grid grid-cols-2">
 <v-clicks>
+<div>
 
-- Must follow conventions (naming, files, parameters, returns)
-- Your function may run in various machine
-- "Stateless" (no shared memory/file system)
-- "Infinitely" scalable automatically
+### Pros
 - Very easy to provision (teams, migration)
+- "Infinitely" scalable automatically
 - Only pay for what you use
-- Limited resources & languages
-- Can also be very far from users
 - Only manage code (no hardware or servers)
 
+</div>
+<div>
+
+### Cons
+- Must follow conventions (naming, files, parameters, returns)
+- "Stateless" (no shared memory/file system)
+- Limited resources & languages
+- Can also be very far from users
+
+</div>
 </v-clicks>
+</div>
 
 ---
 layout: statement
@@ -183,7 +226,7 @@ layout: statement
 layout: statement
 --- 
 
-# Horses for courses
+# Ok, that's compute
 
 ---
 
@@ -197,16 +240,25 @@ Why: By putting devices as close to users as possible, we can reduce latency, th
 
 # Content Delivery Network (CDN)
 
-Thousand of globally distributed servers to deliver your static assets (css, js, img, fonts, etc)
+Thousand of globally distributed servers to deliver resources closer to users
 
+<div class="grid grid-cols-2">
 <v-clicks>
+<div>
 
-- Each server has it's own copy of your assets
-- Asset served from nearest server to users
-- Can greatly reduce latency (distance assets travel)
-- Also great for pre-rendered HTML (SSG)
+### Pros
+- Greatly reduce latency
+- Works well with SSG
 
+</div>
+<div>
+
+### Cons
+- Designed for static content (css, js, img, etc)
+
+</div>
 </v-clicks>
+</div>
 
 ---
 layout: statement
@@ -228,8 +280,6 @@ layout: statement
 
 # Users experience performance in 3-D
 
-(what does that even mean!?)
-
 <v-clicks>
 
 - **Distance** request/response must travel (latency)
@@ -238,50 +288,42 @@ layout: statement
 
 </v-clicks>
 
-<v-click>
+<!-- <v-click>
 
 <h3 class="bottom-10" style="position: absolute !important;">
 🔥🔥🔥 Hot tip: alliteration > coherence
 </h3>
 
-</v-click>
+</v-click> -->
 
 ---
 
 # The speed-of-light-problem
 
-Technology will continue to improve, but speed of light will remain the same.
+Technology continues to improve, but the speed of light remains the same.
 
 <v-clicks>
 
 <div>
   <p>Edge vs. Origin</p>
   <img src="/img/edge-compute/edge-redirect.svg" class="block m-auto" width="600" alt="cute dog wearing a knitted, New England Patriots hat">
+
+  <p>Eventually, the biggest bottleneck is distance</p>
 </div>
 
 </v-clicks>
 
 ---
 
-# In an ideal 3-D world...
+# So ideally...
 
 <v-clicks>
 
 - Do things closer to users (like a CDN)
 - Do more work on servers (like cloud servers/functions)
-- Send smaller assets, pweez 🥺 (it's subjective)
+- Send smaller assets (???)
 
 </v-clicks>
-
-<v-click>
-
-# In reality...
-
-CSR is low-latency, but slow.
-
-SSR is fast, but high-latency.
-
-</v-click>
 
 ---
 layout: statement
@@ -303,20 +345,29 @@ layout: statement
 
 # Edge compute
 
+<p>
 <v-clicks>
-
-<p class="inline-block">Programmable runtimes (like cloud functions)...</p>
-
-<p class="inline-block">that are globally distributed (like a CDN).</p>
-
-
-<p class="inline-block">Dynamic server-side functionality...</p>
-
-<p class="inline-block">that executes as close to users as possible.</p>
-
-Additionally can provide reliable location information 
-
+<span>Programmable runtimes (like cloud functions)...</span>
+<span>that are globally distributed (like a CDN)...</span>
+<span>and live between a client and origin.</span>
 </v-clicks>
+</p>
+<p>
+<v-clicks>
+<span>Dynamic server-side functionality...</span>
+<span>that executes as close to users as possible.</span>
+</v-clicks>
+</p>
+
+<v-click>
+<div class="mt-12">
+
+### Plus:
+
+- Reliable location information
+- Access to key-value stores 
+</div>
+</v-click>
 
 ---
 
@@ -365,11 +416,10 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 
 - Low barrier for POC
 - Consistent execution environment (no x-browser issues)
-- Teams own their respective responsibilities
-- Location-based logic (no GDPR)
-- No servers/infrastructure to manage
+- Location-based logic
 - Secrets stay secret (compared to client-side)
 - Common programming language (JavaScript)
+- No servers/infrastructure to manage
 
 </v-clicks>
 
@@ -394,34 +444,7 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 - Limited platform features (V8 isolates != Node.js)
 - Limited compute resources
 - Limited time resources
-- Limited networking protocols (TCP/IP)
-
-</v-clicks>
-
----
-
-# When it might make sense 🐱‍🏍
-
-<v-clicks>
-
-- Stateless computation
-- Doesn't take a long time
-- Latency-sensitive
-- Hyper-local
-
-</v-clicks>
-
----
-
-# When it may not make sense 🚩
-
-<v-clicks>
-
-- Requires shared memory or file system
-- Requires high computational resources
-- Long-running operations
-- Sequential/waterfall requests (may add latency)
-- Direct DB access
+- Limited networking protocols (HTTP != TCP/IP)
 
 </v-clicks>
 
@@ -431,10 +454,9 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 
 <v-clicks>
 
-- Geolocation
-- Fast auto-suggest / type-ahead
-- Modify request/response
-- Cookie-based personalization
+- Modify request/response (inject ads)
+- Fast static search (auto-complete, store locator)
+- Geolocation (language, policies)
 - Redirect management ([blog post](https://austingil.com/optimizing-content-migrations-with-edge-compute/))
 - Token-based personalization (A/B testing, feature flags)
 - Stateless auth (JSON Web Tokens)
@@ -479,13 +501,13 @@ layout: statement
 
 <h1 class="font-sans">(ಥ﹏ಥ)</h1>
 
-<h4 class="absolute -top-20 left-16">It's just about speed?</h4>
+<h4 class="absolute top-35 left-16">Isn't my app fast enough?</h4>
 
-<h4 class="absolute -top-32 right-16">How much does 300 milliseconds matter?</h4>
+<h4 class="absolute top-32 right-16">How much does 300 milliseconds matter?</h4>
 
-<h4 class="absolute -bottom-28 left-48">Is even it worth it?</h4>
+<h4 class="absolute bottom-28 left-48">Is all the effort worth it?</h4>
 
-<h4 class="absolute -bottom-40 right-12">Do dogs even like wearing hats?</h4>
+<h4 class="absolute bottom-40 right-12">Do dogs even like wearing hats?</h4>
 
 ---
 
@@ -513,28 +535,6 @@ They could hire 133,000 developers and still profit<br>
 </v-clicks>
 
 ---
-
-# Why is it always about money? 😒
-
-Money is easy to quantify, but are there are other reasons to care?
-
-<v-clicks>
-
-Speed and reliability
-
-Importance of access to information
-
-In times of crisis (disease, war, etc)
-
-People are scared
-
-Information is critical
-
-## For some people, not about money at all
-
-</v-clicks>
-
----
 layout: statement
 ---
 
@@ -552,7 +552,7 @@ layout: statement
 
 # EdgeWorkers
 
-- Largest number of locations (over 250,000)
+- Largest number of servers (over 250,000)
 - More customizable lifecycle hooks
   - After client request
   - Before origin request
@@ -649,7 +649,5 @@ image: /img/edge-compute/pretty-chihuahua.jpg
 <p><bi-instagram/> <a href="https://instagram.com/NuggetTheMighty">@NuggetTheMighty</a> (my dog)</p>
 
 </div>
-
 </v-clicks>
-
 </div>
