@@ -16,6 +16,12 @@ h2 {
 h3 {
   font-family: 'Permanent Marker';
 }
+code, kbd, samp, pre {
+  font-size: inherit;
+}
+.slidev-layout :where(p[class]) {
+  margin: unset;
+}
 .dark #slide-content {
   color: #333;
 }
@@ -37,4 +43,8 @@ h3 {
 }
 .dark #slide-content .slidev-code.language-css code {
   color: white !important;
+}
+.slidev-code {
+  font-size: inherit !important;
+  line-height: 1.5 !important;
 }

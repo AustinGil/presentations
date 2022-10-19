@@ -9,6 +9,30 @@ layout: statement
 
 # Building Components With Accessiblity In Mind
 
+<div class="mt-24 grid grid-cols-2 text-left">
+<div>
+
+Prerequisites:
+* Git
+* Node/NPM
+* VS Code
+* GitHub account
+* Headphones (please)
+
+</div>
+<div>
+
+Miro board:
+
+https://bit.ly/3CS1zdb
+
+<br>
+
+Wifi: // TODO
+
+</div>
+</div>
+
 ---
 layout: image-right
 image: /img/edge-compute/austin-gil-bio.png
@@ -26,66 +50,74 @@ image: /img/edge-compute/austin-gil-bio.png
 
 ---
 
-Prerequisites:
-* Git
-* Node/NPM
-* VS Code
-* GitHub account
+# WebAIM Million
 
-Introduction
-- To get more people on board, you have to make it easy to do the right thing, and hard to do the wrong thing. The problem with a lot of current UI libraries is they follow that principle, but require library specific knowledge. Which is just as hard to learn as ARIA. So you have to master a different skill that isn't even transferable. 
+A report on the accessibility of the top 1,000,000 home pages (webaim.org/projects/million)
 
-Setup
+<v-clicks>
 
-Questions
+51,379,694 distinct accessibility errors (🤖)
 
-Debugging tools/audit
+Average of 51.4 errors per page
 
-Development tools
+<div>
 
-Compare different types of website & semantic layout
+Most common issues discovered:
 
-Create components
-- Layouts (skip links)
-- Element with text/heading (not knowing document order)
-- SVG (built in labels make it easy)
-- Image (enforce alt text)
-- How do you prevent invalid HTML? (eg. Buttons containing divs)
-- Input (fallback ID)
-- Card list (:focus-within + expando-link)
-- Dialog
+1. Low contrast text: 86.4%
+2. Missing alternative text for images: 60.6%
+3. Missing form input labels: 54.4%
+4. Empty links: 51.3%
+5. Missing document language: 28.9%
+6. Empty buttons: 26.9%
 
-Styling
-- Styling with semantics/aria: button[aria-expanded="true"] {}
-- visually-hidden class
-- focus-within
-- reduced-motion
-- @supports
-- color-themes 
-- Grid/flex ordering
-- Semantic headings vs size
+</div>
+</v-clicks>
 
-Questions
+---
 
-Keyboard only & Screen reader navigation
+# Screen Readers & Keyboards
 
-Continuous auditing tools
+Markup determines how assistive technology interact with your page:
 
-Questions
+<v-clicks>
 
-Closing
+- Order of elements
+- Landmarks
+- Semantic tags
+- Roles
+- ARIA attributes
 
-Tools:
-Chrome devtools
-aXe devtools
-VS Code axe
-axe accessibility linter / webhint
-eslint-plugin-jsx-a11y / eslint-plugin-vuejs-accessibility
-  React: Reach UI
-  Vue: Vuetensils (I made this one)
-  Web components: Lion
-a11y.css
-https://accesslint.com/
-cypress component testing with axe
+Accessibility Tree: DevTools > Elements > Accessibility
 
-https://austingil.com/making-accessibility-more-accessible/
+</v-clicks>
+
+---
+
+# Semantics Matter
+
+<div class="grid grid-cols-2">
+<v-clicks>
+<img src="img/a11y-workshop/blog.jpg">
+<img src="img/a11y-workshop/dashboard.jpg">
+</v-clicks>
+</div>
+
+---
+layout: statement
+---
+
+# Pop Quiz!
+
+
+<v-clicks>
+
+If a background color is <span style="color:#000;background:#BADA55;">&nbsp;#bada55&nbsp;</span>
+
+And WCAG AA requires color contrast ratio of 4.5:1
+
+What color should the foreground text be...?
+
+🤷 (pfft)
+
+</v-clicks>
