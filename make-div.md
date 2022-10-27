@@ -1,66 +1,34 @@
 ---
-theme: default
-font:
-  sans: 'Manrope'
-  display: 'Rock Salt'
-lineNumbers: false
-layout: image-right
-image: /img/edge-compute/austin-gil-bio.png
+src: intro.md
 ---
-
-<h1 class="text-4xl mt-10">Hey Im Austin Gil 👋</h1>
-<p class="mt-0 !mb-8">austingil.com | @heyAustinGIl</p>
-
-<h4 class="mb-4">Dev Advocate <a href="https://akamai.com">akamai.com</a></h4>
-<h4 class="mb-4">OSS Maintainer of <a href="https://vuetensils.austingil.com">Vuetensils</a></h4>
-<h4 class="mb-4">Chiweenie enthusiast</h4>
-
+---
+layout: statement
 ---
 
 # Story time
 
-- Junior developer code changes not showing in the browser.
+<!-- - Junior developer code changes not showing in the browser.
 - I noticed the issue was not the code, but how the tooling worked.
 - "How does that div get to the browser"
-- "The browser opens up the vue app, the router finds the right component, and loads the .vue component."
+- "The browser opens up the vue app, the router finds match, and loads the .vue component."
 
-Which is kind right, but missing some steps.
-
----
-
-# But it's not their fault...
+Which is kind right, but missing some steps. -->
 
 ---
 layout: statement
 ---
 
-# What does it take <br> to make a \<div\>?
-
-A journey following your code from the editor
-through build processes <br> 
-into deployment pipelines
-out to the public internet <br>
-and finally rendered in a user's browser
+# Let's take a trip back in time
 
 ---
-
-# You may answer
-
-<div class="mt-10 text-10xl font-mono text-center">
-  <v-clicks>
-    <span>&lt;</span>
-    <span>d</span>
-    <span>i</span>
-    <span>v</span>
-    <span>&gt;</span>
-  </v-clicks>
-</div>
-
+preload: false
 ---
 
-# But there's more to it
+<audio autoplay>
+  <source src="/img/make-div/dial-up.mp3" type="audio/mpeg">
+</audio>
 
-Before we can dig into that, let's travel back in time to a better day
+<!-- Let's travel back in time to a better day
 
 When you'd play outside, scrape your knee, and your dad would literally rub dirt in it.
 
@@ -72,80 +40,211 @@ As the 64 MB of RAM kick in and the fans start whining, you yell down the stairs
 
 "Get off the phone! I need to use the internet."
 
-Then you get that sweet, sweet sound 
+Then you get that sweet, sweet sound  -->
 
 <!-- Give me that sound, concentrated, straight to the vein -->
-
----
-
-In this beautiful world, you needed Two tools:
-
-FileZilla
-
-Notepad++
-
-There was no version control.
-
-CI/CD? CD was the thing the internet came on.
-
-Deploy previews? We didn't even have staging sites. We just edited code in production. It's called cowboy coding and it was the most alive I've ever felt.
-
-But things have changed...
-
-The internet has changed...
-
-Things have become more complex...
-
-And so we needed more complex tools...
 
 ---
 layout: statement
 ---
 
-# What have we done!?!?
+# Version control?
+
+---
+layout: statement
+---
+
+# CI/CD?
+
+---
+layout: statement
+---
+
+# Deploy previews?
+
+---
+
+# We only had two tools:
+
+<div class="grid gap-4 grid-cols-2">
+<v-clicks>
+<img src="/img/make-div/Notepad.png">
+<img src="/img/make-div/FileZilla.png">
+</v-clicks>
+</div>
+
+---
+layout: statement
+---
+
+# Those were good times...
+
+---
+layout: statement
+---
+
+# Simpler times...
+
+---
+layout: statement
+---
+
+# Things have changed...
+
+---
+layout: statement
+---
+
+# The internet has changed...
+
+---
+layout: statement
+---
+
+# Websites have become more complex...
+
+---
+layout: statement
+---
+
+# And so tooling had to evolve...
+
+<!-- CD was the thing the internet came on
+
+Deploy previews? We didn't even have staging sites. Just edited in production. Cowboy coding. THe most alive I've ever felt -->
 
 ---
 layout: image
 image: /img/make-div/logos.svg
 ---
 
+<!-- # WTF have we done!?!? -->
+
 ---
 layout: statement
 ---
 
-# Alright, let's do this.
+# What's a dev gotta do to make a \<div\> around here!?
+
+A journey following your code from the editor
+through build processes <br> 
+into deployment pipelines
+out to the public internet <br>
+and finally rendered in a user's browser
 
 ---
 
-# What Happens When You Hit Save? <span class="font-mono">✍(▀̿Ĺ̯▀̿ ̿)</span>
+# Start with a little bit of magic
 
-File watchers & dev servers!!!!
+What's the first thing you do before you start writing code?
 
-Modern applications are made up of several small files instead of one massive thing.
+<v-clicks>
 
-These files are called modules that all have to be stitched together by a bundler.
+Open terminal & recite the magical incantation: `npm run dev` (or some other spell)
+
+That starts a local dev server for working on the project.
+</v-clicks>
+
+---
+
+# Why do I need a dev server?
+
+<v-clicks>
+
+- File (`file:///C:/path/to/index.html`) is not HTTP (`http://localhost:42069`)
+- Support GET, POST, PUT, PATCH, DELETE, etc. 
+- Absolute (`/path`) vs. relative (`../path`)
+- Server-side rendering
+- No latency === faster
+- Can work offline
+- Run background processes...
+</v-clicks>
+
+---
+
+# File Watchers
+
+<v-clicks>
+
+Websites don't know when a files have changed.
+
+In the past: `ctrl+r` || `F5` (carpal tunnel 😱)
+
+These days: `ctrl+s` => instant browser updates 
+
+This is called "**Hot Module Replacement**" or HMR.
+</v-clicks>
+
+---
+
+# HMR
+
+<v-clicks>
+
+- Dev server starts file watcher to listen for changes in file system (e.g. `chokidar`)
+- On file change, dev server may respond: **compiling, transpiling, bundling**
+- Dev server sends changes to client (e.g. `WebSockets`)
+- Client updates the web app
+</v-clicks>
+<v-click>
+
+You can even see this in the network tab if you're into that sort of thing...
+<img src="/img/make-div/hmr.png">
+</v-click>
+
+---
+layout: statement
+---
+
+# Compiling, Transpiling, Bundling...what?
+
+---
+
+# More Magic When You Hit Save <span class="font-mono">✍(▀̿Ĺ̯▀̿ ̿)</span>
 
 ```jsx
-import a from './a.js'
-import b from './b.js'
-import c from './c.js'
+// main.js
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
 
-export function jackson5() {
-  console.log(a, b, c, 'easy as 1, 2, 3')
-}
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+)
 ```
 
-(bundlers can also handle CSS and other assets, but that's a talk for another today)
+<v-clicks>
+
+Modern apps have several files called **modules**.
+
+These modules get stitched together by a **bundler** (e.g. `rollup`).
+
+(Some bundlers can also handle non-JS assets, but that's for another today)
+
+</v-clicks>
 
 ---
 
-# Step 1: Map the Dependency Graph
+# Bundlers are cool!
 
-The first thing a module bundler does is generate a relationship map of all the served files.
+<v-clicks>
 
-This process is called Dependency Resolution.
+You provide the bundler with an entry point (e.g `main.js`)
 
-Now you know in which order to process the application
+Bundler generates a relationship map of all the files.
+
+"**Dependency Resolution**"
+
+Important to avoid duplicate code or circular dependencies.
+
+With the dependency graph it can produce production assets.
+
+</v-clicks>
+
+---
+layout: image
+image: img/make-div/dependency-graph.jpg
+---
 
 ---
 
@@ -176,36 +275,133 @@ layout: image
 image: /img/make-div/spongebob.jpg
 ---
 
-<h1 class="text-center"><span class="text-8xl" style="-webkit-text-stroke: 1px black;">Transpilation</span></h1>
+<style>
+.animate-letters span {
+  opacity: 0;
+  animation: fadein .3s ease-in forwards;
+}
+.animate-letters span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.animate-letters span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.animate-letters span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.animate-letters span:nth-child(5) {
+  animation-delay: .4s;
+}
+.animate-letters span:nth-child(6) {
+  animation-delay: .5s;
+}
+.animate-letters span:nth-child(7) {
+  animation-delay: .6s;
+}
+.animate-letters span:nth-child(8) {
+  animation-delay: .7s;
+}
+.animate-letters span:nth-child(9) {
+  animation-delay: .8s;
+}
+.animate-letters span:nth-child(10) {
+  animation-delay: .9s;
+}
+.animate-letters span:nth-child(11) {
+  animation-delay: 1s;
+}
+.animate-letters span:nth-child(12) {
+  animation-delay: 1.1s;
+}
+.animate-letters span:nth-child(13) {
+  animation-delay: 1.2s;
+}
+@keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+</style>
+
+<h1 class="text-center">
+<span class="animate-letters text-8xl" style="-webkit-text-stroke: 1px black;">
+<span>T</span>
+<span>r</span>
+<span>a</span>
+<span>n</span>
+<span>s</span>
+<span>p</span>
+<span>i</span>
+<span>l</span>
+<span>a</span>
+<span>t</span>
+<span>i</span>
+<span>o</span>
+<span>n</span>
+</span>
+</h1>
 
 ---
 
-# Transpilation
+# Transpilers (e.g. `babel`)
 
-What 
+<v-clicks>
+<div>
 
-Why 
+### What:
+Like a combination of a compiler and a translator.<br>
+Takes source code and converts it into another equivalent language and/or syntax.
+</div>
+<div>
 
-How...
+### Why: 
+Turn language the browser does not understand (TS) into one that it does (JS).<br>
+Turn syntax the browser does not understand (ESNext) into one that it does (ES2015).
+</div>
+<div>
 
-The first step starts with generating tokens from the source code. 
+### How (depends on transpiler):
+1. Generate tokens for each part of the source code.<br>
+2. Transform tokens into an Abstract Syntax Tree (AST).
+</div>
+</v-clicks>
 
-Then, the tokens are transformed into a syntax tree called AST.
+---
+layout: statement
+---
+
+# WTF is an AST!?!?
 
 ---
 
+<style>
+.slidev-code-wrapper.slidev-vclick-hidden {
+  display: none;
+}
+</style>
 
 <div class="grid grid-cols-2 gap-4">
 <div>
 
 JS program:
-```js
-console.log('poop')
-```
+<div class="grid">
+
+<div class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'poop'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+
+<div v-click="6" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code class="opacity-30"><span class="line slidev-vclick-target highlighted">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'poop'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+
+<div v-click="7" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="opacity-30 token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="opacity-30 token string">'poop'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+
+<div v-click="8" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="opacity-30 token punctuation">.</span><span class="opacity-30 token function">log</span><span class="opacity-30 token punctuation">(</span><span class="opacity-30 token string">'poop'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+
+<div v-click="9" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted"><span class="opacity-30">console</span><span class="opacity-30 token punctuation">.</span><span class="token function">log</span><span class="opacity-30 token punctuation">(</span><span class="opacity-30 token string">'poop'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+
+<div v-click="10" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted"><span class="opacity-30">console</span><span class="opacity-30 token punctuation">.</span><span class="opacity-30 token function">log</span><span class="opacity-30 token punctuation">(</span><span class="token string">'poop'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+
+</div>
 </div>
 <div>
 
-AST out ([shift-js](https://github.com/shift-js/shift-js)):
+AST representation (by [shift-js](https://github.com/shift-js/shift-js)):
 <div style="font-size: 10px;">
 
 ```json {all|2|6-8,16,23|11-14|15|17-22}
@@ -240,241 +436,401 @@ AST out ([shift-js](https://github.com/shift-js/shift-js)):
 </div>
 </div>
 
-<div>More languages/transpilers at [astexplorer.net](https://astexplorer.net/)</div>
+<div>More languages/transpilers at <a href="https://astexplorer.net/">astexplorer.net</a></div>
 
 ---
 
-# What can you do with an AST?
+# Great! But what can I do with an AST?
 
-Developers can create parsers called "Visitors"
+<v-clicks>
 
-Visitors walk each part of the AST can do something with it. 
+1. Create a parser program called a "**Visitor**".
+2. Transpiler can "walk" the Visitor any part of the AST and do **[insert action]**. 
+3. Makes it possible to add, remove, transform, anything you want.
+</v-clicks>
+<v-click>
 
-Add, remove, transform, pass to another function.
-
-For example, .tsx => .js
-
----
-
-Bundling
-After receiving inputs and traversing its dependencies during the Dependency Resolution phase, a bundler delivers static assets that the browser can successfully process. This output stage is called Packing.
+Good example of this: `.tsx` => `.js`
+</v-click>
 
 ---
+
+# Putting it all together
+
+<div class="grid gap-4 grid-cols-2">
+<div>
+
+Source code: 
 
 ```jsx
+// main.jsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className="App">
-    Hello world
-  </div>
-)
+ReactDOM.createRoot(
+  document.getElementById('root')
+).render(<App />)
 ```
 
-143kb - 143,082 characters
+- 4 separate files/libraries
+- Written in JSX
+- Uses modern syntax
+</div>
+<v-click>
+<div>
+
+Compiled, bundled, & transpiled code:
+
+<img src="img/make-div/reactcode.png" class="mb-5">
+
+- One 139.76kb file
+- Written in JavaScript
+- Supports older syntax
+
+</div>
+</v-click>
+</div>
 
 ---
 
-This assumes client-side JS. What about server side? Or static generators?
+# Keep in mind
 
-If they're based on JS, the process is similar, but with a slightly different build steps. We'll look at that later.
+<v-clicks>
 
----
-
-Also worth noting that most modern frontend tooling is more than just loading files in your browser.
-
-You need a local web server for your browser to load your website properly. And in addition to that, you probably want a file watcher that will reload the browser automatically any time you make a change.
-
-You young bucks don't know the pain of reloading the website every time you want to see how your changes look.
-
-The reason this matters is because your dev server probably isn't 100% in alignment with your production server.
-
----
-
-# Deploying
-
-<div class="mt-20 font-mono text-3xl">(╯°□°）╯︵ ┻━┻ ┳━┳ ノ(゜-゜ノ)</div>
-
----
-
-Once you've tested your code, it's time to ship it. In the old days, we'd just drag that sucker over the FileZilla GUI and drop it on the server. Of course, that's assuming we weren't just live editing the file on the server.
-
-Not anymore. Today, thing look a bit different.
-
-1. Commit changes in Git
-2. Push commit to GitHub
-3. (...something something something...)
-4. Make sure nothings broken in production
-
-What the heck is that octocat up to? Let's find out.
-
----
-
-Most repository hosts provide some sort of mechanism that can respond to new commits. Today we'll focus on GitHub Actions.
-
-With GitHub Actions, you can create a folder called `/.github/workflows/`. Inside of it you can place a `.yml` file (like `ci.yml`). It may look like this:
-
----
-
-```yml {all|3|5|7-14|16-20}
-jobs:
-  deploy:
-    runs-on: ubuntu-latest # With all the NPM goodness
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Cache node modules
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Install modules
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        run: npm run deploy
-```
-
----
-
-1. A machine that lives on GitHub's servers
-2. and running Ubuntu software (with NPM installed)
-3. is checking out your repo's code
-4. installing NPM dependencies
-5. Then running the `build` and `deploy` commands from your `package.json` file.
-
----
-
-# What are those build and deploy commands?
-
-It depends!
-
-- Build production artifacts then send them to your production server.
-- Create a docker image using the source code an env variables and send it to a registry.
-- Run predefined checks (TypeScript, ESLint, Vitest) before code can be deployed.
-- For static sites, this might mean generating tons of HTML pages then pushing them to a CDN like Akamai.
-
----
-
-# Why does this matter?
-
-Your dev environment (your computer) and your build environment (GitHub's computers) are probably slightly different. Remembering this can avoid some heartache.
-
-Build artifacts are not the same as dev artifacts.
+- Code in your editor is not the same code in the browser.
+- Dev server may behave differently than production server.
+- Example was for client-side JS. Different story for SSR or SSG.
+</v-clicks>
 
 ---
 layout: statement
 ---
 
-# It's the final question
-(dee doo dee doo)
+# Deploying
 
-(dee doo dee doo doo)
+## <span class="font-mono">(╯°□°）╯︵ ┻━┻  ====> ┳━┳ ノ(゜-゜ノ)</span>
 
 ---
+
+# Workflow
+
+<v-clicks>
+
+1. Make some changes
+2. Git commit 
+3. Git push
+4. ??? (∩\*ᗜ\*)⊃━☆ﾟ.* (magic) 
+5. Make sure nothing broke
+</v-clicks>
+
+<!--  In the old days, we'd just drag that sucker over the FileZilla GUI and drop it on the server. Of course, that's assuming we weren't just live editing the file on the server. Not anymore. Today, thing look a bit different. -->
+
+---
+
+# Continuous Integration & Delivery (CI/CD)
+
+<v-clicks>
+
+Most Git hosting services provide some sort of mechanism that can respond to new commits (e.g GitHub Actions).
+
+With GitHub Actions:
+</v-clicks>
+<v-clicks>
+
+- Create a folder called `.github/workflows/`.
+- Add a `.yml` file (e.g. `ci.yml`).
+- Push new commit to GitHub.
+- GitHub run our Action.
+</v-clicks>
+
+---
+
+# Example Action File
+
+<div class="grid gap-4 grid-cols-2">
+
+```yml {all|all|4|6|8|10|12}
+# ci.yml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - run: npm run deploy
+
+```
+<div>
+<div v-click="1" class="mt-6">A machine that lives on GitHub's servers</div>
+<div v-click="2" class="mt-15">running Ubuntu OS (with NPM installed)</div>
+<div v-click="3" class="mt-9">checks out your repo's code,</div>
+<div v-click="4" class="mt-9">installs NPM dependencies,</div>
+<div v-click="5" class="mt-9">then runs the "build" command from your package.json file,</div>
+<div v-click="6" class="mt-5">then runs the "deploy" command from your package.json file.</div>
+</div>
+</div>
+
+---
+layout: statement
+---
+
+# What do those 'build' and 'deploy' commands do?
+
+---
+layout: statement
+---
+
+<div class="text-9xl">It depends™<br>💩</div>
+
+---
+
+# Could be...
+
+<v-clicks>
+
+- Build production artifacts & upload to server.
+- Create docker image & send to a registry.
+- Run code quality checks (e.g. `TypeScript`, `ESLint`, `Vitest`).
+- Static site generator & deploy to CDN (e.g. [Akamai CDN](https://www.akamai.com/solutions/content-delivery-network)).
+</v-clicks>
+
+---
+
+# Keep in mind
+
+<v-clicks>
+
+- Dev environment (your computer) !== CI/CD environment (GitHub's computers).
+- Dev assets !== production assets.
+</v-clicks>
+
+---
+layout: statement
+---
+
+# It's the final section
+(dee duh dee doo)
+
+(dee duh dee doo doo)
+
+---
+
+# We need to answer one last question
 
 <div class="grid grid-cols-2">
   <v-clicks>
     <div class="aspect-square	">
-      <p class="m-0">How do we get user from this...</p>
+      <div>How do we get user from this...</div>
       <img class="w-full h-full object-cover" src="/img/make-div/internet1.jpg">
     </div>
     <div class="aspect-square	">
-      <p class="m-0">to this?</p>
+      <div>to this?</div>
       <img class="w-full h-full object-cover" src="/img/make-div/internet2.png">
     </div>
   </v-clicks>
 </div>
 
 ---
+layout: statement
+---
 
-Move this to end:
-URL -> Browser -> OS -> Wifi -> Router -> Modem -> ISP -> NS -> DNS -> CDN -> IP -> TCP handshake -> TLS handshake -> HTTP request -> Proxy -> web server -> cache -> valid HTTP response -> download html -> download CSS -> download JS -> document.createElement('div')) -> hydration (optional
+# Step 1 - Networking 
 
-# Part 1: Networking <span class="font-mono">(👉ﾟヮﾟ)👉   👈(ﾟヮﾟ👈)</span>
+# <span class="font-mono">(👉ﾟヮﾟ)👉   👈(ﾟヮﾟ👈)</span>
 
-User types [austingil.com](https://austingil.com) into their browser
-Browser does a DNS lookup involving series of places to look.
-* Check browser cache.
-* Check local hosts file.
-* Check DNS server in the network stack (local router cache or ISP cache).
-  * received by a DNS recursive resolver.
-  * The resolver then queries a DNS root nameserver (.).
-  The root server then responds to the resolver with the address of a Top Level Domain (TLD) DNS server (such as .com or .net), which stores the information for its domains. 
-  The resolver then makes a request to the .com TLD.
-  The TLD server then responds with the IP address of the domain’s nameserver, example.com.
-  Lastly, the recursive resolver sends a query to the domain’s nameserver.
-  The IP address for example.com is then returned to the resolver from the nameserver.
-  The DNS resolver then responds to the web browser with the IP address of the domain requested initially.
+---
 
+# When you type [austingil.com](https://austingil.com) into your browser...
 
-Note that DNS caching occur can occur:
+Browser must first do a DNS lookup to get the IP address
+<v-clicks>
+
+1. Check browser cache.
+2. Check local hosts file on computer.
+3. Ping DNS server in the network stack (maybe local router cache or ISP cache).
+</v-clicks>
+
+---
+
+# Uncached DNS lookup
+
+<v-clicks>
+
+1. Send request to DNS Recursive Resolver.
+2. Resolver queries an Authoritative Root nameserver.
+3. The root server responds with the address of an Authoritative Top Level Domain (TLD) nameserver (`.com`, `.net`, `.pizza`).
+4. Resolver makes a request to the `.com` TLD.
+5. The TLD server responds with IP address of the domain's nameserver.
+6. Resolver sends a query to the domain's nameserver.
+7. The IP address for austingil.com is returned to the Resolver.
+8. Resolver responds to the web browser with the IP address of the domain.
+</v-clicks>
+
+---
+layout: image
+image: /img/make-div/dns.jpg
+---
+
+<style>
+.slidev-page-44 { background-size: contain !important; }
+</style>
+
+---
+
+# Keep in mind
+
+Caching is a thing (and can be a pain in the butt):
+
+<v-click>
+
 - Browser
 - Operating system
 - Router
 - ISP
-- Edge
-- Server
+<!-- - Edge compute
+- Server -->
+</v-click>
+
+---
+layout: statement
+---
+
+# Step 2 - Connecting 
+# <span class="font-mono">💗(¯ з¯) (¯ε ¯)💗</span>
 
 ---
 
-# Part 2: Connecting <span class="font-mono">💗(¯ з¯) (¯ε ¯)💗</span>
+# Four parts
 
+<v-clicks>
 
-Browser prepares a data packet to be transmitted through either:
-    Ethernet -> modem -> ISP
-    WiFi -> router -> modem -> ISP
-    Cellular data network
-    (Packet: a small segment of a larger message. Each packet contains both data and information about that data)
-Browser requests a TCP over IP socket stream (handshake)
-  * First, the source send an SYN “initial request” packet to the target server
-  * server then sends a SYN-ACK packet to agree to the process
-  * source sends an ACK packet to the target to confirm the process, after which the message contents can be sent.
-pass from your computer, possibly through a local network, and then through a modem
-Ping pongs through network nodes until reaching destination server
-TLS (SSL) handshake: Your browser also set up encryption between
-- Specify which version of TLS (TLS 1.0, 1.2, 1.3, etc.) they will use
-- Decide on which cipher suites (see below) they will use
-- Authenticate the identity of the server via the server’s public key and the SSL certificate authority’s digital signature
-- Generate session keys in order to use symmetric encryption after the handshake is complete
+- Prepare the packet
+- Open the connection
+- Secure the connection
+- Make the request
+</v-clicks>
 
-HTTP request: Your browser requested the content that appears on this webpage.
+---
+
+# Prepare a packet
+
+With the server's IP address the browser can prepare a data packet to transmit.
+
+Packet: a small segment of a larger message, sent over a network, then then recombined by the receiver.
+
+<!-- - Ethernet -> modem -> ISP
+- WiFi -> router -> modem -> ISP
+- Cellular data network -->
+
+---
+
+# Open the connection
+
+Your computer and the server connect using communication protocols TCP/IP.
+
+Client requests a TCP over IP socket stream ("TCP handshake")
+<v-clicks>
+
+  - Client sends an SYN "initial request" packet to the target server
+  - Server then responds with an SYN-ACK packet to agree to the process
+  - Client sends an ACK packet to the target to confirm the process
+  - Messages can now be sent.
+</v-clicks>
+
+---
+
+# Secure connection
+
+To encrypt messages, the browser and server set up TLS (or "SSL") handshake:
+<v-clicks>
+
+- Specify TLS version
+- Decide on cipher suites
+- Verify server's identity with it's TLS certificate
+- Handhske is complete & session key is generated for encrypting data
+</v-clicks>
+
+---
+
+# Make the request
+
+```mermaid
+sequenceDiagram
+  Alice->>John: Hello John, how are you?
+  Note over Alice: A typical interaction
 ```
+
+```mermaid
+sequenceDiagram
+  participant A as Alice
+  participant J as John
+  A->>J: Hello John, how are you?
+  J->>A: Great!
+```
+
+<v-clicks>
+
+<div>
+
+Your browser sends a request using HTTP protocol.
+
+<span class="text-8xl">💻</span>
+
+```sh
 GET / HTTP/1.1
 Host: austingil.com
 Connection: close
 [...other headers]
 ```
-Akamai EdgeWorkers Modify the request
-Linode server does some work to prepare HTML response
-HTTP response: Server sends content (HTML, CSS, and JavaScript) broken up into a series of data packets. Once your device received the packets and verified it had received all of them
-```
+
+</div>
+<div>
+
+(\*\***I can modify the request before reaching the server using Akamai EdgeWorkers**\*\*)
+
+My Linode server beeps and boops to prepare HTML for the HTTP response
+
+```sh
 200 OK
 [response headers]
 ```
-Akamai EdgeWorkers Modify the response
 
-Browser parses HTML and the above process is repeated for every resource (image, CSS, favicon.ico, etc) referenced by the HTML page
-
-If the HTML referenced a resource on a different domain than austingil.com, the web browser goes back to the steps involved in resolving the other domain, and follows all steps up to this point for that domain.
-
-For example, if you're using a CDN such as Akamai
+(\*\***I can modify the response before reaching the client using Akamai EdgeWorkers**\*\*)
+</div>
+</v-clicks>
 
 ---
 
-# Part 3: Rendering 🏗🧱🎨📖
-(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 📦
-(∩^o^)⊃━☆ *:･ﾟ✧ 📦
+# Got multiple resources?
 
-(。･_･)ノ”【】
-ヽ(⌐■_■)ノ♪♬
+Once the browser verifies it has received all of packets of data, it can parse the HTML.
 
-Critical rendering path
+It will repeat the above process is every resource referenced by the HTML page.
+
+If a resource is from a different domain than austingil.com, browser starts over from the DNS lookup.
+
+For example, if you store staic assets (image, CSS, favicon, fonts, js, etc) on Akamai's CDN.
+
+---
+layout: statement
+---
+
+# Step 3 - Rendering 
+# <span class="font-mono"> 🏗🧱🎨📖</span>
+
+---
+
+# Critical rendering path
+
+The browser must complete several steps to render a web page
+
+<v-clicks>
+
 - Construct the DOM Tree (Object representation of HTML)
 - Construct the CSSOM Tree (Object representation of DOM styles)
 - Run JavaScript
@@ -485,19 +841,30 @@ Critical rendering path
 - Paint content as px to respective layer
 - Composite (flatten layers onto the screen)
 
-Explore Critical render path in Chrome’s performance panel 
+</v-clicks>
+
+How you write CSS and JS impacts Style, Layout, Paint
+
+<v-click>
+
+Explore Critical render path in Chrome's performance panel 
+
+</v-click>
+
+
+---
 
 # Caveats
-
-Render blocking resources?
-- CSS is render blocking except when it isn't
-- JS is a parser blocking except when it isn't
 
 SSR vs Client vs SSG
 
 ---
 
-So when you take down production just say, hay man, it's complicated
+So when your boss asks why the website is broken...
+
+Made a change -> commited to GitHub -> built by Actions -> uploaded to server -> URL -> Browser -> OS -> Wifi -> Router -> Modem -> ISP -> DNS resolution -> server's IP -> TCP handshake -> TLS handshake -> HTTP request -> EdgeWorker -> Linode -> EdgeWorker -> HTTP response -> download HTML -> download CSS -> download JS -> Render `<div>`
+
+...or just say, "Works on my machine. Have you tried clearing your cache?"
 
 ---
 
@@ -521,7 +888,7 @@ image: /img/edge-compute/austin-gil-bio.png
 
 I want to help you build better websites.
 
-Over the last ten years, I’ve built projects for award-winning agencies, innovative tech start-ups, and government organizations.
+Over the last ten years, I've built projects for award-winning agencies, innovative tech start-ups, and government organizations.
 
 Today, I create cool stuff for the web and share what I learn through writing, open-source, YouTube and Twitch, The Function Call, speaking and workshops.
 
@@ -536,3 +903,10 @@ Twitch
 LinkedIn
 
 <div class="mt-10">Come talk to me about edge compute, JavaScript, Chiweenies, or whatever :D</div>
+
+
+(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 📦
+(∩^o^)⊃━☆ *:･ﾟ✧ 📦
+
+(。･_･)ノ”【】
+ヽ(⌐■_■)ノ♪♬
