@@ -19,9 +19,6 @@ h3 {
 code, kbd, samp, pre {
   font-size: inherit;
 }
-.slidev-layout :where(p[class]) {
-  margin: unset;
-}
 .dark #slide-content {
   color: #333;
 }
@@ -32,6 +29,21 @@ code, kbd, samp, pre {
   background-color: lavender;
   background-image: url('/img/background.svg');
   background-size: cover;
+}
+.slidev-layout {
+  font-size: 1.5rem;
+}
+.slidev-layout h1 {
+  font-size: 3rem;
+}
+.slidev-layout :where(p, ul, ol) {
+  font-size: inherit;
+}
+.slidev-layout p {
+  line-height: 1.5;
+}
+.slidev-layout :where(p[class]) {
+  margin: unset;
 }
 .slidev-layout h1 + p {
   margin-top: unset;
