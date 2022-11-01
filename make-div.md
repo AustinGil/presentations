@@ -476,6 +476,7 @@ AST representation (by [shift-js](https://github.com/shift-js/shift-js)):
 
 <div class="grid gap-4 grid-cols-2">
 <div>
+<div class="text-sm">
 
 ```jsx
 // main.jsx
@@ -487,6 +488,7 @@ ReactDOM.createRoot(
   document.getElementById('root')
 ).render(<App />)
 ```
+</div>
 
 - 4 separate files/libraries
 - Written in JSX
@@ -565,7 +567,7 @@ With GitHub Actions:
 Actions define a set of instructions for the Octocats to perform.
 
 <div class="grid gap-4 grid-cols-2">
-<div v-click="1">
+<div v-click="1" class="text-sm">
 
 ```yml {all|all|4|6|8|10|12}
 # ci.yml
@@ -585,11 +587,11 @@ jobs:
 </div>
 <div class="text-2xl">
 <div v-click="1" class="mt-4">A machine on GitHub's servers</div>
-<div v-click="2" class="mt-11">running Ubuntu OS</div>
-<div v-click="3" class="mt-5">checks out your repo's code,</div>
-<div v-click="4" class="mt-5">installs NPM dependencies,</div>
-<div v-click="5" class="mt-5">then runs "build",</div>
-<div v-click="6" class="mt-5">then runs "deploy".</div>
+<div v-click="2" class="mt-4">running Ubuntu OS</div>
+<div v-click="3" class="mt-3">checks out your repo's code,</div>
+<div v-click="4" class="mt-3">installs NPM dependencies,</div>
+<div v-click="5" class="mt-2">then runs "build",</div>
+<div v-click="6" class="mt-3">then runs "deploy".</div>
 </div>
 </div>
 
@@ -623,8 +625,12 @@ layout: statement
 
 <v-clicks>
 
-- Dev environment (your computer) != CI/CD environment (GH computers).
-- Dev assets != production assets.
+- 3 different computers:
+  1. **Development** (e.g. Your laptop)
+  2. **CI/CD** (e.g. GitHub Actions)
+  3. **Production** (e.g. Linode)
+- Dev != CI/CD != Prod
+- Dev artifacts != production artifacts
 </v-clicks>
 
 ---
@@ -768,13 +774,13 @@ With the IP address the browser can prepare a packet for TCP/IP.
 
 # 2.2 Open the connection
 
-**TCP**: The Transmission Control Protocol ensures accurate data delivery.
+**Internet Protocol (IP)**: Guarantees the correct address.
 
-**IP**: The Internet Protocol obtains the address where data is sent.
+**Transmission Control Protocol (TCP)**: Guarantees accurate delivery.
 
 <v-clicks>
 
-Your computer and the server connect using communication protocols TCP/IP.
+Your computer and the server connect using "TCP over IP" (or TCP/IP).
 
 </v-clicks>
 
@@ -791,7 +797,7 @@ Client->>Server: ACK packet to confirm the process
 
 ---
 
-# 2.3 Secure connection (htps)
+# 2.3 Secure connection (https)
 
 To encrypt messages, the browser and server set up TLS (or "SSL") handshake:
 
@@ -813,16 +819,17 @@ Server->>Client: Session created
 </v-clicks> -->
 
 ---
-class: text-sm 
+class: text
 ---
 
 # 2.4 Make the request
 
-<v-clicks>
+<div class="grid grid-cols-3 gap-4">
 
-<div class="grid grid-cols-2">
-
-💻 request using Hypertext Transfer Protocol (HTTP).
+<div v-click="1">
+<h2 class="-mb-4 text-center">Browser</h2>
+<span class="block text-10xl text-center">💻 </span>
+<div class="text-sm">
 
 ```sh
 GET / HTTP/1.1
@@ -830,36 +837,32 @@ Host: austingil.com
 Connection: close
 [...other headers]
 ```
-
 </div>
 
-<p>
-(** 
-<svg class="inline mb-3" width="78.4" height="32" viewBox="0 0 512 209"><path fill="#F79838" d="M156.166 152.93h-20.86l18.07-36.587h.224l2.566 36.588Zm.892 16.621l1.227 14.501h22.979l-7.697-84.44h-34.245l-43.169 84.44h23.425l7.25-14.5h30.23Zm56.331-22.532h3.458l16.509-22.198h21.082l-22.755 28.333l14.055 30.675h-22.533l-9.147-23.87h-3.234l-5.132 23.87h-19.52l17.847-84.106h19.41l-10.04 47.296Zm65.924 12.493c6.358 0 10.597.446 9.37 5.354c-1.45 6.358-4.015 7.25-12.158 7.25c-3.012 0-8.478 0-7.028-6.357c1.116-5.355 5.131-6.247 9.816-6.247Zm5.355 24.317h19.186l7.696-36.81c4.462-20.413-3.57-22.756-23.201-22.756c-13.832 0-27.218-.223-31.234 18.294h19.187c1.227-5.354 4.461-6.358 9.146-6.358c8.478 0 8.255 3.57 6.805 8.923l-1.897 9.37h-.892c-.67-6.804-9.147-6.58-14.724-6.58c-14.055 0-22.31 4.461-25.321 18.516c-3.235 15.059 4.015 18.294 17.401 18.294c6.804 0 15.728-1.45 18.963-9.37h.67l-1.785 8.477Zm58.45-59.008l-1.673 8.477h.67c3.792-7.027 11.488-8.923 18.07-8.923c8.477 0 16.62 1.45 15.505 11.49h.892c2.789-8.479 11.49-11.49 18.963-11.49c13.609 0 19.41 5.577 16.397 19.186l-8.7 40.38h-19.186l7.25-34.245c.893-6.358 1.897-10.82-5.354-10.82c-7.25 0-10.04 4.908-11.266 11.266l-7.028 33.576h-19.186l7.474-35.695c.892-5.355 1.45-9.147-5.354-9.147c-7.92 0-10.374 4.239-11.713 11.266l-7.027 33.576h-19.186l12.716-59.12h17.848v.223h-.112Zm99.165 34.691c6.358 0 10.597.446 9.37 5.354c-1.227 6.358-4.016 7.25-12.158 7.25c-2.79 0-8.478 0-7.028-6.357c1.116-5.355 4.908-6.247 9.816-6.247Zm5.131 24.317H466.6l7.697-36.81c4.462-20.413-3.57-22.756-23.202-22.756c-13.831 0-27.217-.223-31.233 18.294h19.186c1.227-5.354 4.462-6.358 9.147-6.358c8.478 0 8.255 3.57 6.805 8.923l-1.897 9.37h-.892c-.67-6.804-9.147-6.58-14.724-6.58c-14.055 0-22.31 4.461-25.321 18.516c-3.235 15.059 4.015 18.294 17.4 18.294c6.805 0 15.729-1.45 18.964-9.37h.67l-1.786 8.477Zm47.408 0h-19.186l12.381-59.12h19.186l-12.381 59.12Zm16.843-75.182c0 5.912-4.908 10.82-10.82 10.82s-10.82-4.908-10.82-10.82c0-6.135 4.908-10.82 10.82-10.82s10.82 4.685 10.82 10.82Z"/><path fill="#0098CC" d="M106.193 204.242c-42.946-13.162-74.068-52.761-74.068-99.388c0-47.407 31.903-87.23 75.518-100.169c4.462-1.227 3.235-4.239-2.12-4.239C47.631.446.446 47.073.446 104.52c0 57.447 46.85 104.074 105.077 104.074c5.355.334 5.578-2.678.67-4.35Zm-54.1-75.294c-.224-2.789-.447-5.577-.447-8.477c0-45.735 37.034-82.768 82.768-82.768c43.169 0 56.331 19.186 57.67 18.07c1.673-1.45-15.728-39.599-66.37-39.599c-45.735 0-82.768 37.034-82.768 82.768c0 10.597 2.119 20.636 5.577 30.006c1.45 4.016 3.792 4.016 3.57 0ZM86.56 69.382c21.306-9.37 48.523-9.593 75.071-.446c17.848 6.358 28.11 15.059 29.114 14.724c1.45-.67-10.374-19.186-31.68-27.217c-25.767-9.593-53.43-4.685-73.62 11.266c-2.231 1.673-1.562 2.9 1.115 1.673Z"/></svg>
-EdgeWorkers can modify request between client & server.)
-</p>
+Request using Hypertext Transfer Protocol (HTTP).
+</div>
 
-<div class="grid grid-cols-2">
+<div v-click="3" class="text-center text-4xl">
+<p class="text-8xl">🤯</p>
+<logos-akamai class="text-10xl -mb-16 -mt-16"/>
+<p>EdgeWorkers</p>
+<!-- <fa-cogs class="text-8xl"/> -->
+</div>
 
-<p>
-<svg class="inline" width="26.69" height="32" viewBox="0 0 256 307"><path fill="#004711" d="m66.766 141.595l-12.64-83.896L2.919 26.102l15.254 78.884l48.594 36.609ZM78.75 231.81l-8.063-59.49l-45.543-37.698l11.767 58.836L78.75 231.81Zm-36.173-13.292l8.063 44.67l38.788 40.315l-5.448-45.544l-41.403-39.441Zm115.71-13.73l-19.938-14.817s-.284 5.306-.817 5.666l-14.546 10.242l15.907 13.074l.927 14.873l18.903 15.417l-.435-44.454Zm60.253-43.472l-3.596 41.893l-13.401-8.825s1.477-21.181 1.47-21.192c-.077-.142-25.822-17.433-25.822-17.433l.817-19.285l40.532 24.842Z"/><path fill="#00B159" d="m133.665 106.947l-3.704-78.012l-75.833 28.764l12.638 83.896l66.899-34.648Zm3.487 88.472l-3.051-59.49l-63.412 36.39l9.37 61.016l57.093-37.916Zm1.089 24.188l-54.26 38.352l6.756 46.85l49.465-39.441l-1.961-45.761Zm20.92-15.036l.87 45.326l39.225-31.815l1.96-43.147l-42.055 29.636Zm93.429-65.646l-5.121 39.769l-30.671 24.624l3.65-41.784l32.142-22.61Z"/><path d="M140.278 218.847c-.002-.038-.016-.073-.02-.11a1.799 1.799 0 0 0-.107-.46a1.724 1.724 0 0 0-.125-.26c-.028-.05-.055-.1-.088-.146a1.784 1.784 0 0 0-.202-.234c-.035-.035-.066-.074-.104-.107l-.028-.03l-14.511-11.843l13.343-8.99c.533-.36.839-.966.81-1.603l-.135-3.165l17.692 13.504l.344 41.008l-16.276-13.702l-.593-13.862Zm-71.23-45.953l8.205 56.072l-38.886-36.633l-11.26-54.382l41.94 34.943Zm66.478 21.296l-54.29 36.575l-8.467-57.86l60.384-34.37l2.373 55.655Zm-6.982-163.451l3.229 75.494l-63.888 33.245L56.037 58.6l72.507-27.861Zm-76.24 27.78l11.649 79.516L20.026 103.8L4.5 28.795L52.305 58.52Zm.678 204.375l-8.3-40.105l36.998 36.387l5.926 40.468l-34.624-36.75Zm85.558 1.459l-46.91 37.37l-6.238-42.582l51.354-36.742l1.794 41.954Zm58.888-46.95l-36.6 29.192l-.342-41.166l39.383-28.17l-2.441 40.144Zm5.109-23.378l1.24-20.395c0-.023-.006-.044-.006-.067c0-.027.009-.052.008-.08c-.001-.08-.022-.158-.034-.237c-.01-.057-.01-.114-.024-.17a1.875 1.875 0 0 0-.156-.41c-.006-.01-.008-.023-.014-.034a1.857 1.857 0 0 0-.291-.388c-.023-.024-.051-.042-.075-.064c-.074-.07-.146-.141-.232-.2l-24.655-16.282l.359-17.868l38.8 24.178l-3.46 39.993l-11.46-7.976Zm15.22 7.196l3.39-39.175l30.623-21.916l-5.147 38.082l-28.865 23.009ZM256 136.045c-.002-.035-.015-.067-.02-.102a1.842 1.842 0 0 0-.036-.194a1.88 1.88 0 0 0-.17-.463a1.808 1.808 0 0 0-.181-.27c-.036-.045-.07-.091-.11-.133a1.773 1.773 0 0 0-.283-.233c-.032-.022-.055-.053-.09-.073c-.006-.005-.016-.006-.024-.011c-.011-.006-.02-.016-.031-.022l-41.91-23.223a1.836 1.836 0 0 0-1.85.043l-35.374 21.625c-.057.034-.102.083-.154.123c-.063.048-.128.092-.184.148c-.06.059-.106.127-.156.194c-.044.058-.094.112-.13.175c-.046.077-.075.162-.11.245c-.024.063-.057.12-.075.187c-.025.09-.032.184-.043.278c-.007.06-.026.118-.028.18l-.376 18.779l-14.39-9.503a1.837 1.837 0 0 0-1.976-.037l-20.702 12.656l-.897-21.047c-.002-.044-.018-.084-.022-.128a2.078 2.078 0 0 0-.048-.273c-.018-.066-.045-.128-.07-.192a1.735 1.735 0 0 0-.104-.228c-.037-.065-.081-.123-.125-.183a1.74 1.74 0 0 0-.148-.183a1.824 1.824 0 0 0-.18-.157c-.04-.032-.072-.072-.115-.102l-21.545-14.471l20.167-10.494a1.847 1.847 0 0 0 .987-1.712l-3.387-79.222c-.004-.097-.027-.19-.046-.284c-.008-.04-.01-.08-.02-.118a1.764 1.764 0 0 0-.188-.45c-.015-.026-.036-.047-.052-.071a1.802 1.802 0 0 0-.253-.311c-.035-.034-.073-.063-.111-.094c-.053-.044-.1-.094-.157-.132c-.045-.03-.096-.046-.143-.072c-.024-.013-.042-.033-.067-.045L76.736.225a1.829 1.829 0 0 0-1.347-.1L1.279 23.209l-.015.008c-.03.009-.056.03-.086.04a1.808 1.808 0 0 0-.391.196l-.011.005c-.041.029-.07.07-.107.102a1.785 1.785 0 0 0-.265.249c-.055.068-.092.146-.137.22c-.045.075-.095.144-.13.224c-.04.096-.06.198-.082.3c-.015.062-.042.118-.051.18c-.001.01.002.019 0 .028c-.01.093 0 .186.005.28c.003.087-.001.173.014.257c.003.014 0 .027.003.04l16.536 79.869c.09.427.323.808.67 1.077l22.444 17.493l-16.226 7.726c-.03.014-.052.036-.08.05c-.025.015-.052.018-.076.032c-.036.022-.06.054-.093.078a1.846 1.846 0 0 0-.258.216c-.045.045-.09.089-.13.138a1.884 1.884 0 0 0-.2.315c-.02.04-.047.078-.065.12a1.825 1.825 0 0 0-.133.482v.02c-.003.026.002.052 0 .078c-.011.15-.004.3.022.447c.003.02-.001.039.003.058l12.44 60.109c.077.372.265.708.54.967l15.622 14.714l-10.352 6.332a1.86 1.86 0 0 0-.36.293c-.03.029-.05.062-.076.093c-.09.106-.166.219-.23.342a1.851 1.851 0 0 0-.204.628c-.02.177-.005.352.025.524c.004.019-.001.038.003.058l9.638 46.554c.069.33.228.637.463.886l38.982 41.385c.059.062.127.11.192.164c.024.019.044.04.069.059c.122.088.25.16.388.216c.006.003.01.008.018.01c.01.005.024.003.036.007c.205.076.42.122.639.122a1.82 1.82 0 0 0 .659-.134c.046-.018.095-.027.14-.05c.076-.036.132-.094.199-.14c.048-.03.103-.045.148-.081l50.145-39.95c.46-.368.716-.931.692-1.516l-1.172-27.43l16.753 14.1c.029.025.067.034.098.057c.095.07.186.144.294.196c.036.016.073.023.109.038c.046.018.09.032.136.046c.18.057.362.096.547.096c.18 0 .358-.037.535-.091c.04-.013.08-.026.122-.042c.042-.016.085-.024.126-.043c.093-.044.168-.108.25-.165c.036-.025.078-.035.112-.062l40.197-32.056c.409-.33.657-.81.689-1.332l1.223-20.115l12.23 8.513c.026.017.055.023.08.039c.036.022.063.054.1.074c.072.038.149.057.223.085c.05.019.099.042.152.057c.162.045.328.074.494.074c.18 0 .36-.036.537-.09c.04-.012.08-.025.12-.04c.04-.016.084-.024.125-.042c.1-.048.186-.115.274-.178c.029-.02.064-.028.092-.05l32.79-26.134a1.85 1.85 0 0 0 .678-1.195l5.817-43.041c.006-.046-.005-.09-.002-.136c.004-.073.019-.143.015-.217Z"/></svg>
-beeps and boops some HTML for HTTP response
-</p>
+<div v-click="2">
+<h2 class="text-center">Server</h2>
+<logos-linode class="block text-8xl mt-4 mb-6 mx-auto"/>
+<div class="text-sm mb-12">
 
 ```sh
 200 OK
 [response headers]
 ```
-
+</div>
+<p>generates HTML for HTTP response</p>
 </div>
 
-<p>
-(**
-<svg class="inline mb-3" width="78.4" height="32" viewBox="0 0 512 209"><path fill="#F79838" d="M156.166 152.93h-20.86l18.07-36.587h.224l2.566 36.588Zm.892 16.621l1.227 14.501h22.979l-7.697-84.44h-34.245l-43.169 84.44h23.425l7.25-14.5h30.23Zm56.331-22.532h3.458l16.509-22.198h21.082l-22.755 28.333l14.055 30.675h-22.533l-9.147-23.87h-3.234l-5.132 23.87h-19.52l17.847-84.106h19.41l-10.04 47.296Zm65.924 12.493c6.358 0 10.597.446 9.37 5.354c-1.45 6.358-4.015 7.25-12.158 7.25c-3.012 0-8.478 0-7.028-6.357c1.116-5.355 5.131-6.247 9.816-6.247Zm5.355 24.317h19.186l7.696-36.81c4.462-20.413-3.57-22.756-23.201-22.756c-13.832 0-27.218-.223-31.234 18.294h19.187c1.227-5.354 4.461-6.358 9.146-6.358c8.478 0 8.255 3.57 6.805 8.923l-1.897 9.37h-.892c-.67-6.804-9.147-6.58-14.724-6.58c-14.055 0-22.31 4.461-25.321 18.516c-3.235 15.059 4.015 18.294 17.401 18.294c6.804 0 15.728-1.45 18.963-9.37h.67l-1.785 8.477Zm58.45-59.008l-1.673 8.477h.67c3.792-7.027 11.488-8.923 18.07-8.923c8.477 0 16.62 1.45 15.505 11.49h.892c2.789-8.479 11.49-11.49 18.963-11.49c13.609 0 19.41 5.577 16.397 19.186l-8.7 40.38h-19.186l7.25-34.245c.893-6.358 1.897-10.82-5.354-10.82c-7.25 0-10.04 4.908-11.266 11.266l-7.028 33.576h-19.186l7.474-35.695c.892-5.355 1.45-9.147-5.354-9.147c-7.92 0-10.374 4.239-11.713 11.266l-7.027 33.576h-19.186l12.716-59.12h17.848v.223h-.112Zm99.165 34.691c6.358 0 10.597.446 9.37 5.354c-1.227 6.358-4.016 7.25-12.158 7.25c-2.79 0-8.478 0-7.028-6.357c1.116-5.355 4.908-6.247 9.816-6.247Zm5.131 24.317H466.6l7.697-36.81c4.462-20.413-3.57-22.756-23.202-22.756c-13.831 0-27.217-.223-31.233 18.294h19.186c1.227-5.354 4.462-6.358 9.147-6.358c8.478 0 8.255 3.57 6.805 8.923l-1.897 9.37h-.892c-.67-6.804-9.147-6.58-14.724-6.58c-14.055 0-22.31 4.461-25.321 18.516c-3.235 15.059 4.015 18.294 17.4 18.294c6.805 0 15.729-1.45 18.964-9.37h.67l-1.786 8.477Zm47.408 0h-19.186l12.381-59.12h19.186l-12.381 59.12Zm16.843-75.182c0 5.912-4.908 10.82-10.82 10.82s-10.82-4.908-10.82-10.82c0-6.135 4.908-10.82 10.82-10.82s10.82 4.685 10.82 10.82Z"/><path fill="#0098CC" d="M106.193 204.242c-42.946-13.162-74.068-52.761-74.068-99.388c0-47.407 31.903-87.23 75.518-100.169c4.462-1.227 3.235-4.239-2.12-4.239C47.631.446.446 47.073.446 104.52c0 57.447 46.85 104.074 105.077 104.074c5.355.334 5.578-2.678.67-4.35Zm-54.1-75.294c-.224-2.789-.447-5.577-.447-8.477c0-45.735 37.034-82.768 82.768-82.768c43.169 0 56.331 19.186 57.67 18.07c1.673-1.45-15.728-39.599-66.37-39.599c-45.735 0-82.768 37.034-82.768 82.768c0 10.597 2.119 20.636 5.577 30.006c1.45 4.016 3.792 4.016 3.57 0ZM86.56 69.382c21.306-9.37 48.523-9.593 75.071-.446c17.848 6.358 28.11 15.059 29.114 14.724c1.45-.67-10.374-19.186-31.68-27.217c-25.767-9.593-53.43-4.685-73.62 11.266c-2.231 1.673-1.562 2.9 1.115 1.673Z"/></svg>
-EdgeWorkers can modify response between server and client.)
-</p>
-
-</v-clicks>
+</div>
 
 ---
 
@@ -903,30 +906,81 @@ layout: statement
 
 ---
 
-# Your code matters
+# Keep in mind
 
-How you write CSS and JS impacts Style, Layout, Paint
+How you write CSS and JsS impacts Style, Layout, Paint
+<img src="img/make-div/crp.jpg" width="600">
+
+<br>
 
 <v-click>
+<div class="grid grid-cols-2">
 
-Explore Critical render path in Chrome's performance panel 
+Explore Critical Render Path
 
+<img src="img/make-div/devtools-perf.png">
+</div>
 </v-click>
 
 
 ---
+layout: statement
+---
 
-# Caveats
-
-SSR vs Client vs SSG
+# That's it
+# 🤮
 
 ---
 
-So when your boss asks why the website is broken...
+# "Why is the website broken?"
 
-Made a change -> commited to GitHub -> built by Actions -> uploaded to server -> URL -> Browser -> OS -> Wifi -> Router -> Modem -> ISP -> DNS resolution -> server's IP -> TCP handshake -> TLS handshake -> HTTP request -> EdgeWorker -> Linode -> EdgeWorker -> HTTP response -> download HTML -> download CSS -> download JS -> Render `<div>`
+<div class="leading-loose">
+<v-clicks>
+<span class="inline-block">Made a change ->&nbsp;</span>
+<span class="inline-block">commited to GitHub ->&nbsp;</span>
+<span class="inline-block">built by Actions ->&nbsp;</span>
+<span class="inline-block">uploaded to server ->&nbsp;</span>
+<span class="inline-block">URL ->&nbsp;</span>
+<span class="inline-block">Browser ->&nbsp;</span>
+<span class="inline-block">OS ->&nbsp;</span>
+<span class="inline-block">Wifi ->&nbsp;</span>
+<span class="inline-block">Router ->&nbsp;</span>
+<span class="inline-block">Modem ->&nbsp;</span>
+<span class="inline-block">ISP ->&nbsp;</span>
+<span class="inline-block">DNS resolution ->&nbsp;</span>
+<span class="inline-block">server's IP ->&nbsp;</span>
+<span class="inline-block">TCP handshake ->&nbsp;</span>
+<span class="inline-block">TLS handshake ->&nbsp;</span>
+<span class="inline-block">HTTP request ->&nbsp;</span>
+<span class="inline-block">EdgeWorker ->&nbsp;</span>
+<span class="inline-block">Linode ->&nbsp;</span>
+<span class="inline-block">EdgeWorker ->&nbsp;</span>
+<span class="inline-block">HTTP response ->&nbsp;</span>
+<span class="inline-block">download HTML ->&nbsp;</span>
+<span class="inline-block">download CSS ->&nbsp;</span>
+<span class="inline-block">download JS ->&nbsp;</span>
+<span class="inline-block">Construct DOM ->&nbsp;</span>
+<span class="inline-block">Construct CSSOM ->&nbsp;</span>
+<span class="inline-block">Run JS ->&nbsp;</span>
+<span class="inline-block"><code>document.createElement('div');</code> ->&nbsp;</span>
+<span class="inline-block">Render ->&nbsp;</span>
+<span class="inline-block">Layout ->&nbsp;</span>
+<span class="inline-block">Paint ->&nbsp;</span>
+<span class="inline-block">Composite</span>
+</v-clicks>
+</div>
 
-...or just say, "Works on my machine. Have you tried clearing your cache?"
+---
+layout: statement
+---
+
+## Or you could just say:
+<v-clicks>
+
+# Works on my machine...
+
+# Have you tried clearing your cache?
+</v-clicks>
 
 ---
 
@@ -936,9 +990,6 @@ Made a change -> commited to GitHub -> built by Actions -> uploaded to server ->
 
 [What happens when](https://github.com/alex/what-happens-when) by [Alex Gaynor](https://alexgaynor.net/)
 
----
-layout: image-right
-image: /img/edge-compute/austin-gil-bio.png
 ---
 
 <h1 class="text-4xl mt-10 !mb-0">Hey Im Austin Gil 👋</h1>
