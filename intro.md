@@ -8,7 +8,7 @@ layout: image-right
 image: /img/edge-compute/austin-gil-bio.png
 ---
 
-<h1 class="text-4xl mt-10">Hey!<br>I'm Austin Gil</h1>
+<h1 class="text-4xl mt-10">Hey 👋<br>I'm Austin Gil</h1>
 <!-- <p class="mt-0 !mb-8">austingil.com | <logos-twitter/>@heyAustinGil</p> -->
 
 <h4 class="mt-16 mb-4">Dev Advocate <a href="https://akamai.com">akamai.com</a></h4>

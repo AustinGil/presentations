@@ -48,18 +48,21 @@ Then you get that sweet, sweet sound  -->
 layout: statement
 ---
 
+# 🤔
 # Version control?
 
 ---
 layout: statement
 ---
 
+# 🤨
 # CI/CD?
 
 ---
 layout: statement
 ---
 
+# 🤣
 # Deploy previews?
 
 ---
@@ -77,37 +80,43 @@ layout: statement
 layout: statement
 ---
 
+# 😁
 # Those were good times...
 
 ---
 layout: statement
 ---
 
+# 😃
 # Simpler times...
 
 ---
 layout: statement
 ---
 
-# Things have changed...
+# 😐
+# But things changed...
 
 ---
 layout: statement
 ---
 
-# The internet has changed...
+# 😑
+# The internet changed...
 
 ---
 layout: statement
 ---
 
-# Websites have become more complex...
+# 😒
+# Things got complicated...
 
 ---
 layout: statement
 ---
 
-# And so tooling had to evolve...
+# 😔
+# So tooling had to evolve...
 
 <!-- CD was the thing the internet came on
 
@@ -140,9 +149,9 @@ What's the first thing you do before you start writing code?
 
 <v-clicks>
 
-Open terminal & recite the magical incantation (e.g. `npm run dev`)
+Terminal + magical incantation (e.g. `npm run dev`)
 
-That starts a local dev server for working on the project.
+Starts a local dev server.
 </v-clicks>
 
 ---
@@ -226,7 +235,7 @@ layout: image-left
 image: img/make-div/flo.png
 ---
 
-# Bundlers are cool!
+# Bundling is cool!
 
 <v-clicks>
 
@@ -236,11 +245,11 @@ Bundler maps out file relationship.
 
 "**Dependency Resolution**"
 
-Avoid duped code or circular deps.
+Avoids duplicate code.
 
-Produces production assets.
+Prevents circular dependencies.
 
-A depenecy graph looks like this...
+Resulting in a dependency graph...
 
 </v-clicks>
 
@@ -251,7 +260,7 @@ image: img/make-div/dependency-graph.jpg
 
 ---
 
-# Just one problem...
+# But there's still one problem...
 
 <div class="grid grid-cols-2">
 <v-clicks>
@@ -513,9 +522,9 @@ ReactDOM.createRoot(
 
 <v-clicks>
 
-- Code in your editor is not the same code in the browser.
-- Dev server may behave differently than production server.
-- Example was for client-side JS. Different story for SSR or SSG.
+- Code in editor != code in the browser.
+- Dev server != production server.
+- Client-side JS app != SSR or SSG.
 </v-clicks>
 
 ---
@@ -534,10 +543,10 @@ class: text-5xl
 
 <v-clicks>
 
-1. Make some changes
+1. Make change
 2. Git commit 
 3. Git push
-4. **(∩^ᗜ^)⊃━☆ﾟ.\* (???)** 
+4. (∩^ᗜ^)⊃━☆ﾟ.\* (???) 
 </v-clicks>
 
 <!--  In the old days, we'd just drag that sucker over the FileZilla GUI and drop it on the server. Of course, that's assuming we weren't just live editing the file on the server. Not anymore. Today, thing look a bit different. -->
@@ -562,9 +571,9 @@ With GitHub Actions:
 
 ---
 
-# Example Action File
+# Example
 
-Actions define a set of instructions for the Octocats to perform.
+Instructions for the Octocats:
 
 <div class="grid gap-4 grid-cols-2">
 <div v-click="1" class="text-sm">
@@ -670,7 +679,7 @@ layout: statement
 
 # Step 1 - Networking 
 
-# <span class="font-mono">(👉ﾟヮﾟ)👉   👈(ﾟヮﾟ👈)</span>
+# <span class="font-mono">(☞ﾟヮﾟ)☞   ☜(ﾟヮﾟ☜)</span>
 
 ---
 
@@ -680,8 +689,10 @@ Browser need the IP address
 <v-clicks>
 
 1. Check browser cache.
-2. Check local hosts file on computer.
-3. Ping DNS server in the network stack (maybe router cache or ISP cache).
+2. Check local hosts file.
+3. Check network stack.
+    - Router cache?
+    - ISP cache?
 </v-clicks>
 
 ---
@@ -691,13 +702,11 @@ Browser need the IP address
 <v-clicks>
 
 1. Send request to DNS Recursive Resolver.
-2. Resolver queries an Authoritative Root nameserver.
-3. Root server responds with the address of Top Level Domain (TLD) nameserver (`.com`, `.net`, `.pizza`).
-4. Resolver makes a request to the `.com` TLD.
-5. The TLD server responds with IP address of the domain's nameserver.
-6. Resolver sends a query to the domain's nameserver.
-7. The IP address for austingil.com is returned to the Resolver.
-8. Resolver responds to the web browser with the IP address of the domain.
+2. Forwards to Authoritative Root nameserver.
+3. Forwards to Top Level Domain (TLD) nameserver (`.com`, `.net`, `.pizza`).
+4. Forwards to `austingil.com`'s nameserver
+5. IP is returned to the Resolver.
+5. IP is returned to the browser.
 </v-clicks>
 
 ---
@@ -723,7 +732,7 @@ Recursive Resolver->> Browser: Here you go!
 
 # Keep in mind
 
-Caching is a thing (and can be a pain in the butt):
+Caching is a thing (and a pain in the butt):
 
 <v-click>
 
@@ -762,7 +771,7 @@ layout: statement
 
 <v-click>
 
-With the IP address the browser can prepare a packet for TCP/IP.
+With the IP, browser can prepare packet.
 </v-click>
 
 
@@ -797,17 +806,31 @@ Client->>Server: ACK packet to confirm the process
 
 ---
 
-# 2.3 Secure connection (https)
+# 2.3 Secure connection
 
-To encrypt messages, the browser and server set up TLS (or "SSL") handshake:
+<v-clicks>
+
+**Secure Socket Layers (SSL)**: cryptographic protocol to encrypt data and authenticate a connection on the Internet
+
+**Transport Layer Security (TLS)**: cryptographic protocol to encrypt data and authenticate a connection on the Internet
+
+"Um, actually SSL != TLS"
+
+For HTTPS green lock, you need SSL (or TLS)
+
+</v-clicks>
+
+---
+
+# SSL (or TLS) "handshake"
 
 ```mermaid {theme: 'default'}
 sequenceDiagram
-Client->>Server: "hello": supported TLS, supported ciphers, "client random"
-Server->>Client: SSL cert, chosen cipher, "server random" 
-Client->>Cert Authority: Verify server identity.
-Client->>Server: "pre-master secret"
-Server->>Client: Session created 
+Browser->>Server: "hello": supported TLS, supported ciphers, "client random"
+Server->>Browser: SSL cert, chosen cipher, "server random" 
+Browser->>Cert Authority: Verify server identity.
+Browser->>Server: "pre-master secret"
+Server->>Browser: Session created 
 ```
 
 <!-- <v-clicks>
@@ -843,7 +866,7 @@ Request using Hypertext Transfer Protocol (HTTP).
 </div>
 
 <div v-click="3" class="text-center text-4xl">
-<p class="text-8xl">🤯</p>
+<p class="text-8xl">😎</p>
 <logos-akamai class="text-10xl -mb-16 -mt-16"/>
 <p>EdgeWorkers</p>
 <!-- <fa-cogs class="text-8xl"/> -->
@@ -859,22 +882,24 @@ Request using Hypertext Transfer Protocol (HTTP).
 [response headers]
 ```
 </div>
-<p>generates HTML for HTTP response</p>
+<p>Generates HTML for HTTP response</p>
 </div>
 
 </div>
 
 ---
 
-# Got multiple resources?
+# Browser parses HTML
 
 <v-clicks>
 
-Once browser receives the of packets it can parse the HTML.
+Multiple resources?
 
-Repeats process for every resource in HTML.
+Repeats process each one.
 
-Got different domains? Go back to DNS lookup.
+Different domains?
+
+Go back to DNS lookup.
 </v-clicks>
 
 ---
@@ -882,7 +907,7 @@ layout: statement
 ---
 
 # Step 3 - Rendering 
-# <span class="font-mono"> 🏗🧱🎨📖</span>
+# <span class="font-mono"> 💩 🖌️ლ( ͡°෴ ͡° )</span>
 
 ---
 
@@ -936,10 +961,15 @@ layout: statement
 
 <div class="leading-loose">
 <v-clicks>
-<span class="inline-block">Made a change ->&nbsp;</span>
-<span class="inline-block">commited to GitHub ->&nbsp;</span>
-<span class="inline-block">built by Actions ->&nbsp;</span>
-<span class="inline-block">uploaded to server ->&nbsp;</span>
+<span class="inline-block">Make a change ->&nbsp;</span>
+<span class="inline-block">git commit ->&nbsp;</span>
+<span class="inline-block">git push ->&nbsp;</span>
+<span class="inline-block">CI/CD pipeline ->&nbsp;</span>
+<span class="inline-block">transpile ->&nbsp;</span>
+<span class="inline-block">"Dependency Resolution" ->&nbsp;</span>
+<span class="inline-block">bundle ->&nbsp;</span>
+<span class="inline-block">package ->&nbsp;</span>
+<span class="inline-block">uploaded to prod ->&nbsp;</span>
 <span class="inline-block">URL ->&nbsp;</span>
 <span class="inline-block">Browser ->&nbsp;</span>
 <span class="inline-block">OS ->&nbsp;</span>
@@ -977,7 +1007,7 @@ layout: statement
 ## Or you could just say:
 <v-clicks>
 
-# Works on my machine...
+# It works on my machine...
 
 # Have you tried clearing your cache?
 </v-clicks>
@@ -991,35 +1021,5 @@ layout: statement
 [What happens when](https://github.com/alex/what-happens-when) by [Alex Gaynor](https://alexgaynor.net/)
 
 ---
-
-<h1 class="text-4xl mt-10 !mb-0">Hey Im Austin Gil 👋</h1>
-<p class="mt-0">austingil.com | <logos-twitter/>@heyAustinGIl</p>
-
-<h4 class="mb-2">Dev Advocate <a href="https://akamai.com">akamai.com</a></h4>
-<h4 class="mb-2">OSS Maintainer of <a href="https://vuetensils.austingil.com">Vuetensils</a></h4>
-<h4 class="mb-2">Chiweenie enthusiast</h4>
-
-I want to help you build better websites.
-
-Over the last ten years, I've built projects for award-winning agencies, innovative tech start-ups, and government organizations.
-
-Today, I create cool stuff for the web and share what I learn through writing, open-source, YouTube and Twitch, The Function Call, speaking and workshops.
-
-Twitter
-
-GitHub
-
-YouTube
-
-Twitch
-
-LinkedIn
-
-<div class="mt-10">Come talk to me about edge compute, JavaScript, Chiweenies, or whatever :D</div>
-
-
-(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 📦
-(∩^o^)⊃━☆ *:･ﾟ✧ 📦
-
-(。･_･)ノ”【】
-ヽ(⌐■_■)ノ♪♬
+src: outro.md
+---
