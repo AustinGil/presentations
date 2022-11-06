@@ -15,4 +15,5 @@ Cloud compute, edge, JavaScript, Chiweenies, whatever :D
 <div><logos-youtube-icon/>@heyAustinGil</div>
 <div><logos-twitch/>@heyAustinGil</div>
 <div><logos-github-icon/>@AustinGil</div>
+<div><logos-instagram-icon/>@NuggetTheMighty</div>
 </div>

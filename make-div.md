@@ -20,29 +20,25 @@ layout: statement
 
 # Let's take a trip back in time
 
----
-preload: false
----
+<!-- When you'd play outside, scrape your knee, and your dad would literally rub dirt in it.
 
-<audio autoplay>
-  <source src="/img/make-div/dial-up-fast.mp3" type="audio/mpeg">
-</audio>
-
-<!-- Let's travel back in time to a better day
-
-When you'd play outside, scrape your knee, and your dad would literally rub dirt in it.
-
-You get home and run upstairs.
-
-Sit down at the computer and use your big toe to hit the power button on your GATEWAY 2000 PENTIUM II
+You get home and run upstairs. GATEWAY 2000 PENTIUM II
 
 As the 64 MB of RAM kick in and the fans start whining, you yell down the stairs
 
 "Get off the phone! I need to use the internet."
 
-Then you get that sweet, sweet sound  -->
+Then you get that sweet, sweet sound 
 
-<!-- Give me that sound, concentrated, straight to the vein -->
+Give me that sound, concentrated, straight to the vein -->
+
+---
+preload: false
+---
+
+<audio autoplay>
+  <source src="/img/make-div/dial-up.mp3" type="audio/mpeg">
+</audio>
 
 ---
 layout: statement
@@ -88,14 +84,14 @@ layout: statement
 ---
 
 # 😃
-# Simpler times...
+# Simple times...
 
 ---
 layout: statement
 ---
 
 # 😐
-# But things changed...
+# But things had to change...
 
 ---
 layout: statement
@@ -109,7 +105,7 @@ layout: statement
 ---
 
 # 😒
-# Things got complicated...
+# It got complicated...
 
 ---
 layout: statement
@@ -462,7 +458,7 @@ AST representation (by [shift-js](https://github.com/shift-js/shift-js)):
 <v-clicks>
 
 1. Create a parser program called a "**Visitor**".
-2. Transpiler can "walk" the Visitor any part of the AST and do **[insert action]**. 
+2. Transpiler can "walk" the Visitor through "tokens" and do **[insert action]**. 
 3. Makes it possible to **add, remove, transform**, anything you want.
 </v-clicks>
 <v-click>
@@ -517,6 +513,11 @@ ReactDOM.createRoot(
 </div>
 
 ---
+layout: image
+image: img/make-div/createElement.png
+---
+
+---
 
 # Keep in mind
 
@@ -533,7 +534,7 @@ layout: statement
 
 # Deploying
 
-## <span class="font-mono">(╯°□°）╯︵ ┻━┻  ===> ┳━┳ ノ(゜-゜ノ)</span>
+## <span class="font-mono text-4xl">(╯°□°）╯︵ ┻━┻  ===> ┳━┳ ノ(゜-゜ノ)</span>
 
 ---
 class: text-5xl
@@ -622,10 +623,11 @@ layout: statement
 
 <v-clicks>
 
-- Build production artifacts & upload to servers.
+- Use Vite to create production artifacts & `scp` to upload to servers.
 - Create docker image & send to a registry.
 - Run code quality checks (e.g. `TypeScript`, `ESLint`, `Vitest`).
 - Generate static site & distribute to CDN (e.g. [Akamai CDN](https://www.akamai.com/solutions/content-delivery-network)).
+- Run a bunch of `bash` scripts Larry wrote (too afraid to touch)
 </v-clicks>
 
 ---
@@ -799,9 +801,9 @@ Your computer and the server connect using "TCP over IP" (or TCP/IP).
 
 ```mermaid {theme: 'default'}
 sequenceDiagram
-Client->>Server: SYN "initial request" packet to open socket
-Server->> Client: SYN+ACK packet to agree to the process
-Client->>Server: ACK packet to confirm the process
+Browser->>Server: SYN "initial request" packet to open socket
+Server->> Browser: SYN+ACK packet to agree to the process
+Browser->>Server: ACK packet to confirm the process
 ```
 
 ---
@@ -840,6 +842,10 @@ Server->>Browser: Session created
 - Verify server's identity with it's TLS certificate
 - Handhske is complete & session key is generated for encrypting data
 </v-clicks> -->
+
+---
+
+<img src="img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
 
 ---
 class: text
