@@ -864,7 +864,7 @@ class: text
 GET / HTTP/1.1
 Host: austingil.com
 Connection: close
-[...other headers]
+[...request headers]
 ```
 </div>
 
@@ -884,8 +884,10 @@ Request using Hypertext Transfer Protocol (HTTP).
 <div class="text-sm mb-12">
 
 ```sh
-200 OK
-[response headers]
+HTTP/1.1 200 OK
+Content-Type: text/html
+Connection: Closed
+[...response headers]
 ```
 </div>
 <p>Generates HTML for HTTP response</p>

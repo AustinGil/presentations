@@ -1,22 +1,6 @@
 ---
-theme: default
-font:
-  sans: 'Manrope'
-  display: 'Rock Salt'
-lineNumbers: false
-layout: image-right
-image: /img/edge-compute/austin-gil-bio.png
+src: intro.md
 ---
-
-<h1 class="text-4xl mt-10">Hey Im Austin Gil 👋</h1>
-<p class="-top-4">@heyAustinGIl</p>
-
-<h4 class="mb-4">Dev Advocate <a href="https://akamai.com">akamai.com</a></h4>
-<h4 class="mb-4">OSS Maintainer of <a href="https://vuetensils.austingil.com">Vuetensils</a></h4>
-<h4 class="mb-4">Chiweenie enthusiast</h4>
-
-<div class="mt-10">Come talk to me about edge compute, JavaScript, Chiweenies, or whatever :D</div>
-
 ---
 layout: statement
 ---
@@ -29,20 +13,29 @@ layout: statement
 
 # Plain and simple:
 
+<v-clicks>
+
 Edge compute is the result of distributing serverless functions to thousands of locations around the world to handle requests from as close to the user as possible.
 
 The result is programmable/dynamic/customizable responses with the least amount of latency (aka more speed).
+</v-clicks>
+---
+layout: statement
+---
 
-<v-click>
-
-## But that's really boring
-
-</v-click>
+# That's it!
 
 <!-- That's it. That's the pitch. And if you understand all that, then I have nothing more to add. 
 Thank you for coming to my talk.
 For the rest of my talk, we'll cover pros and cons as well as driving the idea home with a metaphor.
 -->
+
+
+---
+layout: statement
+---
+
+# But that's also really boring
 
 ---
 layout: statement
@@ -52,21 +45,29 @@ layout: statement
 
 # Dog hats!!!
 
-(really just an ok analogy)
+(ok analogy but great photos)
 
 ---
 
-# What is "Compute"?
+# First, let's define "Compute"
 
-What: compute = bleeps & bloops -> HTML
+<v-clicks>
+<div>
 
-Where: 
+## What:
 
+Compute = bleeps & bloops -> HTML
+</div>
+<div>
+
+## Where: 
 - Traditional Servers
 <!-- - Content Delivery Networks -->
 - Client-Side Rendering
 - Static-Site-Generators
 - Cloud functions
+</div>
+</v-clicks>
 
 ---
 
@@ -184,7 +185,9 @@ layout: statement
 
 ---
 
-# Cloud Functions (aka "lambda", "serverless")
+# Cloud Functions
+
+(aka "lambda", "serverless")
 
 Service providers route requests to the functions you provide.<br>
 (They manage machines and servers)
@@ -194,8 +197,8 @@ Service providers route requests to the functions you provide.<br>
 <div>
 
 ### Pros
-- Very easy to provision (teams, migration)
-- "Infinitely" scalable automatically
+- Easy to provision (teams/migration)
+- "Infinitely" scalable
 - Only pay for what you use
 - Only manage code (no hardware or servers)
 
@@ -204,7 +207,7 @@ Service providers route requests to the functions you provide.<br>
 
 ### Cons
 - Must follow conventions (naming, files, parameters, returns)
-- "Stateless" (no shared memory/file system)
+- "Stateless" (no shared memory/files)
 - Limited resources & languages
 - Can also be very far from users
 
@@ -371,33 +374,6 @@ layout: statement
 
 ---
 
-# An addition, not a replacement
-
-Where to run compute is difficult<br>
-(latency, bundle size, device capabilities, etc).
-
-<v-click>
-
-<h3 class="mt-12">Before</h3>
-
-Client-side JS -> Client-side service worker -> Cloud functions -> Traditional servers
-
-</v-click>
-<v-click>
-
-<h3 class="mt-12">After</h3>
-
-Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functions -> Traditional servers
-
-<!-- <div class="mt-12">Smart folks are exploring these issues:
-<br><br>
-<a href="https://astro.build/">Astro</a>, <a href="https://remix.run/">Remix</a>, <a href="https://nuxtjs.org/">Nuxt</a>, <a href="https://nextjs.org/">Next</a>, and more
-</div> -->
-
-</v-click>
-
----
-
 # Benefits - Users
 
 <v-clicks>
@@ -445,6 +421,152 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 - Limited compute resources
 - Limited time resources
 - Limited networking protocols (HTTP != TCP/IP)
+
+</v-clicks>
+
+---
+
+# An addition, not a replacement
+
+Where to run compute is difficult<br>
+(latency, bundle size, device capabilities, etc).
+
+<v-click>
+
+<h3 class="mt-12">Before</h3>
+
+Client-side JS -> Client-side service worker -> Cloud functions -> Traditional servers
+
+</v-click>
+<v-click>
+
+<h3 class="mt-12">After</h3>
+
+Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functions -> Traditional servers
+
+<!-- <div class="mt-12">Smart folks are exploring these issues:
+<br><br>
+<a href="https://astro.build/">Astro</a>, <a href="https://remix.run/">Remix</a>, <a href="https://nuxtjs.org/">Nuxt</a>, <a href="https://nextjs.org/">Next</a>, and more
+</div> -->
+
+</v-click>
+
+---
+layout: statement
+---
+
+# Be careful!
+## Chaining calls is tricky
+
+💻: origin<br>
+🤵: server<br>
+🔪: edge<br>
+🎯: target<br>
+
+---
+
+# Proxy service in same region 🙂
+
+<v-clicks>
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+💻---------------🤵-🎯
+```
+
+</div>
+
+vs.
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+💻-🔪---------------🎯
+```
+
+</div>
+
+</v-clicks>
+
+---
+
+# Proxy service in distant region 😀
+
+<v-clicks>
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+💻---------------🤵---------------🎯
+```
+</div>
+
+vs.
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+💻-🔪---------------🎯
+```
+
+</div>
+
+</v-clicks>
+
+---
+
+<h1>Multiple <b class="text-5xl">concurrent</b> requests 😄</h1>
+
+<v-clicks>
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+                   ┌----------------🎯
+💻----------------🤵-🎯
+                   └------🎯
+```
+
+</div>
+
+vs.
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+    ┌----------------🎯
+💻-🔪---🎯
+    └------🎯
+```
+
+</div>
+
+</v-clicks>
+
+---
+
+<h1>Multiple <b class="text-5xl">sequential</b> requests 😬</h1>
+
+<v-clicks>
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+💻---------------🤵-🎯-🤵🎯-🤵---------------💻
+```
+
+</div>
+
+vs.
+
+<div class="p-4 rounded-md bg-gray-800">
+
+```
+💻-🔪---------------🎯---------------🔪---------------🎯---------------🔪-💻
+```
+
+</div>
 
 </v-clicks>
 
@@ -522,7 +644,9 @@ layout: statement
 - 250ms faster => keeps users from visiting competitors
 - Performance impact's revenue, perception, loyalty, & engagement
 
-[Akamai's 2017 Online Retail Performance Report](https://www.akamai.com/newsroom/press-release/akamai-releases-spring-2017-state-of-online-retail-performance-report)
+---
+
+# [2017 Online Retail Performance](https://www.akamai.com/newsroom/press-release/akamai-releases-spring-2017-state-of-online-retail-performance-report)
 
 <v-clicks>
 
