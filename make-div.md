@@ -708,7 +708,8 @@ Browser need the IP address
 3. Forwards to Top Level Domain (TLD) nameserver (`.com`, `.net`, `.pizza`).
 4. Forwards to `austingil.com`'s nameserver
 5. IP is returned to the Resolver.
-5. IP is returned to the browser.
+6. IP is returned to the browser.
+7. Browser can connect to server.
 </v-clicks>
 
 ---
