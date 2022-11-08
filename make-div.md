@@ -825,6 +825,10 @@ For HTTPS green lock, you need SSL (or TLS)
 
 ---
 
+<img src="img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
+
+---
+
 # SSL (or TLS) "handshake"
 
 ```mermaid {theme: 'default'}
@@ -843,10 +847,6 @@ Server->>Browser: Session created
 - Verify server's identity with it's TLS certificate
 - Handhske is complete & session key is generated for encrypting data
 </v-clicks> -->
-
----
-
-<img src="img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
 
 ---
 class: text
