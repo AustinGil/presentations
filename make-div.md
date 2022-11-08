@@ -942,7 +942,7 @@ layout: statement
 
 # Keep in mind
 
-How you write CSS and JsS impacts Style, Layout, Paint
+How you write CSS and JS impacts Style, Layout, Paint
 <img src="img/make-div/crp.jpg" width="600">
 
 <br>
