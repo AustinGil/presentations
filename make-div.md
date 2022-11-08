@@ -882,7 +882,7 @@ Request using Hypertext Transfer Protocol (HTTP).
 <div v-click="2">
 <h2 class="text-center">Server</h2>
 <logos-linode class="block text-8xl mt-4 mb-6 mx-auto"/>
-<div class="text-sm mb-12">
+<div class="text-sm">
 
 ```sh
 HTTP/1.1 200 OK
