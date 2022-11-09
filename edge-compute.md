@@ -425,38 +425,10 @@ layout: statement
 </v-clicks>
 
 ---
-
-# An addition, not a replacement
-
-Where to run compute is difficult<br>
-(latency, bundle size, device capabilities, etc).
-
-<v-click>
-
-<h3 class="mt-12">Before</h3>
-
-Client-side JS -> Client-side service worker -> Cloud functions -> Traditional servers
-
-</v-click>
-<v-click>
-
-<h3 class="mt-12">After</h3>
-
-Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functions -> Traditional servers
-
-<!-- <div class="mt-12">Smart folks are exploring these issues:
-<br><br>
-<a href="https://astro.build/">Astro</a>, <a href="https://remix.run/">Remix</a>, <a href="https://nuxtjs.org/">Nuxt</a>, <a href="https://nextjs.org/">Next</a>, and more
-</div> -->
-
-</v-click>
-
----
 layout: statement
 ---
 
-# Be careful!
-## Chaining calls is tricky
+# Close isn't<br>always better 
 
 💻: origin<br>
 🤵: server<br>
@@ -569,6 +541,33 @@ vs.
 </div>
 
 </v-clicks>
+
+---
+
+# An addition, not a replacement
+
+Where to run compute is difficult<br>
+(latency, bundle size, device capabilities, etc).
+
+<v-click>
+
+<h3 class="mt-12">Before</h3>
+
+Client-side JS -> Client-side service worker -> Cloud functions -> Traditional servers
+
+</v-click>
+<v-click>
+
+<h3 class="mt-12">After</h3>
+
+Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functions -> Traditional servers
+
+<!-- <div class="mt-12">Smart folks are exploring these issues:
+<br><br>
+<a href="https://astro.build/">Astro</a>, <a href="https://remix.run/">Remix</a>, <a href="https://nuxtjs.org/">Nuxt</a>, <a href="https://nextjs.org/">Next</a>, and more
+</div> -->
+
+</v-click>
 
 ---
 
