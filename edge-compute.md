@@ -604,6 +604,8 @@ layout: statement
 - [Next.js](https://nextjs.org/)
 - [Nuxt.js](https://nuxtjs.org/)
 - [11ty](https://www.11ty.dev/docs/plugins/edge/)
+- [Sveltekit](https://kit.svelte.dev/)
+- [Fresh](https://fresh.deno.dev/)
 - and more
 
 ---
