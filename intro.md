@@ -5,7 +5,7 @@ font:
   display: 'Rock Salt'
 lineNumbers: false
 layout: image-right
-image: /img/edge-compute/austin-gil-bio.png
+image: /img/austin-gil-bio.png
 ---
 
 <h1 class="text-4xl mt-10">Hey 👋<br>I'm Austin Gil</h1>

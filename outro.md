@@ -9,11 +9,11 @@ Cloud compute, edge, JavaScript, Chiweenies, whatever :D
 
 ## Let's connect:
 
-<div class="grid grid-cols-3 gap-4 mt-6">
-<div><iconoir-internet/>austingil.com</div>
-<div><logos-twitter/>@heyAustinGil</div>
-<div><logos-youtube-icon/>@heyAustinGil</div>
-<div><logos-twitch/>@heyAustinGil</div>
-<div><logos-github-icon/>@AustinGil</div>
-<div><logos-instagram-icon/>@NuggetTheMighty</div>
+<div class="grid grid-cols-3 gap-2">
+<div><pepicons-internet/><a href="https://austingil.com">austingil.com</a></div>
+<div><logos-twitter/><a href="https://twitter.com/heyAustinGil">@heyAustinGil</a></div>
+<div><logos-youtube-icon/><a href="https://youtube.com/@heyAustinGil">@heyAustinGil</a></div>
+<div><logos-twitch/><a href="https://twitch.tv/heyAustinGil">@heyAustinGil</a></div>
+<div><bi-github/><a href="https://github.com/AustinGil">@AustinGil</a></div>
+<div><bi-instagram/><a href="https://instagram.com/NuggetTheMighty">@NuggetTheMighty</a></div>
 </div>
