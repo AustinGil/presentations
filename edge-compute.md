@@ -604,6 +604,8 @@ layout: statement
 - [Next.js](https://nextjs.org/)
 - [Nuxt.js](https://nuxtjs.org/)
 - [11ty](https://www.11ty.dev/docs/plugins/edge/)
+- [Sveltekit](https://kit.svelte.dev/)
+- [Fresh](https://fresh.deno.dev/)
 - and more
 
 ---
@@ -746,31 +748,34 @@ image: /img/edge-compute/pretty-chihuahua.jpg
 
 # Thanks 😘
 
+<p class="text-5xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
+<p class="text-5xl"><a href="https://bit.ly/austinode">bit.ly/austinode</a></p>
+
 <div>
 
 ### Info on Akamai's edge:
 
-[akamai.com](https://www.akamai.com/products/serverless-computing-edgeworkers)
+[akamai.com](https://www.akamai.com/products/serverless-computing-edgeworkers?utm_source=influencer&utm_medium=talk&utm_campaign=austingil)
 
-[developer.akamai.com](https://developer.akamai.com/akamai-edgeworkers-overview)
 
-[techdocs.akamai.com](https://techdocs.akamai.com/edgeworkers/docs/welcome-to-edgeworkers)
+<!-- [developer.akamai.com](https://developer.akamai.com/akamai-edgeworkers-overview?utm_source=influencer&utm_medium=talk&utm_campaign=austingil) -->
+
+<!-- https://www.linode.com/akatube?utm_source=austin_gil&utm_medium=blog&utm_campaign=blog-austin_gil-dev_advocate-austin_gil -->
+
 
 </div>
 <div>
 
-### Info on me:
+### Find me:
 
-<p><pepicons-internet/> <a href="https://austingil.com">austingil.com</a></p>
-
-<p><logos-twitter/> <a href="https://twitter.com/heyAustinGil">@heyAustinGil</a></p>
-
-<p><logos-twitch/> <a href="https://twitch.tv/heyAustinGil">@heyAustinGil</a></p>
-
-<p><bi-github/> <a href="https://github.com/AustinGil">@AustinGil</a></p>
-
-<p><bi-instagram/> <a href="https://instagram.com/NuggetTheMighty">@NuggetTheMighty</a> (my dog)</p>
-
+<div class="grid grid-cols-2 gap-2 w-2/3">
+<div><pepicons-internet/><a href="https://austingil.com">austingil.com</a></div>
+<div><logos-twitter/><a href="https://twitter.com/heyAustinGil">@heyAustinGil</a></div>
+<div><logos-youtube-icon/><a href="https://youtube.com/@heyAustinGil">@heyAustinGil</a></div>
+<div><logos-twitch/><a href="https://twitch.tv/heyAustinGil">@heyAustinGil</a></div>
+<div><bi-github/><a href="https://github.com/AustinGil">@AustinGil</a></div>
+<div><bi-instagram/><a href="https://instagram.com/NuggetTheMighty">@NuggetTheMighty</a></div>
+</div>
 </div>
 </v-clicks>
 </div>
