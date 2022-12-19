@@ -790,6 +790,8 @@ With the IP, browser can prepare packet.
 
 **Transmission Control Protocol (TCP)**: Guarantees accurate delivery.
 
+The first thing browsers do when connecting to the correct web server is set up a TCP connection. This protocol handles the transmission of all data. It divides large files into small chunks that are sent one by one, and also checks incoming data for errors or missing parts, re-requesting chunks when necessary.
+
 <v-clicks>
 
 Your computer and the server connect using "TCP over IP" (or TCP/IP).
@@ -889,6 +891,7 @@ HTTP/1.1 200 OK
 Content-Type: text/html
 Connection: Closed
 [...response headers]
+<html>...
 ```
 </div>
 <p>Generates HTML for HTTP response</p>
@@ -910,6 +913,20 @@ Different domains?
 
 Go back to DNS lookup.
 </v-clicks>
+
+---
+
+Caching?
+
+Browser, ISP, CDN, server
+
+---
+
+CDNs
+
+---
+
+JavaScript and CSS files, are considered blocking resources. When browsers encounter blocking resources they stop parsing the HTML until the blocking resource has been completely downloaded and parsed as well, and any JavaScript has been executed.
 
 ---
 layout: statement
@@ -955,7 +972,6 @@ Explore Critical Render Path
 <img src="img/make-div/devtools-perf.png">
 </div>
 </v-click>
-
 
 ---
 layout: statement
