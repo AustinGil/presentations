@@ -1,23 +1,45 @@
 ---
-src: intro.md
----
+theme: default
+font:
+  sans: 'Manrope'
+  display: 'Rock Salt'
+lineNumbers: false
+layout: image-right
+image: /img/austin-gil-bio.png
 ---
 
-# Super Powered Forms With JS
+# Building Super Powered Forms
+
+<p class="mt-0">austingil.com | <logos-twitter/>@heyAustinGil</p>
+
+Tech educator, open-sourcer <a href="https://akamai.com">dev Advocate</a> & chiweenie daddy
+
+<p class="!mt-16">Wifi: // TODO</p>
+
+GitHub repo: **github.com/AustinGil/formwork**
+
+
+---
+
 
 <div class="grid grid-cols-2 text-left">
 <div>
 
-Miro board: **bit.ly/js-forms**
-
-Wifi: // TODO
+# Setup
 
 Prerequisites:
 * Git
 * Node/NPM
 * Editor
 
+Clone repo: **github.com/AustinGil/formwork**
+
+Install deps:<br>
+`npm install`
+
 </div>
+
+Miro board: **bit.ly/formwerk**
 <img src="img/forms-workshop/qr-miro.png">
 </div>
 
@@ -36,8 +58,7 @@ Prerequisites:
   - Add new features
   - Progressive Enhancement
 
----
-
+<!-- 
 # The Problem with JS
 
 - More work for developers
@@ -45,12 +66,14 @@ Prerequisites:
 - Worse for performance
 - Double-edge for a11y
 - Doesn't work for everyone
+-->
 
----
+
+<!--
 
 # Click Example
 
-<!-- ```
+```
 <div id="click-me">Click me!</div>
 
 const clickMe = document.querySelector('#click-me');
@@ -60,17 +83,10 @@ function onClick() {
 clickMe?.addEventListener('click', onClick);
 ``` -->
 
----
-
-Some things we don't need JS for
-- Sending data over HTTP
-- Some inline validation hints
-- Submitting forms on 'enter'
-- Nested data structures
-
+<!-- 
 A search input
 
-<!-- ```
+```
 <div class="control__input">
   <input id="search" placeholder="Search" />
   <span>🔎</span>
@@ -88,6 +104,45 @@ input?.addEventListener('keydown', (event) => {
 
 ---
 
+JS fails for many reasons
+
+* Has the page loaded yet?
+* Connection drops
+* Connection times out
+* Corporate firewall
+* ISP or mobile operator interfere with downloaded JavaScript?
+* Is the client a microbrowser
+* Have they switched off JavaScript?
+* Is Data Saver mode turned on?
+* Extensions that alter the DOM
+* Adblockers that disable scripts
+* Is the CDN up?
+* Does their browser support the JavaScript you’ve written?
+
+See: https://www.kryogenix.org/code/browser/everyonehasjs.html
+
+---
+
+In 2013, GOV.UK found that 1.1% of users were not running JavaScript.
+
+> "Surprisingly, the proportion of people that have explicitly disabled JavaScript or use a browser that doesn't support JavaScript, only makes up a small slice of people that don't run JavaScript."
+
+Only 0.2% had JavaScript explicitly disabled.
+
+https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/
+
+---
+
+# Escalators > Elevators
+
+<iframe width="850" height="480" src="https://www.youtube.com/embed/yHopAo_Ohy0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+<!-- An escalator can never break: it can only become stairs. You should never see an Escalator Temporarily Out Of Order sign, just Escalator Temporarily Stairs. Sorry for the convenience. -->
+
+<!--
+
 # But JS can make things better
 
 Progressive Enhancement
@@ -96,7 +151,7 @@ Progressive Enhancement
 - How to detect no-js
 - Before we enhance, take stock of what we have
 
-<!-- <html lang="en" class="no-js">
+<html lang="en" class="no-js">
   <head>
     other stuff
 		<script type="module">
@@ -105,22 +160,20 @@ Progressive Enhancement
 		</script>
   </head>
   <body>...</body>
-</html> -->
+</html>
+-->
 
----
-
+<!-- 
 # The Perfect Input
 
-<!-- <div class="control">
+<div class="control">
   <label for="email">Email</label>
   <div class="control__input">
     <input id="email" type="email" name="email" required />
   </div>
 </div> -->
 
----
-
-# Non-JS Examples
+<!-- # Non-JS Examples -->
 
 <!-- 
 ["Elon Musk","Jeff Bezos","Bernard Arnault","Gautam Adani","Bill Gates","Warren Buffett","Larry Page","Sergey Brin","Larry Ellison","Steve Ballmer"]
@@ -291,25 +344,21 @@ Progressive Enhancement
 </fieldset>
 -->
 
----
-
-# Enhance form
+<!-- # Enhance form -->
 
 <!-- const form = document.querySelector('form');
 if (!form) return;
 enhanceForm(form); -->
 
-Existing Form powers
+<!-- Existing Form powers
 - Inherent submit
 - HTTP requests (method & action)
 - Triggers HTML input validation
   - Prevents form submission
   - Focuses first invalid input
-  - Communicates error message
+  - Communicates error message -->
 
----
-
-# Enhance submission with fetch
+<!-- # Enhance submission with fetch -->
 
 <!-- 
 /** @type {HTMLFormElement} */
@@ -331,9 +380,7 @@ const request = fetch(url, options);
 return request;
 -->
 
----
-
-# Trigger Validation
+<!-- # Trigger Validation -->
 
 <!-- 
 form.noValidate = true;
@@ -345,9 +392,7 @@ form.addEventListener('submit', (event) => {
   }
 -->
 
----
-
-# Custom input validation UI
+<!-- # Custom input validation UI -->
 
 <!-- 
 if (!form.checkValidity()) {
@@ -356,33 +401,29 @@ if (!form.checkValidity()) {
     validateInput(input);
   }
 -->
----
 
-## Check validity state
+<!-- ## Check validity state -->
 
 <!-- 
 const { validity } = input;
 if (!validity.valid) {
 -->
----
 
-## Toggle aria-invalid
+<!-- ## Toggle aria-invalid -->
 
 <!-- 
 if (!validity.valid) {
 input.setAttribute('aria-invalid', true);
 -->
----
 
-## Get or generate input ID
+<!-- ## Get or generate input ID -->
 
 <!-- 
 const inputId = input.id || Math.random().toString(36).slice(2);
 input.id = inputId;
 -->
----
 
-## Create .control__errors div with errors
+<!-- ## Create .control__errors div with errors -->
 
 <!-- 
 const errorsId = `${inputId}-input-errors`;
@@ -401,16 +442,14 @@ if (!validity.valid) {
     input.parentElement.before(errorContainer);
 }
 -->
----
 
-## Connect with aria-describedby
+<!-- ## Connect with aria-describedby -->
 
 <!-- 
 input.setAttribute('aria-describedby', errorsId);
 -->
----
 
-## Account for pre-existing aria-describedby excluding
+<!-- ## Account for pre-existing aria-describedby excluding -->
 
 <!-- 
 let descriptors = input.getAttribute('aria-describedby');
@@ -425,17 +464,12 @@ if (descriptors.length > 0) {
   input.setAttribute('aria-describedby', descriptors.join(' '));
 }
 -->
----
 
-## Challenge: Custom error messages via config
+<!-- ## Challenge: Custom error messages via config -->
 
----
+<!-- ## Challenge: Custom error messages via data-attrs -->
 
-## Challenge: Custom error messages via data-attrs
-
----
-
-# Focus/scroll management (w/o aria live regions)
+<!-- # Focus/scroll management (w/o aria live regions) -->
 
 <!--
 if (!form.checkValidity()) {
@@ -444,13 +478,9 @@ if (!form.checkValidity()) {
 }
 -->
 
----
+<!-- # Now we can start improving!!! -->
 
-# Now we can start improving!!!
-
----
-
-# Validate inputs on input/blur
+<!-- # Validate inputs on input/blur -->
 
 <!-- 
 /** @param {Event} event */
@@ -469,9 +499,7 @@ export function enhanceInput(input) {
 }
 -->
 
----
-
-Enhanced fetch
+<!-- Enhanced fetch -->
 
 <!-- 
 
@@ -483,11 +511,9 @@ Enhanced fetch
  * }} [init]
  */
 export function enhancedFetch(url, init = {}) {
-   -->
+-->
 
----
-
-# Put data on response object
+<!-- # Put data on response object -->
 
 <!--
 let response = await fetch(url, init);
@@ -507,11 +533,9 @@ if (init.modifyResponse) {
 }
 
 resolve(response);
---->
+-->
 
----
-
-# Errors on bad requests
+<!-- # Errors on bad requests -->
 
 <!-- 
 class FetchError extends Error {
@@ -532,11 +556,9 @@ if (!response.ok) {
       cause: response,
     });
 }
-  -->
+-->
 
----
-
-# Retries
+<!-- # Retries -->
 
 <!-- 
 let response = await fetch()
@@ -558,11 +580,9 @@ if (retry) {
   );
 } else {
 }
- -->
+-->
 
----
-
-# Timeout
+<!-- # Timeout -->
 
 <!-- 
 const promise = new LazyPromise(async (resolve, reject) => {
@@ -573,9 +593,8 @@ const promise = new LazyPromise(async (resolve, reject) => {
       }, init.timeout);
     }
 -->
----
 
-# Abortable
+<!-- # Abortable -->
 
 <!-- 
 enhancedFetch() {
@@ -596,9 +615,7 @@ enhancedFetch() {
 }
 -->
 
----
-
-# Lazy execution (optional)
+<!-- # Lazy execution (optional) -->
 <!-- 
 class LazyPromise extends Promise {
   /** @param {ConstructorParameters<PromiseConstructor>[0]} fn */
@@ -616,18 +633,12 @@ class LazyPromise extends Promise {
   }
 }
 -->
----
 
-# Challenge: How to handle 3XX status codes?
+<!-- # Challenge: How to handle 3XX status codes? -->
 
----
+<!-- # Challenge: Resumable on network reconnect (navigator.onLine) -->
 
-# Challenge: Resumable on network reconnect (navigator.
-onLine)
-
----
-
-# Prevent page navigation
+<!-- # Prevent page navigation -->
 
 <!-- 
 export function enhanceForm(form, options = {}) {
@@ -656,11 +667,9 @@ function onBeforeUnload(event) {
 }
 -->
 
----
+<!-- # Prevent spamming submit button
 
-# Prevent spamming submit button
-
-(bonus: onInput debouce)
+(bonus: onInput debouce) -->
 
 <!-- 
 if (form._pendingRequest) {
@@ -673,9 +682,7 @@ request.then(() => {
 });
 -->
 
----
-
-# Store changes in sessionStorage
+<!-- # Store changes in sessionStorage -->
 
 <!-- 
 const form = document.querySelector('form')
@@ -708,24 +715,16 @@ form.addEventListener('submit', () => {
 });
 -->
 
-# Convert to Vue handlers (avoid memory leaks)
-
----
+<!-- # Convert to Vue handlers (avoid memory leaks)
 
 # Create components
-
----
 
 # Enhance server 
 
 Receive body 
 Receive files
 Validate
-Respond with HTML/JSON
-
----
-
-# Nested data structures
+Respond with HTML/JSON -->
 
 <!-- 
   if (headers['content-type']?.includes('application/x-www-form-urlencoded')) {
@@ -735,71 +734,95 @@ Respond with HTML/JSON
 
 ---
 
-Pop Quiz
+# Pop Quiz: What is the 'content-type' for each request?
 
-What is the 'content-type' for each request
+---
 
-1. "text/plain"
-2. "application/x-www-form-urlencoded"
-3. "multipart/form-data"
-4. "application/json"
-5. undefined
+<div class="flex gap-6 text-xs">
+  <span>1. "text/plain"</span>
+  <span>2. "application/x-www-form-urlencoded"</span>
+  <span>3. "multipart/form-data"</span>
+  <span>4. "application/json"</span>
+  <span>5. undefined</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+<div v-click="1">
 
 ```html
 <form>
 ```
-2
-```js
-fetch('/')
-```
-5
+<!-- 2 -->
+</div>
+
+<div v-click="3">
+
 ```html
 <form method="post">
 ```
-2
+<!-- 2 -->
+</div>
+
+<div v-click="5">
+
 ```js
 fetch('/', { 
-  method: 'post'
-})
-```
-5
-```js
-fetch('/', { 
-  method: 'post'
+  method: 'post',
   body: JSON.stringify()  
 })
 ```
-5
+<!-- 5 -->
+</div>
+
+<div v-click="7">
+
 ```js
 fetch('/', { 
-  method: 'post'
-  body: new URLSearchParams()  
-})
-```
-2
-```js
-fetch('/', { 
-  method: 'post'
+  method: 'post',
   body: new FormData()  
 })
 ```
-3
+<!-- 3 -->
+</div>
+</div>
+<div>
+
+<div v-click="2">
+
+```js
+fetch('/')
+```
+<!-- 5 -->
+</div>
+
+<div v-click="4">
+
+```js
+fetch('/', { 
+  method: 'post'
+})
+```
+<!-- 5 -->
+</div>
+
+<div v-click="6">
+
+```js
+fetch('/', { 
+  method: 'post',
+  body: new URLSearchParams()  
+})
+```
+<!-- 2 -->
+</div>
+
+<div v-click="8" class="text-sm">
+
 ```html
 <form method="post" enctype="multipart/form-data">
 ```
-3
-
----
-
-# Account for file inputs (multipart/form-data)
-
----
-
-# Improve with CSS
-
----
-
-- Going beyond
-  - CSRF
-  https://owasp.org/www-community/attacks/csrf
-  https://typeofnan.dev/using-cookie-based-csrf-tokens-for-your-single-page-application/
+<!-- 3 -->
+</div>
+</div>
+</div>

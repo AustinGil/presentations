@@ -16,7 +16,7 @@ h2 {
 h3 {
   font-family: 'Permanent Marker';
 }
-code, kbd, samp, pre {
+code, kbd, samp, pre, .slidev-layout blockquote {
   font-size: inherit;
 }
 .dark #slide-content {
