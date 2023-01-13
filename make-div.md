@@ -891,7 +891,8 @@ HTTP/1.1 200 OK
 Content-Type: text/html
 Connection: Closed
 [...response headers]
-<html>...
+
+<!DOCTYPE html><html><head>...
 ```
 </div>
 <p>Generates HTML for HTTP response</p>
