@@ -52,11 +52,18 @@ Miro board: **bit.ly/formwerk**
   - Accessible (works with AT & keyboards)
   - Performance baseline (nothing **unnecessary**)
   - Secure
+  - Works as expected
 - Super powers
-  - Don't break existing features
   - Enhance existing features (a11y)
   - Add new features
-  - Progressive Enhancement
+  - Doesn't break ordinary powers
+
+---
+layout: statement
+---
+
+# Board
+Section 1
 
 <!-- 
 # The Problem with JS
@@ -104,23 +111,30 @@ input?.addEventListener('keydown', (event) => {
 
 ---
 
-JS fails for many reasons
+# The Many Reasons JavaScript Fails
+
+<div class="grid grid-cols-2">
+<div>
 
 * Has the page loaded yet?
-* Connection drops
-* Connection times out
-* Corporate firewall
-* ISP or mobile operator interfere with downloaded JavaScript?
-* Is the client a microbrowser
-* Have they switched off JavaScript?
+* Did the connection drop?
+* Did the connection time out?
+* Is there a corporate firewall?
+* Did the ISP or mobile operator interfere with downloaded JavaScript?
+* Is the client a microbrowser?
+</div>
+<div>
+
+* Is JavaScript turned off?
 * Is Data Saver mode turned on?
-* Extensions that alter the DOM
-* Adblockers that disable scripts
+* Did extensions alter the DOM?
+* Are there Adblockers that disable scripts?
 * Is the CDN up?
 * Does their browser support the JavaScript you’ve written?
+</div>
+</div>
 
 See: https://www.kryogenix.org/code/browser/everyonehasjs.html
-
 ---
 
 In 2013, GOV.UK found that 1.1% of users were not running JavaScript.
@@ -137,9 +151,14 @@ https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript
 
 <iframe width="850" height="480" src="https://www.youtube.com/embed/yHopAo_Ohy0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<!-- An escalator can never break: it can only become stairs. You should never see an Escalator Temporarily Out Of Order sign, just Escalator Temporarily Stairs. Sorry for the convenience. -->
+
+---
+layout: statement
 ---
 
-<!-- An escalator can never break: it can only become stairs. You should never see an Escalator Temporarily Out Of Order sign, just Escalator Temporarily Stairs. Sorry for the convenience. -->
+# Board
+Section 2
 
 <!--
 
@@ -172,6 +191,67 @@ Progressive Enhancement
     <input id="email" type="email" name="email" required />
   </div>
 </div> -->
+
+---
+layout: statement
+---
+
+# Pop Quiz:
+## Using only HTML, how many different ways can you submit a form?
+
+---
+
+```html
+<form>
+  Elements inside this form
+</form>
+```
+
+<v-clicks>
+
+```html
+<button>Submit</button>
+```
+```html
+<input type="submit">
+```
+```html
+<input type="image">
+```
+```html
+<input>
+(user presses "enter")
+```
+</v-clicks>
+
+---
+
+```html
+<form id="formid">
+</form>
+Elements outside this form
+```
+
+```html
+<button form="formid">Submit</button>
+```
+```html
+<input form="formid" type="submit"/>
+```
+```html
+<input form="formid" type="image">
+```
+```html
+<input form="formid">
+(user presses "enter")
+```
+
+---
+layout: statement
+---
+
+# Board
+Section 3
 
 <!-- # Non-JS Examples -->
 
@@ -499,6 +579,111 @@ export function enhanceInput(input) {
 }
 -->
 
+---
+layout: statement
+---
+
+# Pop Quiz:
+## What is the 'content-type' for each request?
+
+---
+
+<div class="flex gap-6 text-xs">
+  <span>1. "text/plain"</span>
+  <span>2. "application/x-www-form-urlencoded"</span>
+  <span>3. "multipart/form-data"</span>
+  <span>4. "application/json"</span>
+  <span>5. undefined</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+<div v-click="1">
+
+```html
+<form>
+```
+<!-- 2 -->
+</div>
+
+<div v-click="3">
+
+```html
+<form method="post">
+```
+<!-- 2 -->
+</div>
+
+<div v-click="5">
+
+```js
+fetch('/', { 
+  method: 'post',
+  body: new URLSearchParams()  
+})
+```
+<!-- 2 -->
+</div>
+
+<div v-click="7">
+
+```js
+fetch('/', { 
+  method: 'post',
+  body: new FormData()  
+})
+```
+<!-- 3 -->
+</div>
+</div>
+<div>
+
+<div v-click="2">
+
+```js
+fetch('/')
+```
+<!-- 5 -->
+</div>
+
+<div v-click="4">
+
+```js
+fetch('/', { 
+  method: 'post'
+})
+```
+<!-- 5 -->
+</div>
+
+<div v-click="6">
+
+```js
+fetch('/', { 
+  method: 'post',
+  body: JSON.stringify()  
+})
+```
+<!-- 5 -->
+</div>
+
+<div v-click="8" class="text-sm">
+
+```html
+<form method="post" enctype="multipart/form-data">
+```
+<!-- 3 -->
+</div>
+</div>
+</div>
+
+---
+layout: statement
+---
+
+# Board
+Section 4
+
 <!-- Enhanced fetch -->
 
 <!-- 
@@ -732,97 +917,3 @@ Respond with HTML/JSON -->
   }
  -->
 
----
-
-# Pop Quiz: What is the 'content-type' for each request?
-
----
-
-<div class="flex gap-6 text-xs">
-  <span>1. "text/plain"</span>
-  <span>2. "application/x-www-form-urlencoded"</span>
-  <span>3. "multipart/form-data"</span>
-  <span>4. "application/json"</span>
-  <span>5. undefined</span>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div>
-
-<div v-click="1">
-
-```html
-<form>
-```
-<!-- 2 -->
-</div>
-
-<div v-click="3">
-
-```html
-<form method="post">
-```
-<!-- 2 -->
-</div>
-
-<div v-click="5">
-
-```js
-fetch('/', { 
-  method: 'post',
-  body: JSON.stringify()  
-})
-```
-<!-- 5 -->
-</div>
-
-<div v-click="7">
-
-```js
-fetch('/', { 
-  method: 'post',
-  body: new FormData()  
-})
-```
-<!-- 3 -->
-</div>
-</div>
-<div>
-
-<div v-click="2">
-
-```js
-fetch('/')
-```
-<!-- 5 -->
-</div>
-
-<div v-click="4">
-
-```js
-fetch('/', { 
-  method: 'post'
-})
-```
-<!-- 5 -->
-</div>
-
-<div v-click="6">
-
-```js
-fetch('/', { 
-  method: 'post',
-  body: new URLSearchParams()  
-})
-```
-<!-- 2 -->
-</div>
-
-<div v-click="8" class="text-sm">
-
-```html
-<form method="post" enctype="multipart/form-data">
-```
-<!-- 3 -->
-</div>
-</div>
-</div>
