@@ -3,7 +3,7 @@
 <p class="text-5xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
 
 ## Talk to me: 
-Cloud compute, edge, JavaScript, Chiweenies, whatever :D
+Edge compute, JavaScript, build tools, Chiweenies, whatever :D
 
 <!-- <span class="font-mono">ヽ(⌐■_■)ノ♪♬</span> -->
 

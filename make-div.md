@@ -785,9 +785,9 @@ With the IP, browser can prepare packet.
 
 # 2.2 Open the connection
 
-**Internet Protocol (IP)**: Guarantees the correct address.
-
 **Transmission Control Protocol (TCP)**: Guarantees accurate delivery.
+
+**Internet Protocol (IP)**: Guarantees the correct address.
 
 <!-- The first thing browsers do when connecting to the correct web server is set up a TCP connection. This protocol handles the transmission of all data. It divides large files into small chunks that are sent one by one, and also checks incoming data for errors or missing parts, re-requesting chunks when necessary. -->
 
@@ -828,8 +828,7 @@ For HTTPS green lock, you need SSL (or TLS)
 
 <img src="/img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
 
----
-
+<!-- 
 # SSL (or TLS) "handshake"
 
 ```mermaid {theme: 'default'}
@@ -839,7 +838,7 @@ Server->>Browser: SSL cert, chosen cipher, "server random"
 Browser->>Cert Authority: Verify server identity.
 Browser->>Server: "pre-master secret"
 Server->>Browser: Session created 
-```
+``` -->
 
 <!-- <v-clicks>
 
@@ -982,10 +981,10 @@ layout: statement
 
 ---
 
-# "Why is the website broken?"
+# So what's it take to make a div?
 
 <div class="leading-loose">
-<v-clicks>
+<v-click>
 <span class="inline-block">Make a change ->&nbsp;</span>
 <span class="inline-block">git commit ->&nbsp;</span>
 <span class="inline-block">git push ->&nbsp;</span>
@@ -1022,28 +1021,26 @@ layout: statement
 <span class="inline-block">Layout ->&nbsp;</span>
 <span class="inline-block">Paint ->&nbsp;</span>
 <span class="inline-block">Composite</span>
-</v-clicks>
+</v-click>
 </div>
 
 ---
 layout: statement
 ---
 
-## Or you could just say:
+## Kind of a lot, actually...
 <v-clicks>
 
-# It works on my machine...
+# So be nice to co-workers
 
-# Have you tried clearing your cache?
+# And be nice to yourself
 </v-clicks>
 
----
-
-# Resources: 
+<!-- # Resources: 
 
 [Transpilers: How They Work and How To Build Your Own JS Transpiler](https://daily.dev/blog/transpilers-how-they-work) by [Chidume Nnamdi](https://twitter.com/ngArchangel)
 
-[What happens when](https://github.com/alex/what-happens-when) by [Alex Gaynor](https://alexgaynor.net/)
+[What happens when](https://github.com/alex/what-happens-when) by [Alex Gaynor](https://alexgaynor.net/) -->
 
 ---
 src: outro.md
