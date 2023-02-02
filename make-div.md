@@ -177,7 +177,7 @@ In the past: `ctrl+r` || `F5` (carpal tunnel 😱)
 
 These days: `ctrl+s` => instant browser updates 
 
-This is called "**Hot Module Replacement**" or HMR.
+Sometimes called "**Hot Module Replacement**" or HMR.
 </v-clicks>
 
 ---
@@ -382,7 +382,7 @@ layout: statement
 ---
 
 # WTF is an AST!?!?
-<img src="img/make-div/nick-young.jpg" class="block m-auto">
+<img src="/img/make-div/nick-young.jpg" class="block m-auto">
 
 ---
 
@@ -502,7 +502,7 @@ ReactDOM.createRoot(
 <v-click>
 <div>
 
-<img src="img/make-div/reactcode.png" class="mt-3 mb-5">
+<img src="/img/make-div/reactcode.png" class="mt-3 mb-5">
 
 - One 139.76kb file
 - Written in JavaScript
@@ -524,7 +524,6 @@ image: img/make-div/createElement.png
 <v-clicks>
 
 - Code in editor != code in the browser.
-- Dev server != production server.
 - Client-side JS app != SSR or SSG.
 </v-clicks>
 
@@ -650,7 +649,7 @@ image: img/make-div/europe.jpg
 class: grid place-items-center text-center
 ---
 
-<!-- <img src="img/make-div/europe.jpg" > -->
+<!-- <img src="/img/make-div/europe.jpg" > -->
 <div style="-webkit-text-stroke: 1px black;">
 
 # It's the final question
@@ -790,7 +789,7 @@ With the IP, browser can prepare packet.
 
 **Transmission Control Protocol (TCP)**: Guarantees accurate delivery.
 
-The first thing browsers do when connecting to the correct web server is set up a TCP connection. This protocol handles the transmission of all data. It divides large files into small chunks that are sent one by one, and also checks incoming data for errors or missing parts, re-requesting chunks when necessary.
+<!-- The first thing browsers do when connecting to the correct web server is set up a TCP connection. This protocol handles the transmission of all data. It divides large files into small chunks that are sent one by one, and also checks incoming data for errors or missing parts, re-requesting chunks when necessary. -->
 
 <v-clicks>
 
@@ -800,6 +799,7 @@ Your computer and the server connect using "TCP over IP" (or TCP/IP).
 
 ---
 
+<!--
 # TCP "handshake"
 
 ```mermaid {theme: 'default'}
@@ -808,8 +808,7 @@ Browser->>Server: SYN "initial request" packet to open socket
 Server->> Browser: SYN+ACK packet to agree to the process
 Browser->>Server: ACK packet to confirm the process
 ```
-
----
+-->
 
 # 2.3 Secure connection
 
@@ -827,7 +826,7 @@ For HTTPS green lock, you need SSL (or TLS)
 
 ---
 
-<img src="img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
+<img src="/img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
 
 ---
 
@@ -874,11 +873,17 @@ Connection: close
 Request using Hypertext Transfer Protocol (HTTP).
 </div>
 
-<div v-click="3" class="text-center text-4xl">
-<p class="text-8xl">😎</p>
-<logos-akamai class="text-10xl -mb-16 -mt-16"/>
-<p>EdgeWorkers</p>
-<!-- <fa-cogs class="text-8xl"/> -->
+<div v-click="3">
+<div class="text-center text-4xl">
+  <h2 class="-mb-4 text-center">Edge Compute</h2>
+  <logos-akamai class="text-10xl -mb-20 -mt-6"/>
+  <p>EdgeWorkers</p>
+  <vscode-icons:file-type-http class="text-8xl"/>
+  <!-- <material-symbols-edit-outline class="text-8xl"/> -->
+  <!-- <material-symbols-edit-road-outline class="text-8xl"/> -->
+  <gis-modify-line class="text-8xl"/>
+</div>
+<p>Modify request and/or response between client and server</p>
 </div>
 
 <div v-click="2">
@@ -906,28 +911,22 @@ Connection: Closed
 
 <v-clicks>
 
-Multiple resources?
+Multiple resources (fonts, styles, scripts, etc)?
 
 Repeats process each one.
 
-Different domains?
+Different domains (CDN)?
 
 Go back to DNS lookup.
 </v-clicks>
 
----
-
-Caching?
+<!-- Caching?
 
 Browser, ISP, CDN, server
 
----
-
 CDNs
 
----
-
-JavaScript and CSS files, are considered blocking resources. When browsers encounter blocking resources they stop parsing the HTML until the blocking resource has been completely downloaded and parsed as well, and any JavaScript has been executed.
+JavaScript and CSS files, are considered blocking resources. When browsers encounter blocking resources they stop parsing the HTML until the blocking resource has been completely downloaded and parsed as well, and any JavaScript has been executed. -->
 
 ---
 layout: statement
@@ -950,9 +949,9 @@ layout: statement
 - Create Render Tree (DOM + CSSOM for RENDERED nodes)
 - <span class="text-purple-500">Calculate styles</span>
 - <span class="text-purple-500">Generate layout</span>
-- Create layers in case of animations
+- Create animations layers
 - <span class="text-green-500">Paint content as px to respective layer</span>
-- <span class="text-green-500">Composite (flatten layers onto the screen)</span>
+- <span class="text-green-500">Composite (flatten everythings onto the screen)</span>
 
 </v-clicks>
 
@@ -961,7 +960,7 @@ layout: statement
 # Keep in mind
 
 How you write CSS and JS impacts Style, Layout, Paint
-<img src="img/make-div/crp.jpg" width="600">
+<img src="/img/make-div/crp.jpg" width="600">
 
 <br>
 
@@ -970,7 +969,7 @@ How you write CSS and JS impacts Style, Layout, Paint
 
 Explore Critical Render Path
 
-<img src="img/make-div/devtools-perf.png">
+<img src="/img/make-div/devtools-perf.png">
 </div>
 </v-click>
 
