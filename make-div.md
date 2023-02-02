@@ -757,13 +757,13 @@ layout: statement
 
 # Four parts
 
-<v-clicks>
+<v-click>
 
 - 2.1 Prepare the packet
 - 2.2 Open the connection
 - 2.3 Secure the connection
 - 2.4 Make the request
-</v-clicks>
+</v-click>
 
 ---
 
