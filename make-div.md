@@ -1010,6 +1010,7 @@ layout: statement
 <span class="inline-block">Linode server ->&nbsp;</span>
 <span class="inline-block">HTTP response ->&nbsp;</span>
 <span class="inline-block">EdgeWorker ->&nbsp;</span>
+<span class="inline-block">Browser ->&nbsp;</span>
 <span class="inline-block">download HTML ->&nbsp;</span>
 <span class="inline-block">download CSS ->&nbsp;</span>
 <span class="inline-block">download JS ->&nbsp;</span>
