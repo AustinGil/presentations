@@ -1007,9 +1007,9 @@ layout: statement
 <span class="inline-block">TLS handshake ->&nbsp;</span>
 <span class="inline-block">HTTP request ->&nbsp;</span>
 <span class="inline-block">EdgeWorker ->&nbsp;</span>
-<span class="inline-block">Linode ->&nbsp;</span>
-<span class="inline-block">EdgeWorker ->&nbsp;</span>
+<span class="inline-block">Linode server ->&nbsp;</span>
 <span class="inline-block">HTTP response ->&nbsp;</span>
+<span class="inline-block">EdgeWorker ->&nbsp;</span>
 <span class="inline-block">download HTML ->&nbsp;</span>
 <span class="inline-block">download CSS ->&nbsp;</span>
 <span class="inline-block">download JS ->&nbsp;</span>
