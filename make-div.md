@@ -912,11 +912,11 @@ Connection: Closed
 
 Multiple resources (fonts, styles, scripts, etc)?
 
-Repeats process each one.
+Repeat process from HTTP request.
 
 Different domains (CDN)?
 
-Go back to DNS lookup.
+Repeat process from DNS lookup.
 </v-clicks>
 
 <!-- Caching?
