@@ -1,9 +1,20 @@
+<div class="grid grid-cols-2">
+<div>
+
 # How'd I do?
+<p class="text-4xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
+</div>
+<div>
 
-<p class="text-5xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
+# $100 for Linode
+<p class="text-4xl"><a href="https://bit.ly/austinode">bit.ly/austinode</a></p>
+</div>
+</div>
+<br>
+<br>
 
-## Talk to me: 
-Edge compute, JavaScript, build tools, Chiweenies, whatever :D
+## Let's talk: 
+Edge compute, JavaScript, Akamai, a11y, build tools, Chiweenies, whatever :D
 
 <!-- <span class="font-mono">ヽ(⌐■_■)ノ♪♬</span> -->
 
