@@ -1,11 +1,8 @@
 ---
 src: intro.md
 ---
----
-layout: statement
----
 
-# Story time
+<!-- # Story time -->
 
 <!-- - Junior developer code changes not showing in the browser.
 - I noticed the issue was not the code, but how the tooling worked.
