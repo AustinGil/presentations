@@ -542,8 +542,8 @@ class: text-5xl
 <v-clicks>
 
 1. Write `<div>`
-2. Git commit 
-3. Git push
+2. Commit changes
+3. Push code
 4. (∩^ᗜ^)⊃━☆ﾟ.\* (???) 
 </v-clicks>
 
