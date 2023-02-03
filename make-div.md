@@ -545,7 +545,7 @@ class: text-5xl
 
 1. Write `<div>`
 2. Commit changes
-3. Push code
+3. Push to git repo
 4. (∩^ᗜ^)⊃━☆ﾟ.\* (???) 
 </v-clicks>
 
