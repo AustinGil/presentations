@@ -112,7 +112,7 @@ layout: statement
 ---
 
 # 😔
-# So tooling had to evolve...
+# So here we are...
 
 <!-- CD was the thing the internet came on
 
@@ -131,11 +131,11 @@ layout: statement
 
 # What's a dev gotta do to make a \<div\> around here!?
 
-A journey following your code from the editor
+<!-- A journey following your code from the editor
 through build processes <br> 
 into deployment pipelines
 out to the public internet <br>
-and finally rendered in a user's browser
+and finally rendered in a user's browser -->
 
 ---
 
@@ -187,9 +187,9 @@ Sometimes called "**Hot Module Replacement**" or HMR.
 <v-clicks>
 
 - Dev server starts file watcher to listen for changes (e.g. `chokidar`)
-- On file change, dev server may respond: **compiling, transpiling, bundling**
+- Write `<div>` => dev server responds: **compiling, transpiling, bundling**
 - Dev server sends changes to client (e.g. `WebSockets`)
-- Client updates the web app
+- Client updates the web app with `<div>`
 </v-clicks>
 <v-click>
 
@@ -211,7 +211,7 @@ layout: statement
 // main.js
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <App />
@@ -357,7 +357,7 @@ image: /img/make-div/spongebob.jpg
 
 ### What:
 <div class="text-2xl mb-4">
-Like a combination of a compiler and a translator.<br>
+<!-- Like a combination of a compiler and a translator.<br> -->
 Converts source code into another equivalent language and/or syntax.
 </div>
 </div>
@@ -365,8 +365,9 @@ Converts source code into another equivalent language and/or syntax.
 
 ### Why: 
 <div class="text-2xl mb-4">
-Turn language browsers don't understand (<b>TS</b>) into one they do (<b>JS</b>).<br>
-Turn syntax browsers don't understand (<b>ESNext</b>) into one they do (<b>ES2015</b>).
+<!-- Turn language browsers don't understand (<b>TS</b>) into one they do (<b>JS</b>).<br> -->
+Write language (<b>TS</b>) or syntax (<b>ESNext</b>) browsers don't understand. <br>
+Run language (<b>JS</b>) or syntax (<b>ES2015</b>) do.
 </div>
 </div>
 <div>
@@ -484,10 +485,10 @@ AST representation (by [shift-js](https://github.com/shift-js/shift-js)):
 <div class="text-sm">
 
 ```jsx
-// main.jsx
+// main.tsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import App from './App.tsx'
 
 ReactDOM.createRoot(
   document.getElementById('root')
@@ -495,8 +496,8 @@ ReactDOM.createRoot(
 ```
 </div>
 
-- 4 separate files/libraries
-- Written in JSX
+- Several modules
+- Written in .tsx
 - Uses modern syntax
 </div>
 <v-click>
@@ -543,7 +544,7 @@ class: text-5xl
 
 <v-clicks>
 
-1. Make change
+1. Write `<div>`
 2. Git commit 
 3. Git push
 4. (∩^ᗜ^)⊃━☆ﾟ.\* (???) 
@@ -799,7 +800,7 @@ Your computer and the server connect using "TCP over IP" (or TCP/IP).
 
 ---
 
-<!--
+
 # TCP "handshake"
 
 ```mermaid {theme: 'default'}
@@ -808,7 +809,8 @@ Browser->>Server: SYN "initial request" packet to open socket
 Server->> Browser: SYN+ACK packet to agree to the process
 Browser->>Server: ACK packet to confirm the process
 ```
--->
+
+---
 
 # 2.3 Secure connection
 
@@ -826,9 +828,6 @@ For HTTPS green lock, you need SSL (or TLS)
 
 ---
 
-<img src="/img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
-
-<!-- 
 # SSL (or TLS) "handshake"
 
 ```mermaid {theme: 'default'}
@@ -838,7 +837,7 @@ Server->>Browser: SSL cert, chosen cipher, "server random"
 Browser->>Cert Authority: Verify server identity.
 Browser->>Server: "pre-master secret"
 Server->>Browser: Session created 
-``` -->
+```
 
 <!-- <v-clicks>
 
@@ -847,6 +846,10 @@ Server->>Browser: Session created
 - Verify server's identity with it's TLS certificate
 - Handhske is complete & session key is generated for encrypting data
 </v-clicks> -->
+
+---
+
+<img src="/img/make-div/encryption.png" class="block m-auto -mt-10" width="820">
 
 ---
 class: text
@@ -984,8 +987,9 @@ layout: statement
 # So what's it take to make a div?
 
 <div class="leading-loose">
-<v-click>
-<span class="inline-block">Make a change ->&nbsp;</span>
+<v-clicks>
+<span class="inline-block">Start dev server ->&nbsp;</span>
+<span class="inline-block">write the <code>&lt;div&gt;</code> ->&nbsp;</span>
 <span class="inline-block">git commit ->&nbsp;</span>
 <span class="inline-block">git push ->&nbsp;</span>
 <span class="inline-block">CI/CD pipeline ->&nbsp;</span>
@@ -1006,10 +1010,10 @@ layout: statement
 <span class="inline-block">TCP handshake ->&nbsp;</span>
 <span class="inline-block">TLS handshake ->&nbsp;</span>
 <span class="inline-block">HTTP request ->&nbsp;</span>
-<span class="inline-block">EdgeWorker ->&nbsp;</span>
+<span class="inline-block">through EdgeWorker ->&nbsp;</span>
 <span class="inline-block">Linode server ->&nbsp;</span>
 <span class="inline-block">HTTP response ->&nbsp;</span>
-<span class="inline-block">EdgeWorker ->&nbsp;</span>
+<span class="inline-block">through EdgeWorker ->&nbsp;</span>
 <span class="inline-block">Browser ->&nbsp;</span>
 <span class="inline-block">download HTML ->&nbsp;</span>
 <span class="inline-block">download CSS ->&nbsp;</span>
@@ -1021,8 +1025,9 @@ layout: statement
 <span class="inline-block">Render ->&nbsp;</span>
 <span class="inline-block">Layout ->&nbsp;</span>
 <span class="inline-block">Paint ->&nbsp;</span>
-<span class="inline-block">Composite</span>
-</v-click>
+<span class="inline-block">Composite ->&nbsp;</span>
+<span class="inline-block">celebrate that you somehow managed to make this all work!!! 🥳</span>
+</v-clicks>
 </div>
 
 ---
@@ -1032,9 +1037,9 @@ layout: statement
 ## Kind of a lot, actually...
 <v-clicks>
 
-# So be nice to co-workers
+# Be kind to others
 
-# And be nice to yourself
+# And be kind to yourself
 </v-clicks>
 
 <!-- # Resources: 
