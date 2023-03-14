@@ -376,19 +376,15 @@ layout: statement
 
 # Benefits - Users
 
-<v-clicks>
+Dynamic content with...
 
 - Less latency (compared to servers/cloud functions)
 - Less to download (compared to client-side rendering)
-- Keeps work off device (batt. & perf.)
-
-</v-clicks>
+- Less work on the client (better batt. & perf.)
 
 --- 
 
 # Benefits - Developers
-
-<v-clicks>
 
 - Low barrier for POC
 - Consistent execution environment (no x-browser issues)
@@ -397,32 +393,22 @@ layout: statement
 - Common programming language (JavaScript)
 - No servers/infrastructure to manage
 
-</v-clicks>
-
 --- 
 
 # Benefits - Website owners
-
-<v-clicks>
 
 - Reduce load on origin servers (performance, reliability, cost)
 - Automatic scaling
 - Only pay for what you use
 
-</v-clicks>
-
 --- 
 
 <h1>The rough edges <span class="font-sans">( ͡° ͜ʖ ͡°)</span></h1>
-
-<v-clicks>
 
 - Limited platform features (V8 isolates != Node.js)
 - Limited compute resources
 - Limited time resources
 - Limited networking protocols (HTTP != TCP/IP)
-
-</v-clicks>
 
 ---
 layout: statement
@@ -656,6 +642,8 @@ For every 1s faster load, Walmart increased sales by 2%<br>
 
 They could hire 133,000 developers and still profit<br>
 (2020 average = $75k)
+
+https://wpostats.com/
 
 </v-clicks>
 
