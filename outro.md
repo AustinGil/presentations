@@ -6,7 +6,7 @@
 </div>
 <div>
 
-# $100 for Linode
+# $100 for Akamai Connected Cloud
 <p class="text-4xl"><a href="https://bit.ly/austinode">bit.ly/austinode</a></p>
 </div>
 </div>
