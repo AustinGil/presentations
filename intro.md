@@ -15,7 +15,7 @@ image: /img/austin-gil-bio.png
 <h4 class="mb-4">Hacking on websites since 2013</h4>
 <!-- <h4 class="mb-4">Frontend & Backend</h4> -->
 <!-- <h4 class="mb-4">Open-sourcer (<a href="https://vuetensils.austingil.com">Vuetensils</a>)</h4> -->
-<h4 class="mb-4">Help web developers write better code</h4>
+<h4 class="mb-4">Teach folks how to build better websites</h4>
 <!-- <h4 class="mb-4">Chiweenie enthusiast</h4> -->
 <!-- <div class="text-16px">
 - Content creator

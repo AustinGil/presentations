@@ -7,7 +7,7 @@
 <div>
 
 # $100 for Akamai Connected Cloud
-<p class="text-4xl"><a href="https://bit.ly/austinode">bit.ly/austinode</a></p>
+<p class="text-4xl"><a href="https://linode.com/austingil">linode.com/austingil</a></p>
 </div>
 </div>
 <br>

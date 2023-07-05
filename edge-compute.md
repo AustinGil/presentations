@@ -45,7 +45,15 @@ layout: statement
 
 # Dog hats!!!
 
-(ok analogy but great photos)
+(decent analogy, great photos)
+
+---
+
+# Same, same, but different
+
+1. Client wants a thing
+2. You make a thing
+3. You give them a thing
 
 ---
 
@@ -233,11 +241,22 @@ layout: statement
 
 ---
 
-# What is "Edge"?
+# What about "Edge"?
 
-What: A network of globally distributed computers capable of handling user requests.
+<div class="grid grid-cols-2 gap-4 mt-24">
+<v-clicks>
+<div>
 
-Why: By putting devices as close to users as possible, we can reduce latency, thereby improving performance and user experience.
+## What
+A network of globally distributed computers capable of handling user requests.
+</div>
+<div>
+
+## Why
+By putting devices as close to users as possible, we can reduce latency, thereby improving performance and user experience.
+</div>
+</v-clicks>
+</div>
 
 ---
 
@@ -378,13 +397,18 @@ layout: statement
 
 Dynamic content with...
 
+<v-clicks>
+
 - Less latency (compared to servers/cloud functions)
 - Less to download (compared to client-side rendering)
 - Less work on the client (better batt. & perf.)
+</v-clicks>
 
 --- 
 
 # Benefits - Developers
+
+<v-clicks>
 
 - Low barrier for POC
 - Consistent execution environment (no x-browser issues)
@@ -392,29 +416,48 @@ Dynamic content with...
 - Secrets stay secret (compared to client-side)
 - Common programming language (JavaScript)
 - No servers/infrastructure to manage
+</v-clicks>
 
 --- 
 
 # Benefits - Website owners
 
+<v-clicks>
+
 - Reduce load on origin servers (performance, reliability, cost)
 - Automatic scaling
 - Only pay for what you use
+</v-clicks>
 
 --- 
 
 <h1>The rough edges <span class="font-sans">( ͡° ͜ʖ ͡°)</span></h1>
 
+<v-clicks>
+
 - Limited platform features (V8 isolates != Node.js)
 - Limited compute resources
 - Limited time resources
 - Limited networking protocols (HTTP != TCP/IP)
+</v-clicks>
 
 ---
 layout: statement
 ---
 
-# Close isn't<br>always better 
+# Distributed compute is not the hard part
+
+---
+layout: statement
+---
+
+# Distributed data is
+
+---
+layout: statement
+---
+
+# Edge compute isn't<br>always better 
 
 💻: origin<br>
 🤵: server<br>
@@ -425,7 +468,7 @@ layout: statement
 
 # Proxy service in same region 🙂
 
-<v-clicks>
+<!-- <v-clicks> -->
 
 <div class="p-4 rounded-md bg-gray-800">
 
@@ -445,13 +488,13 @@ vs.
 
 </div>
 
-</v-clicks>
+<!-- </v-clicks> -->
 
 ---
 
 # Proxy service in distant region 😀
 
-<v-clicks>
+<!-- <v-clicks> -->
 
 <div class="p-4 rounded-md bg-gray-800">
 
@@ -470,13 +513,15 @@ vs.
 
 </div>
 
-</v-clicks>
+<!-- </v-clicks> -->
 
 ---
 
 <h1>Multiple <b class="text-5xl">concurrent</b> requests 😄</h1>
 
-<v-clicks>
+(a.k.a API Orchestration)
+
+<!-- <v-clicks> -->
 
 <div class="p-4 rounded-md bg-gray-800">
 
@@ -500,13 +545,15 @@ vs.
 
 </div>
 
-</v-clicks>
+<!-- </v-clicks> -->
 
 ---
 
 <h1>Multiple <b class="text-5xl">sequential</b> requests 😬</h1>
 
-<v-clicks>
+(eg: Blog Post -> Catgeories -> Related Posts)
+
+<!-- <v-clicks> -->
 
 <div class="p-4 rounded-md bg-gray-800">
 
@@ -526,14 +573,26 @@ vs.
 
 </div>
 
+<!-- </v-clicks> -->
+
+---
+
+# There are solutions
+
+<v-clicks>
+
+- Edge Key-Value stores
+- Replica databases
+- Distributed cache
+
 </v-clicks>
 
 ---
 
 # An addition, not a replacement
 
-Where to run compute is difficult<br>
-(latency, bundle size, device capabilities, etc).
+Where to run compute becomes a tough question<br>
+(latency, bundle size, device capabilities, data location etc).
 
 <v-click>
 
@@ -583,7 +642,7 @@ layout: statement
 
 ---
 
-# Coming to frameworks near you 
+# Available in frameworks near you 
 
 - [Astro](https://astro.build/)
 - [Remix](https://remix.run/)
@@ -631,19 +690,21 @@ layout: statement
 - 250ms faster => keeps users from visiting competitors
 - Performance impact's revenue, perception, loyalty, & engagement
 
+Source: [Akamai's 2017 Online Retail Performance Report](https://www.akamai.com/newsroom/press-release/akamai-releases-spring-2017-state-of-online-retail-performance-report)
+
 ---
 
-# [2017 Online Retail Performance](https://www.akamai.com/newsroom/press-release/akamai-releases-spring-2017-state-of-online-retail-performance-report)
+# Visualization
 
 <v-clicks>
 
-For every 1s faster load, Walmart increased sales by 2%<br>
-(2021 = $500b x 2% = $10b)
+In 2008, Amazon found 100ms in load hurt sales by 1%<br>
+($513.98b annual revenue x 1% = >$5b)
 
-They could hire 133,000 developers and still profit<br>
-(2020 average = $75k)
+They could hire **SIXTY THOUSAND** developers and still profit<br>
+(2023 average = $83k)
 
-https://wpostats.com/
+More case studies of performance vs. UX/biz metrics at wpostats.com
 
 </v-clicks>
 
@@ -665,12 +726,13 @@ layout: statement
 
 # EdgeWorkers
 
-- Largest number of servers (over 250,000)
+- Largest network (>300k servers, >4k POPs)
 - More customizable lifecycle hooks
   - After client request
   - Before origin request
   - After origin response
   - Before client response
+- Canary-deployment rollouts
 - No per-region/per-server limits (only per-request)
 - Run on same servers as cached content
 - Protected by industry-leading firewall
@@ -728,42 +790,40 @@ image: /img/edge-compute/reindog.jpg
 ---
 layout: image
 image: /img/edge-compute/pretty-chihuahua.jpg
+style: color:black
 ---
 
-<div class="text-gray-900">
+<v-click>
 
-<v-clicks>
-
-# Thanks 😘
-
-<p class="text-5xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
-<p class="text-5xl"><a href="https://bit.ly/austinode">bit.ly/austinode</a></p>
-
+<div class="grid grid-cols-2">
 <div>
 
-### Info on Akamai's edge:
-
-[akamai.com](https://www.akamai.com/products/serverless-computing-edgeworkers?utm_source=influencer&utm_medium=talk&utm_campaign=austingil)
-
-
-<!-- [developer.akamai.com](https://developer.akamai.com/akamai-edgeworkers-overview?utm_source=influencer&utm_medium=talk&utm_campaign=austingil) -->
-
-<!-- https://www.linode.com/akatube?utm_source=austin_gil&utm_medium=blog&utm_campaign=blog-austin_gil-dev_advocate-austin_gil -->
-
-
+# How'd I do?
+<p class="text-4xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
 </div>
 <div>
 
-### Find me:
+# $100 Cloud Credit
+<p class="text-4xl"><a href="https://linode.com/austingil">linode.com/austingil</a></p>
+</div>
+</div>
+<br>
+<br>
 
-<div class="grid grid-cols-2 gap-2 w-2/3">
+## Let's talk: 
+Edge compute, web development, <br>career, chiweenies, whatever :D
+
+<!-- <span class="font-mono">ヽ(⌐■_■)ノ♪♬</span> -->
+
+## Let's connect:
+
+<p class="grid grid-cols-3 gap-2">
 <div><pepicons-internet/><a href="https://austingil.com">austingil.com</a></div>
 <div><logos-twitter/><a href="https://twitter.com/heyAustinGil">@heyAustinGil</a></div>
+<div><logos-mastodon-icon/><a href="https://mastodon.social/@Austingil" class="text-[1.125rem]">@mastodon.social/@Austingil</a></div>
 <div><logos-youtube-icon/><a href="https://youtube.com/@heyAustinGil">@heyAustinGil</a></div>
 <div><logos-twitch/><a href="https://twitch.tv/heyAustinGil">@heyAustinGil</a></div>
 <div><bi-github/><a href="https://github.com/AustinGil">@AustinGil</a></div>
-<div><bi-instagram/><a href="https://instagram.com/NuggetTheMighty">@NuggetTheMighty</a></div>
-</div>
-</div>
-</v-clicks>
-</div>
+</p>
+
+</v-click>
