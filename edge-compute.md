@@ -11,6 +11,29 @@ layout: statement
 
 ---
 
+# Let's start with "Compute"
+
+<v-clicks>
+<div>
+
+## What:
+
+Compute = bleeps & bloops -> HTML
+</div>
+<div>
+
+## Where: 
+- Traditional Servers
+- Client-Side JavaScript
+- Client-Side workers
+- Static-Site-Generators
+- Cloud functions
+- Edge functions
+</div>
+</v-clicks>
+
+---
+
 # Plain and simple:
 
 <v-clicks>
@@ -30,7 +53,6 @@ Thank you for coming to my talk.
 For the rest of my talk, we'll cover pros and cons as well as driving the idea home with a metaphor.
 -->
 
-
 ---
 layout: statement
 ---
@@ -43,39 +65,25 @@ layout: statement
 
 <img src="/img/edge-compute/puppy-hat.jpg" class="block m-auto" width="300" alt="cute dog wearing a knitted hat">
 
-# Dog hats!!!
+# Let's make dog hats!!!
 
 (decent analogy, great photos)
 
 ---
 
-# Same, same, but different
+# Natural progression of dog hats
 
 1. Client wants a thing
 2. You make a thing
 3. You give them a thing
 
 ---
+layout: statement
+--- 
 
-# First, let's define "Compute"
+# Commercial workspace 🏭
 
-<v-clicks>
-<div>
-
-## What:
-
-Compute = bleeps & bloops -> HTML
-</div>
-<div>
-
-## Where: 
-- Traditional Servers
-<!-- - Content Delivery Networks -->
-- Client-Side Rendering
-- Static-Site-Generators
-- Cloud functions
-</div>
-</v-clicks>
+<img src="/img/edge-compute/dog-beret.jpg" class="block m-auto" width="350" alt="Black pug with a knitted red beret to match its red, black, and white stripped shirt.">
 
 ---
 
@@ -109,11 +117,9 @@ Machine runs software you choose to execute code you write to return HTML.
 layout: statement
 --- 
 
-# Traditional Servers
+# DIY knitting kits 🛠
 
-<img src="/img/edge-compute/dog-beret.jpg" class="block m-auto" width="300" alt="Black pug with a knitted red beret to match its red, black, and white stripped shirt.">
-
-## Like commercial workspace 🏭
+<img src="/img/edge-compute/knitting-supplies.jpg" class="block m-auto" alt="knitting supplies">
 
 ---
 
@@ -146,12 +152,9 @@ JavaScript (or WebAssembly) running in the user's browser generates HTML.
 layout: statement
 --- 
 
-# Client-Side Rendering
+# Pre-knitted dog hats 🐶🎩
 
-<img src="/img/edge-compute/knitting-supplies.jpg" class="block m-auto" width="300" alt="knitting supplies">
-
-## Like DIY dog-hat kits 🛠
-<div>(dog sold separately)</div>
+<img src="/img/edge-compute/dog-hats-5.jpg" class="block m-auto" width="320" alt="Black lab wearing a blue knitted hat with a puff ball on top. He's outside in the fall time.">
 
 ---
 
@@ -185,11 +188,9 @@ Generate all pages (HTML, CSS, JavaScript, etc.) ahead of time, into static fold
 layout: statement
 --- 
 
-# Static-Site-Generators
+# Dog-hat-knitting robots <br>🤖🧶💉🐶🎩
 
-<img src="/img/edge-compute/dog-hats-5.jpg" class="block m-auto" width="200" alt="Black lab wearing a blue knitted hat with a puff ball on top. He's outside in the fall time.">
-
-## Like pre-made dog hats 🐶🎩
+<img src="/img/edge-compute/football-dog.jpg" class="block m-auto" width="350" alt="cute dog wearing a knitted, New England Patriots hat">
 
 ---
 
@@ -227,16 +228,6 @@ Service providers route requests to the functions you provide.<br>
 layout: statement
 --- 
 
-# Cloud Functions
-
-<img src="/img/edge-compute/football-dog.jpg" class="block m-auto" width="300" alt="cute dog wearing a knitted, New England Patriots hat">
-
-## Like robots trained to knit dog-hats 🤖🧶💉🐶🎩
-
----
-layout: statement
---- 
-
 # Ok, that's compute
 
 ---
@@ -259,10 +250,18 @@ By putting devices as close to users as possible, we can reduce latency, thereby
 </div>
 
 ---
+layout: statement
+--- 
+
+# Convenience stores 🏪
+
+<img src="/img/edge-compute/two-hat-dogs.jpg" class="block m-auto" width="400" alt="two cute dogs wearing a knitted hats">
+
+---
 
 # Content Delivery Network (CDN)
 
-Thousand of globally distributed servers to deliver resources closer to users
+Thousand of globally distributed servers to deliver static assets closer to users
 
 <div class="grid grid-cols-2">
 <v-clicks>
@@ -270,27 +269,17 @@ Thousand of globally distributed servers to deliver resources closer to users
 
 ### Pros
 - Greatly reduce latency
-- Works well with SSG
+- Works well with CSR & SSG
 
 </div>
 <div>
 
 ### Cons
-- Designed for static content (css, js, img, etc)
+- Not ideal for dynamic contnet
 
 </div>
 </v-clicks>
 </div>
-
----
-layout: statement
---- 
-
-# Content Delivery Network
-
-<img src="/img/edge-compute/two-hat-dogs.jpg" class="block m-auto" width="300" alt="two cute dogs wearing a knitted hats">
-
-## Like convenience stores 🏪
 
 ---
 layout: statement
@@ -351,17 +340,15 @@ Technology continues to improve, but the speed of light remains the same.
 layout: statement
 ---
 
-# Can you guess where we're going...?
+# The logical next step is...
 
 ---
 layout: statement
 ---
 
-# Edge compute
+# Put dog-hat-knitting robots inside convenience stores <br> 🤖🧶💉🐶🎩+🏪
 
-<img src="/img/edge-compute/mohawk-dog.jpg" class="block m-auto" width="400" alt="cute dog wearing a knitted, New England Patriots hat">
-
-## Like robots trained to knit dog-hats at convenience stores <br> 🤖🧶💉🐶🎩+🏪
+<img src="/img/edge-compute/mohawk-dog.jpg" class="block m-auto" width="450" alt="cute dog wearing a knitted, New England Patriots hat">
 
 ---
 
@@ -651,6 +638,8 @@ layout: statement
 - [11ty](https://www.11ty.dev/docs/plugins/edge/)
 - [Sveltekit](https://kit.svelte.dev/)
 - [Fresh](https://fresh.deno.dev/)
+- [SolidStart](https://start.solidjs.com/)
+- [Qwik City](https://qwik.builder.io/docs/qwikcity/)
 - and more
 
 ---
@@ -696,10 +685,10 @@ Source: [Akamai's 2017 Online Retail Performance Report](https://www.akamai.com/
 
 # Visualization
 
-<v-clicks>
 
 In 2008, Amazon found 100ms in load hurt sales by 1%<br>
 ($513.98b annual revenue x 1% = >$5b)
+<v-clicks>
 
 They could hire **SIXTY THOUSAND** developers and still profit<br>
 (2023 average = $83k)
@@ -724,18 +713,15 @@ layout: statement
 
 ---
 
-# EdgeWorkers
+# Akamai EdgeWorkers
 
-- Largest network (>300k servers, >4k POPs)
+- Most distributed network (>300k servers, >4k POPs)
 - More customizable lifecycle hooks
-  - After client request
-  - Before origin request
-  - After origin response
-  - Before client response
+  - After client request, before origin request, after origin response, before client response
+- Integrates with CDN's cached content
+- Protected by industry-leading security
 - Canary-deployment rollouts
 - No per-region/per-server limits (only per-request)
-- Run on same servers as cached content
-- Protected by industry-leading firewall
 
 ---
 layout: image
