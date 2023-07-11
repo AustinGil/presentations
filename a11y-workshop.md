@@ -67,7 +67,7 @@ layout: statement
 
 ---
 
-<img src="img/a11y/ally-mimic.jpg" class="block m-auto -mt-10" width="495">
+<img src="/img/a11y/ally-mimic.jpg" class="block m-auto -mt-10" width="495">
 
 ---
 
@@ -93,8 +93,8 @@ Accessibility Tree: DevTools > Elements > Accessibility
 
 <div class="grid grid-cols-2">
 <v-clicks>
-<img src="img/a11y-workshop/blog.jpg">
-<img src="img/a11y-workshop/dashboard.jpg">
+<img src="/img/a11y-workshop/blog.jpg">
+<img src="/img/a11y-workshop/dashboard.jpg">
 </v-clicks>
 </div>
 

@@ -191,7 +191,7 @@ layout: statement
 
 # $100 for Akamai Connected Cloud
 
-<img src="img/bit.ly_agilacc.png" width="260">
+<img src="/img/bit.ly_agilacc.png" width="260">
 <a href="https://bit.ly/agilacc">bit.ly/agilacc</a>
 </div>
 

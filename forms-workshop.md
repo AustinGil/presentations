@@ -40,7 +40,7 @@ Install deps:<br>
 </div>
 
 Miro board: **bit.ly/formwerk**
-<img src="img/forms-workshop/qr-miro.png">
+<img src="/img/forms-workshop/qr-miro.png">
 </div>
 
 ---
@@ -369,7 +369,7 @@ Section 3
 
   <div class="pokemon pokemon--bulbasaur">
     <img
-      src="img/bulbasaur.png"
+      src="/img/bulbasaur.png"
       width="300"
       height="300"
       alt="Bulbasaur"
@@ -389,7 +389,7 @@ Section 3
 
   <div class="pokemon pokemon--charmander">
     <img
-      src="img/charmander.png"
+      src="/img/charmander.png"
       width="300"
       height="300"
       alt="Charmander"
@@ -408,7 +408,7 @@ Section 3
   </div>
 
   <div class="pokemon pokemon--squirtle">
-    <img src="img/squirtle.png" width="300" height="300" alt="Squirtle" />
+    <img src="/img/squirtle.png" width="300" height="300" alt="Squirtle" />
     <p>
       Squirtle's shell is not merely used for protection. The shell's
       rounded shape and the grooves on its surface help minimize
