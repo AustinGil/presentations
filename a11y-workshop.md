@@ -1,10 +1,6 @@
 ---
-theme: default
-font:
-  sans: 'Manrope'
-  display: 'Rock Salt'
-lineNumbers: false
-layout: statement
+src: intro.md
+---
 ---
 
 # Building Components With Accessiblity In Mind
@@ -34,19 +30,10 @@ Wifi: // TODO
 </div>
 
 ---
-layout: image-right
-image: /img/edge-compute/austin-gil-bio.png
+layout: statement
 ---
 
-<h1 class="text-4xl mt-10">Hey Im Austin Gil 👋</h1>
-<p class="-top-4">@heyAustinGIl</p>
-
-<h4 class="mb-4">Dev Advocate <a href="https://akamai.com">akamai.com</a></h4>
-<h4 class="mb-4">OSS Maintainer of <a href="https://vuetensils.austingil.com">Vuetensils</a></h4>
-<h4 class="mb-4">Chiweenie enthusiast</h4>
-<h4 class="mb-4">Perfect marshmallow roaster</h4>
-
-<div class="mt-10">Come talk to me about edge compute, web development, JavaScript, Vue.js, a11y, Chiweenies, or whatever :D</div>
+# To the board!!!
 
 ---
 
@@ -57,8 +44,6 @@ A report on the accessibility of the top 1,000,000 home pages (webaim.org/projec
 <v-clicks>
 
 51,379,694 distinct accessibility errors (🤖)
-
-Average of 51.4 errors per page
 
 <div>
 
@@ -73,6 +58,16 @@ Most common issues discovered:
 
 </div>
 </v-clicks>
+
+---
+layout: statement
+---
+
+# To the board!!!
+
+---
+
+<img src="img/a11y/ally-mimic.jpg" class="block m-auto -mt-10" width="495">
 
 ---
 
@@ -94,7 +89,7 @@ Accessibility Tree: DevTools > Elements > Accessibility
 
 ---
 
-# Semantics Matter
+# How would you code this?
 
 <div class="grid grid-cols-2">
 <v-clicks>
@@ -102,6 +97,12 @@ Accessibility Tree: DevTools > Elements > Accessibility
 <img src="img/a11y-workshop/dashboard.jpg">
 </v-clicks>
 </div>
+
+---
+layout: statement
+---
+
+# To the board!!!
 
 ---
 layout: statement
