@@ -1,11 +1,17 @@
----
-src: intro.md
----
----
-
 # Building Components With Accessiblity In Mind
 
-<div class="mt-24 grid grid-cols-2 text-left">
+<div class="mt-10 grid grid-cols-2 text-left">
+<div>
+
+Wifi:<br>
+// TODO
+
+<br>
+
+Board:<br>
+https://bit.ly/3CS1zdb
+
+</div>
 <div>
 
 Prerequisites:
@@ -16,18 +22,25 @@ Prerequisites:
 * Headphones (please)
 
 </div>
-<div>
-
-Miro board:
-
-https://bit.ly/3CS1zdb
-
-<br>
-
-Wifi: // TODO
-
 </div>
-</div>
+
+---
+src: intro.md
+---
+---
+layout: image-left
+image: /img/a11y-workshop/michael.jpg
+---
+
+# Everyone say <br>"Hi, Michael"
+
+<p class="pt-8 text-4xl">Michael Fairchild</p>
+
+Accessibility Coach and Manager at Deque Systems.
+
+Developer. Gamer. Rower. Forever learning and growing.
+
+Built a11ysupport.io and co-chairs the W3C ARIA-AT group.
 
 ---
 layout: statement
