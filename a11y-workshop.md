@@ -1,15 +1,34 @@
+<!-- Hello friends!
+
+This is Austin Gil, and I'm very excited to have you all at my workshop tomorrow, "Make Accessibility Easier to get Right & Harder to get Wrong"
+
+I wanted to reach out with a few things you can do now to help things run more smoothly tomorrow.
+
+You'll want to make sure you have Git (https://git-scm.com/) and Node.js (https://nodejs.org/en) installed on your machine, as well as a code editor (https://code.visualstudio.com/) and a GitHub account (https://github.com/)
+
+There is a repository we'll be working from (https://github.com/AustinGil/accessiblitz), so if you want to clone that and install the NPM dependencies from inside the /react folder, it could help speed things up. Here's the command to do all that from a unix terminal:
+
+git clone https://github.com/AustinGil/accessiblitz.git && cd accessiblitz/react && npm install
+
+We will be learning how to setup automated tests with Cypress and/or Playwright. You can choose just one or both, but there are some other terminal commands to set those up.
+
+For Cypress users: npx cypress verify
+For Playwright users: npx playwright install --with-deps
+
+ -->
+
 # Building Components With Accessiblity In Mind
 
 <div class="mt-10 grid grid-cols-2 text-left">
 <div>
 
 Wifi:<br>
-// TODO
+MarriotBonvoy_Guest
 
 <br>
 
 Board:<br>
-https://bit.ly/3CS1zdb
+https://bit.ly/a11y-ws
 
 </div>
 <div>
@@ -50,27 +69,29 @@ layout: statement
 
 ---
 
-# WebAIM Million
+# The facts - [WebAIM Million Report](https://webaim.org/projects/million/)
 
-A report on the accessibility of the top 1,000,000 home pages (webaim.org/projects/million)
+<v-click>
 
-<v-clicks>
+Feb 2022 - 50,829,406 distinct errors / 50.8 errors per page
+[webaim.org/projects/million](https://webaim.org/projects/million/)
 
-51,379,694 distinct accessibility errors (🤖)
+</v-click>
 
-<div>
+<v-click>
 
-Most common issues discovered:
+* Low contrast text: 86.4%
+* Missing alternative text for images: 60.6%
+* Missing form input labels: 54.4%
+* Empty links: 51.3%
+* Missing document language: 28.9%
+* Empty buttons: 26.9%
 
-1. Low contrast text: 86.4%
-2. Missing alternative text for images: 60.6%
-3. Missing form input labels: 54.4%
-4. Empty links: 51.3%
-5. Missing document language: 28.9%
-6. Empty buttons: 26.9%
+</v-click>
+<v-click>
 
-</div>
-</v-clicks>
+**IMPORTANT:** Based on **automated** WCAG metrics
+</v-click>
 
 ---
 layout: statement
