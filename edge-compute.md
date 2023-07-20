@@ -1,7 +1,4 @@
 ---
-src: intro.md
----
----
 layout: statement
 ---
 
@@ -10,28 +7,8 @@ layout: statement
 (aka "edge functions" or "edge workers")
 
 ---
-
-# Let's start with "Compute"
-
-<v-clicks>
-<div>
-
-## What:
-
-Compute = bleeps & bloops -> HTML
-</div>
-<div>
-
-## Where: 
-- Traditional Servers
-- Client-Side JavaScript
-- Client-Side workers
-- Static-Site-Generators
-- Cloud functions
-- Edge functions
-</div>
-</v-clicks>
-
+src: intro.md
+---
 ---
 
 # Plain and simple:
@@ -42,6 +19,7 @@ Edge compute is the result of distributing serverless functions to thousands of 
 
 The result is programmable/dynamic/customizable responses with the least amount of latency (aka more speed).
 </v-clicks>
+
 ---
 layout: statement
 ---
@@ -67,7 +45,7 @@ layout: statement
 
 # Let's make dog hats!!!
 
-(decent analogy, great photos)
+(mediocre analogy, but really good photos)
 
 ---
 
@@ -76,6 +54,29 @@ layout: statement
 1. Client wants a thing
 2. You make a thing
 3. You give them a thing
+
+---
+
+# Let's start with "Compute"
+
+<v-clicks>
+<div>
+
+## What:
+
+Compute = bleeps & bloops -> HTML
+</div>
+<div>
+
+## Where: 
+- Traditional Servers
+- Client-Side JavaScript
+- Client-Side workers
+- Static-Site-Generators
+- Cloud functions
+- Edge functions
+</div>
+</v-clicks>
 
 ---
 layout: statement
@@ -326,7 +327,7 @@ Technology continues to improve, but the speed of light remains the same.
 
 ---
 
-# So ideally...
+# With that in mind, we should...
 
 <v-clicks>
 
@@ -432,13 +433,13 @@ Dynamic content with...
 layout: statement
 ---
 
-# Distributed compute is not the hard part
+# No one likes to talk about the hard part...
 
 ---
 layout: statement
 ---
 
-# Distributed data is
+# Distributed data
 
 ---
 layout: statement
