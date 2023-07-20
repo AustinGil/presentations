@@ -17,13 +17,14 @@ For Playwright users: npx playwright install --with-deps
 
  -->
 
-# Building Components With Accessiblity In Mind
+# Make Accessibility <br>Easier to Get Right 
+## (& Harder to Get Wrong)
 
-<div class="mt-10 grid grid-cols-2 text-left">
+<div class="grid grid-cols-2 text-left">
 <div>
 
 Wifi:<br>
-MarriotBonvoy_Guest
+MarriotBonvoy_Conference
 
 <br>
 
