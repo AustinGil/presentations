@@ -80,55 +80,40 @@ Compute = bleeps & bloops -> HTML
 
 ---
 layout: statement
---- 
-
-# Commercial workspace 🏭
-
-<img src="/img/edge-compute/dog-beret.jpg" class="block m-auto" width="350" alt="Black pug with a knitted red beret to match its red, black, and white stripped shirt.">
-
 ---
 
 # Traditional Servers
 
 Machine runs software you choose to execute code you write to return HTML.
 
-<div class="grid grid-cols-2">
-<v-clicks>
-<div>
+<!-- <v-clicks>
 
-### Pros
 - Predictable pricing
 - Unbounded run times
-- **You are in complete control**
-
-</div>
-<div>
-
-### Cons
 - You pay even for idle times
-- Complicated scaling up/down
+- Challenge to scale
 - Distance from users add latency
-- You maintain server software & application logic
+- **You have complete control/responsibility**
 
-</div>
-</v-clicks>
-</div>
+</v-clicks> -->
 
 ---
 layout: statement
 --- 
 
-# DIY knitting kits 🛠
+# 🏭<br>Commercial workspace
 
-<img src="/img/edge-compute/knitting-supplies.jpg" class="block m-auto" alt="knitting supplies">
+<img src="/img/edge-compute/dog-beret.jpg" class="block m-auto" width="300" alt="Black pug with a knitted red beret to match its red, black, and white stripped shirt.">
 
 ---
+layout: statement
+--- 
 
 # Client-Side Rendering
 
 JavaScript (or WebAssembly) running in the user's browser generates HTML.
 
-<div class="grid grid-cols-2">
+<!-- <div class="grid grid-cols-2">
 <v-clicks>
 <div>
 
@@ -147,25 +132,27 @@ JavaScript (or WebAssembly) running in the user's browser generates HTML.
 
 </div>
 </v-clicks>
-</div>
+</div> -->
 
 ---
 layout: statement
 --- 
 
-# Pre-knitted dog hats 🐶🎩
+# 🛠️<br>DIY kits
 
-<img src="/img/edge-compute/dog-hats-5.jpg" class="block m-auto" width="320" alt="Black lab wearing a blue knitted hat with a puff ball on top. He's outside in the fall time.">
+<img src="/img/edge-compute/knitting-supplies.jpg" class="block m-auto" alt="knitting supplies" width="530">
 
 ---
+layout: statement
+--- 
 
 # Static-Site-Generators (SSGs)
 
-Generate all pages (HTML, CSS, JavaScript, etc.) ahead of time, into static folders and files.
+Generate all pages ahead of time, into static folders and files.
 
 (Technically still SSR)
 
-<div class="grid grid-cols-2">
+<!-- <div class="grid grid-cols-2">
 <v-clicks>
 <div>
 
@@ -183,26 +170,28 @@ Generate all pages (HTML, CSS, JavaScript, etc.) ahead of time, into static fold
 
 </div>
 </v-clicks>
-</div>
+</div> -->
 
 ---
 layout: statement
 --- 
 
-# Dog-hat-knitting robots <br>🤖🧶💉🐶🎩
+# 🐶🎩<br>Pre-knitted dog hats
 
-<img src="/img/edge-compute/football-dog.jpg" class="block m-auto" width="350" alt="cute dog wearing a knitted, New England Patriots hat">
+<img src="/img/edge-compute/dog-hats-5.jpg" class="block m-auto" width="280" alt="Black lab wearing a blue knitted hat with a puff ball on top. He's outside in the fall time.">
 
 ---
+layout: statement
+--- 
 
 # Cloud Functions
 
 (aka "lambda", "serverless")
 
 Service providers route requests to the functions you provide.<br>
-(They manage machines and servers)
+<!-- (They manage machines and servers) -->
 
-<div class="grid grid-cols-2">
+<!-- <div class="grid grid-cols-2">
 <v-clicks>
 <div>
 
@@ -223,7 +212,15 @@ Service providers route requests to the functions you provide.<br>
 
 </div>
 </v-clicks>
-</div>
+</div> -->
+
+---
+layout: statement
+--- 
+
+# 🐶🎩🧶💉🤖<br>Dog-hat-knitting robots
+
+<img src="/img/edge-compute/football-dog.jpg" class="block m-auto" width="350" alt="cute dog wearing a knitted, New England Patriots hat">
 
 ---
 layout: statement
@@ -245,7 +242,7 @@ A network of globally distributed computers capable of handling user requests.
 <div>
 
 ## Why
-By putting devices as close to users as possible, we can reduce latency, thereby improving performance and user experience.
+By putting resources as close to users as possible, we can reduce latency, thereby improving performance and user experience.
 </div>
 </v-clicks>
 </div>
@@ -254,17 +251,11 @@ By putting devices as close to users as possible, we can reduce latency, thereby
 layout: statement
 --- 
 
-# Convenience stores 🏪
-
-<img src="/img/edge-compute/two-hat-dogs.jpg" class="block m-auto" width="400" alt="two cute dogs wearing a knitted hats">
-
----
-
 # Content Delivery Network (CDN)
 
 Thousand of globally distributed servers to deliver static assets closer to users
 
-<div class="grid grid-cols-2">
+<!-- <div class="grid grid-cols-2">
 <v-clicks>
 <div>
 
@@ -280,7 +271,15 @@ Thousand of globally distributed servers to deliver static assets closer to user
 
 </div>
 </v-clicks>
-</div>
+</div> -->
+
+---
+layout: statement
+--- 
+
+# 🏪<br>Convenience stores
+
+<img src="/img/edge-compute/two-hat-dogs.jpg" class="block m-auto" width="350" alt="two cute dogs wearing a knitted hats">
 
 ---
 layout: statement
@@ -327,7 +326,7 @@ Technology continues to improve, but the speed of light remains the same.
 
 ---
 
-# With that in mind, we should...
+# With everything in mind, we should...
 
 <v-clicks>
 
@@ -347,7 +346,7 @@ layout: statement
 layout: statement
 ---
 
-# Put dog-hat-knitting robots inside convenience stores <br> 🤖🧶💉🐶🎩+🏪
+# Put dog-hat-knitting robots inside convenience stores <br> 🐶🎩🧶💉🤖+🏪
 
 <img src="/img/edge-compute/mohawk-dog.jpg" class="block m-auto" width="450" alt="cute dog wearing a knitted, New England Patriots hat">
 
@@ -381,7 +380,7 @@ layout: statement
 
 ---
 
-# Benefits - Users
+# For Users
 
 Dynamic content with...
 
@@ -394,7 +393,7 @@ Dynamic content with...
 
 --- 
 
-# Benefits - Developers
+# For Developers
 
 <v-clicks>
 
@@ -408,7 +407,7 @@ Dynamic content with...
 
 --- 
 
-# Benefits - Website owners
+# For Website owners
 
 <v-clicks>
 
@@ -603,12 +602,19 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 </v-click>
 
 ---
+layout: statement
+---
+
+# So maybe not for full apps
+## But good at other things...
+
+---
 
 # Common use cases
 
 <v-clicks>
 
-- Modify request/response (inject ads)
+- Modify request/response (server-side ads)
 - Fast static search (auto-complete, store locator)
 - Geolocation (language, policies)
 - Redirect management ([blog post](https://austingil.com/optimizing-content-migrations-with-edge-compute/))
@@ -668,6 +674,12 @@ layout: statement
 <h4 class="absolute bottom-40 right-12">Do dogs even like wearing hats?</h4>
 
 ---
+layout: statement
+---
+
+# Does 300ms really matter?
+
+---
 
 # Compulsory slide with lots of stats
 
@@ -702,11 +714,13 @@ More case studies of performance vs. UX/biz metrics at wpostats.com
 layout: statement
 ---
 
-# So is it worth it?
+# Is it worth it?
 
 <v-click>
 
-# It depends 💩
+## ~~Lemme work it~~
+
+## It depends 💩
 
 (but when you need it, give [Akamai EdgeWorkers](https://www.akamai.com/products/serverless-computing-edgeworkers) a try)
 
@@ -794,7 +808,6 @@ style: color:black
 <p class="text-4xl"><a href="https://linode.com/austingil">linode.com/austingil</a></p>
 </div>
 </div>
-<br>
 <br>
 
 ## Let's talk: 
