@@ -2,9 +2,19 @@
 layout: statement
 ---
 
+<div class="grid grid-cols-2 gap-4">
+<div class="grid place-content-center">
+
 # What the heck is Edge Compute anyway?
 
-(aka "edge functions" or "edge workers")
+(aka "edge functions" <br>or "edge workers")
+</div>
+<div>
+
+<b>Slides:</b> [bit.ly/edge-compute](http://bit.ly/edge-compute)
+<img src="/img/edge-compute/qr.png" alt="http://bit.ly/edge-compute" width="400">
+</div>
+</div>
 
 ---
 src: intro.md
