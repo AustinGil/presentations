@@ -45,8 +45,6 @@ layout: statement
 
 # Let's make dog hats!!!
 
-(mediocre analogy, but really good photos)
-
 ---
 
 # Natural progression of dog hats
@@ -54,6 +52,11 @@ layout: statement
 1. Client wants a thing
 2. You make a thing
 3. You give them a thing
+
+<v-click>
+
+Mediocre analogy / really good photos ¯\\\_(ツ)\_/¯
+</v-click>
 
 ---
 
