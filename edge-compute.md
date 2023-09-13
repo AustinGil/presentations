@@ -25,7 +25,7 @@ src: intro.md
 
 <v-clicks>
 
-Edge compute is the result of distributing serverless functions to thousands of locations around the world to handle requests from as close to the user as possible.
+Edge compute is the result of distributing serverless functions to multiple locations around the world to handle requests from as close to the user as possible.
 
 The result is programmable/dynamic/customizable responses with the least amount of latency (aka more speed).
 </v-clicks>
@@ -286,7 +286,7 @@ layout: statement
 
 # Content Delivery Network (CDN)
 
-Thousand of globally distributed servers to deliver static assets closer to users
+Several globally distributed servers that deliver static assets closer to users
 
 <!-- <div class="grid grid-cols-2">
 <v-clicks>
@@ -465,7 +465,7 @@ Dynamic content with...
 layout: statement
 ---
 
-# No one likes to talk about the hard part...
+# The thing no one likes to talk about...
 
 ---
 layout: statement
