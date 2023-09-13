@@ -261,6 +261,26 @@ By putting resources as close to users as possible, we can reduce latency, there
 </div>
 
 ---
+
+# How many locations make it "edge"?
+
+<v-clicks>
+
+2 (You & your friend)
+
+~10 (Netlify/Deno)
+
+~100 (Fastly)
+
+~300 (Cloudflare)
+
+~4,000 (Akamai)
+
+~10,000 (IoT)
+
+</v-clicks>
+
+---
 layout: statement
 --- 
 
@@ -459,9 +479,9 @@ layout: statement
 
 # Edge compute isn't<br>always better 
 
-💻: origin<br>
-🤵: server<br>
-🔪: edge<br>
+💻: client<br>
+🤵: origin server<br>
+🔪: edge node<br>
 🎯: target<br>
 
 ---
@@ -711,7 +731,6 @@ Source: [Akamai's 2017 Online Retail Performance Report](https://www.akamai.com/
 
 # Visualization
 
-
 In 2008, Amazon found 100ms in load hurt sales by 1%<br>
 ($513.98b annual revenue x 1% = >$5b)
 <v-clicks>
@@ -731,8 +750,6 @@ layout: statement
 
 <v-click>
 
-## ~~Lemme work it~~
-
 ## It depends 💩
 
 (but when you need it, give [Akamai EdgeWorkers](https://www.akamai.com/products/serverless-computing-edgeworkers) a try)
@@ -750,6 +767,22 @@ layout: statement
 - Protected by industry-leading security
 - Canary-deployment rollouts
 - No per-region/per-server limits (only per-request)
+
+---
+
+# Key Takeaways
+
+<v-clicks>
+
+Distributed systems are hard.
+
+Edge compute adds complexity.
+
+Many projects don't need to be distributed.
+
+But understanding distributed systems allows you to build and launch your application today and scale it tomorrow.
+
+</v-clicks> 
 
 ---
 layout: image
