@@ -103,10 +103,11 @@ Machine runs software you choose to execute code you write to return HTML.
 
 - Predictable pricing
 - Unbounded run times
-- You pay even for idle times
+- **You have complete control**
+- pay for idle times
 - Challenge to scale
 - Distance from users add latency
-- **You have complete control/responsibility**
+- **You have complete responsibility**
 
 </v-clicks> -->
 
@@ -126,26 +127,16 @@ layout: statement
 
 JavaScript (or WebAssembly) running in the user's browser generates HTML.
 
-<!-- <div class="grid grid-cols-2">
-<v-clicks>
-<div>
+<!--
 
-### Pros
-- No latency because it's on device
-- Can work offline
+- No latency
+- Offline
+- Bigger download
+- No secrets
+- Environment/ x-browser
+- Users Performance
 
-</div>
-<div>
-
-### Cons
-- Requires user download more JS
-- Can't keep secrets ("View source")
-- No control over environment (x-browser issues)
-- Performance greatly dependent on user's device
-
-</div>
-</v-clicks>
-</div> -->
+-->
 
 ---
 layout: statement
@@ -165,25 +156,15 @@ Generate all pages ahead of time, into static folders and files.
 
 (Technically still SSR)
 
-<!-- <div class="grid grid-cols-2">
-<v-clicks>
-<div>
+<!--
 
-### Pros
-- Immediate response times
-- Works great with a CDN
-- Very fast, cheap, secure, and easy to host
+- Immediate response
+- CDN
+- fast, cheap, secure, easy
+- Not dynamic
+- Build times
 
-</div>
-<div>
-
-### Cons
-- Can't support dynamic content (without CSR)
-- Build times grow with number of pages
-
-</div>
-</v-clicks>
-</div> -->
+-->
 
 ---
 layout: statement
@@ -204,28 +185,18 @@ layout: statement
 Service providers route requests to the functions you provide.<br>
 <!-- (They manage machines and servers) -->
 
-<!-- <div class="grid grid-cols-2">
-<v-clicks>
-<div>
+<!--
 
-### Pros
-- Easy to provision (teams/migration)
+- Easy to provision
 - "Infinitely" scalable
-- Only pay for what you use
-- Only manage code (no hardware or servers)
-
-</div>
-<div>
-
-### Cons
-- Must follow conventions (naming, files, parameters, returns)
-- "Stateless" (no shared memory/files)
+- Pay for use
+- Only manage code
+- follow conventions
+- "Stateless" 
 - Limited resources & languages
-- Can also be very far from users
+- far from users
 
-</div>
-</v-clicks>
-</div> -->
+-->
 
 ---
 layout: statement
@@ -288,23 +259,11 @@ layout: statement
 
 Several globally distributed servers that deliver static assets closer to users
 
-<!-- <div class="grid grid-cols-2">
-<v-clicks>
-<div>
-
-### Pros
+<!--
 - Greatly reduce latency
 - Works well with CSR & SSG
-
-</div>
-<div>
-
-### Cons
 - Not ideal for dynamic contnet
-
-</div>
-</v-clicks>
-</div> -->
+-->
 
 ---
 layout: statement
@@ -630,7 +589,7 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 <!-- <div class="mt-12">Smart folks are exploring these issues:
 <br><br>
 <a href="https://astro.build/">Astro</a>, <a href="https://remix.run/">Remix</a>, <a href="https://nuxtjs.org/">Nuxt</a>, <a href="https://nextjs.org/">Next</a>, and more
-</div> -->
+-->
 
 </v-click>
 
