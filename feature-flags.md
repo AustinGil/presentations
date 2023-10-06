@@ -26,7 +26,7 @@ layout: statement
 layout: center
 ---
 
-Tools that allow us to toggle features on/off without deploying new code.
+Tools that allow us to toggle specific features on/off for targeted customer segments without deploying new code.
 
 <!-- <img src="/img/feature-flags/ld-rule.png"> -->
 <img src="/img/feature-flags/flags.png">
@@ -37,9 +37,9 @@ Tools that allow us to toggle features on/off without deploying new code.
 
 - Gradual release
 - A/B testing
-- Test internal features
 - Beta testers
 - Personalization
+- Preview internal features
 - Kill switches (roll back)
 
 ---
@@ -64,13 +64,11 @@ if (featureFlagIsEnabled("new-ui-flag")) {
 
 # Benefits
 
-<v-clicks>
-
-- Faster Release Cycles
-- Reduced Risk
-- Improved User Experience
-- Greater Flexibility
-</v-clicks>
+- Faster release cycles
+- Reduced risk
+- Improved user experience
+- Greater flexibility
+- Decouple deployments & features
 
 <!-- 
 Can roll out features before ready
@@ -135,7 +133,9 @@ Server pulls feature flag config from admin during request and constructs HTML r
 <div>
 
 ## Pros
-- Improved performance
+- No UI content flash
+- Less data for client to download
+- Less work for client device
 - No script blocking
 
 </div>
@@ -144,7 +144,7 @@ Server pulls feature flag config from admin during request and constructs HTML r
 
 ## Cons
 - More load on origin server
-- Can remove ability to cache
+- Can remove option to cache results
 </div>
 </v-clicks>
 </div>
@@ -190,33 +190,20 @@ layout: statement
 ---
 
 # Generic Example
-A/B testing logic with dynamic content assembly
+Dynamic content assembly
 
 ---
 
 # How it might work
 
-User requests a web page
-
+- User requests a web page
 <v-clicks>
 
-Edge node pulls HTML from origin & feature flags from KV store
-
-Possible to cache origin response for future requests
-
-Edge node assembles HTML based on flags & context
-
-Possible to cache Edge responses as well 
+- Edge node pulls HTML from origin & feature flags from KV store
+- Possible to cache origin response for future requests
+- Edge node assembles HTML based on flags & context
+- Possible to cache Edge responses as well 
 </v-clicks>
-
-<!-- ---
-
-# "Possible" to cache...?
-
-Caching strategy depends largely on:
-- Is personalization generalized or per unique user?
-- Can personalization logic run at the edge or must be origin?
-- In other words, it depends -->
 
 ---
 
@@ -274,14 +261,25 @@ export async function responseProvider(request) {
 </div>
 
 ---
+
+# Caveat on caching
+
+Although you **can** cache responses from subrequests (eg. origin) and edge responses, strategy depends largely on:
+- Is personalization generalized or per unique user?
+- Can personalization logic run at the edge or must be origin?
+
+<v-click>
+
+In other words, it depends
+</v-click>
+
+---
 layout: statement
 ---
 
-# Enterprise Example
+# Mad Science Example
 
-Incrementally upgrade beta users to Akamai [Image & Video Manager](https://www.akamai.com/products/image-and-video-manager)
-<br>
-(automatic media optimizer & CDN)
+Upgrade beta users to improved features
 
 ---
 
@@ -302,10 +300,10 @@ Incrementally upgrade beta users to Akamai [Image & Video Manager](https://www.a
 
 - Create a user-defined variable in Akamai dashboard to use in feature flagging logic & cache key
 - Create a flag rule in LaunchDarkly dashboard (synced to EdgeKV)
-- EdgeWorker uses LaunchDarkly SDK to read EdgeKV and LaunchDarkly Context Attributes to analyze feature flag status
-- Pre-cache (`onClientRequest`) modify request to origin, update user-defined variable & set cache key based on feature flags
+- EdgeWorker uses LaunchDarkly SDK to determine feature flag status based on EdgeKV config Context Attributes (beta user cookie)
+- Pre-cache (`onClientRequest`) update user-defined variable based on flag status & use as cache key for origin request
 - Post-cache (`responseProvider`) resolve with assembled HTML
-- Use Akamai Property Manager match conditions to enable Image Manager and apply caching logic
+- Akamai Property Manager match conditions enable Image Manager when cache key is present, even when cached
 </v-clicks>
 
 ---
