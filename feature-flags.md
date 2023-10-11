@@ -5,8 +5,9 @@ layout: statement
 <!-- <div class="grid grid-cols-2 gap-4">
 <div class="grid place-content-center"> -->
 
-# Edge Feature Flags:
-## Blending Static Cache & Dynamic Compute
+# Supercharge User Experience 
+## with Akamai EdgeWorkers & LaunchDarkly
+<!-- ## Blending Static Cache & Dynamic Compute -->
 
 <!-- </div>
 <div> -->
@@ -89,9 +90,7 @@ layout: statement
 
 Frontend contains client-side SDK, which commincates to admin and updates the UI accordingly.
 
-<v-click>
 <img src="/img/feature-flags/client.svg" width="600">
-</v-click>
 
 ---
 
@@ -121,9 +120,7 @@ Frontend contains client-side SDK, which commincates to admin and updates the UI
 
 Server pulls feature flag config from admin during request and constructs HTML response dynamically.
 
-<v-click>
 <img src="/img/feature-flags/server.svg" width="500">
-</v-click>
 
 ---
 
@@ -154,12 +151,10 @@ Server pulls feature flag config from admin during request and constructs HTML r
 # Edge-Side
 
 CDN node between client and origin server, capable of running dynamic compute and integrating CDN cache.
-<v-clicks>
 
 Have access to key-value stores, geolocation, and device information.
 
 <img src="/img/feature-flags/ekv.svg" width="700">
-</v-clicks>
 
 ---
 
@@ -260,7 +255,7 @@ export async function responseProvider(request) {
 ```
 </div>
 
----
+<!-- ---
 
 # Caveat on caching
 
@@ -271,7 +266,7 @@ Although you **can** cache responses from subrequests (eg. origin) and edge resp
 <v-click>
 
 In other words, it depends
-</v-click>
+</v-click> -->
 
 ---
 layout: statement
@@ -316,9 +311,9 @@ Safe & incremental roll-out of enhanced media delivery via Image Manager.
 
 Reduced data costs for users and bandwidth costs for image delivery.
 
-Caching also reduces server workload, costs, and improves reliability.
+Caching reduces server workload, costs, and improves reliability.
 
-And users have better performance from optimized images, caching, and CDN.
+Cache + optimized images + CDN greatly improves performance.
 
 Also, features can easily be turned on/off or rolled back without code changes.
 
@@ -328,6 +323,8 @@ Engineers have less work, less stress, less responsibility, and faster releases.
 ---
 layout: statement
 ---
+
+# Cache + Compute
 
 # 🤟<span style="font-size: 100px">😝</span><span style="display: inline-block; scale: -1 1;">🤟</span>
 

@@ -23,12 +23,9 @@ src: intro.md
 
 # Plain and simple:
 
-<v-clicks>
-
 Edge compute is the result of distributing serverless functions to multiple locations around the world to handle requests from as close to the user as possible.
 
-The result is programmable/dynamic/customizable responses with the least amount of latency (aka more speed).
-</v-clicks>
+The result is dynamic responses with the least amount of latency.
 
 ---
 layout: statement
@@ -57,37 +54,43 @@ layout: statement
 
 ---
 
-# Natural progression of dog hats
+# How to make dog hats
 
-1. Client wants a thing
-2. You make a thing
-3. You give them a thing
+1. Client asks for the thing
+2. You do work to make the thing
+3. You give them the thing
 
-<v-click>
+<v-clicks>
 
-Mediocre analogy / really good photos ¯\\\_(ツ)\_/¯
-</v-click>
+A mediocre analogy for delivering websites
+
+...but really good photos ¯\\\_(ツ)\_/¯
+</v-clicks>
+
+---
+layout: image
+image: /img/edge-compute/cute.jpg
+---
+
+<!-- <img src="/img/edge-compute/cute.jpg"> -->
 
 ---
 
-# Let's start with "Compute"
+# Background on "Compute"
 
 <v-clicks>
 <div>
 
 ## What:
 
-Compute = bleeps & bloops -> HTML
+Compute = bleeps & bloops -> HTML (or other stuff)
 </div>
 <div>
 
 ## Where: 
-- Traditional Servers
-- Client-Side JavaScript
-- Client-Side workers
+- Servers-Side
+- Client-Side
 - Static-Site-Generators
-- Cloud functions
-- Edge functions
 </div>
 </v-clicks>
 
@@ -95,9 +98,10 @@ Compute = bleeps & bloops -> HTML
 layout: statement
 ---
 
-# Traditional Servers
+# Server-Side
+(on-prem, VPS, cloud functions)
 
-Machine runs software you choose to execute code you write to return HTML.
+User request travels to a machine (own/rent) in a specific location which runs your code and return the HTML that's rendered on the page.
 
 <!-- <v-clicks>
 
@@ -123,9 +127,10 @@ layout: statement
 layout: statement
 --- 
 
-# Client-Side Rendering
+# Client-Side
+(JavaScript, service workers, WASM)
 
-JavaScript (or WebAssembly) running in the user's browser generates HTML.
+User downloads JavaScript that runs on **THEIR** machine to generate HTML.
 
 <!--
 
@@ -150,11 +155,10 @@ layout: statement
 layout: statement
 --- 
 
-# Static-Site-Generators (SSGs)
+# Static-Site-Generators
+(aka SSG, technically still SSR)
 
-Generate all pages ahead of time, into static folders and files.
-
-(Technically still SSR)
+Machine you control builds website ahead of time into static folders and files, allowing for immediate HTML response.
 
 <!--
 
@@ -178,45 +182,15 @@ layout: statement
 layout: statement
 --- 
 
-# Cloud Functions
-
-(aka "lambda", "serverless")
-
-Service providers route requests to the functions you provide.<br>
-<!-- (They manage machines and servers) -->
-
-<!--
-
-- Easy to provision
-- "Infinitely" scalable
-- Pay for use
-- Only manage code
-- follow conventions
-- "Stateless" 
-- Limited resources & languages
-- far from users
-
--->
-
----
-layout: statement
---- 
-
-# 🐶🎩🧶💉🤖<br>Dog-hat-knitting robots
-
-<img src="/img/edge-compute/football-dog.jpg" class="block m-auto" width="350" alt="cute dog wearing a knitted, New England Patriots hat">
-
----
-layout: statement
---- 
-
 # Ok, that's compute
 
+---
+layout: statement
 ---
 
 # What about "Edge"?
 
-<div class="grid grid-cols-2 gap-4 mt-24">
+<!-- <div class="grid grid-cols-2 gap-4 mt-24">
 <v-clicks>
 <div>
 
@@ -229,35 +203,16 @@ A network of globally distributed computers capable of handling user requests.
 By putting resources as close to users as possible, we can reduce latency, thereby improving performance and user experience.
 </div>
 </v-clicks>
-</div>
-
----
-
-# How many locations make it "edge"?
-
-<v-clicks>
-
-2 (You & your friend)
-
-~10 (Netlify/Deno)
-
-~100 (Fastly)
-
-~300 (Cloudflare)
-
-~4,000 (Akamai)
-
-~10,000 (IoT)
-
-</v-clicks>
+</div> -->
 
 ---
 layout: statement
 --- 
 
-# Content Delivery Network (CDN)
+# Content Delivery Network
+(CDN)
 
-Several globally distributed servers that deliver static assets closer to users
+Network of globally distributed computers that deliver **STATIC** assets closer to users, reducing latency and improving performance.
 
 <!--
 - Greatly reduce latency
@@ -281,14 +236,13 @@ layout: statement
 
 ---
 
-# Users experience performance in 3-D
+# Performance: Now in 3-D!
 
 <v-clicks>
 
-- **Distance** request/response must travel (latency)
-- **Download** size before code executes
-- **Device** hardware capabilities
-
+- **Distance**: How far does the payload have to travel?
+- **Device**: How fast can the hardware build the payload?
+- **Download**: How big is the payload is being sent?
 </v-clicks>
 
 <!-- <v-click>
@@ -301,44 +255,61 @@ layout: statement
 
 ---
 
-# The speed-of-light-problem
-
-Technology continues to improve, but the speed of light remains the same.
+# With that in mind, we should...
 
 <v-clicks>
 
-<div>
-  <p>Edge vs. Origin</p>
-  <img src="/img/edge-compute/edge-redirect.svg" class="block m-auto" width="600" alt="cute dog wearing a knitted, New England Patriots hat">
+- Move things closer to users (like a CDN)
+- Do work on servers (like cloud servers/functions)
+- Build smaller apps (pfft)
 
-  <p>Eventually, the biggest bottleneck is distance</p>
+</v-clicks>
+
+---
+
+# But we're often left picking 2 of 3:
+
+1. Fast Device
+2. Low Latency
+3. Dynamic Data
+
+<div class="grid grid-cols-3 gap-4 mt-12">
+<v-clicks>
+<div>
+
+## SSR
+😀 Device + Data
+
+😟 Latency
+</div>
+<div>
+
+## CSR + CDN
+😀 Latency + Data
+
+😟 Device
+</div>
+<div>
+
+## SSG + CDN
+😀 Device + Latency
+
+😟 Data
+</div>
+</v-clicks>
 </div>
 
-</v-clicks>
-
+---
+layout: statement
 ---
 
-# With everything in mind, we should...
-
-<v-clicks>
-
-- Do things closer to users (like a CDN)
-- Do more work on servers (like cloud servers/functions)
-- Send smaller assets (???)
-
-</v-clicks>
+# But what if...
 
 ---
 layout: statement
 ---
 
-# The logical next step is...
-
----
-layout: statement
----
-
-# Put dog-hat-knitting robots inside convenience stores <br> 🐶🎩🧶💉🤖+🏪
+# 🐶🎩🧶💉🤖+🏪<br>Dog-hat-knitting robots inside convenience stores 
 
 <img src="/img/edge-compute/mohawk-dog.jpg" class="block m-auto" width="450" alt="cute dog wearing a knitted, New England Patriots hat">
 
@@ -349,21 +320,22 @@ layout: statement
 <p>
 <v-clicks>
 <span>Programmable runtimes (like cloud functions)...</span>
-<span>that are globally distributed (like a CDN)...</span>
-<span>and live between a client and origin.</span>
+<span>that are globally distributed (within a CDN)...</span>
+<span>and can integrate with caches (like SSG).</span>
 </v-clicks>
 </p>
 <p>
 <v-clicks>
 <span>Dynamic server-side functionality...</span>
-<span>that executes as close to users as possible.</span>
+<span>that executes as close to users as possible...</span>
+<span>and <b>CAN</b> reduce repeat work.</span>
 </v-clicks>
 </p>
 
 <v-click>
 <div class="mt-12">
 
-### Plus:
+## Plus:
 
 - Reliable location information
 - Access to key-value stores 
@@ -378,8 +350,8 @@ Dynamic content with...
 
 <v-clicks>
 
-- Less latency (compared to servers/cloud functions)
-- Less to download (compared to client-side rendering)
+- Less latency (compared to SSR)
+- Less data usage (compared to CSR)
 - Less work on the client (better batt. & perf.)
 </v-clicks>
 
@@ -410,7 +382,7 @@ Dynamic content with...
 
 --- 
 
-<h1>The rough edges <span class="font-sans">( ͡° ͜ʖ ͡°)</span></h1>
+<h1>The rough edges 😏</h1>
 
 <v-clicks>
 
@@ -424,19 +396,21 @@ Dynamic content with...
 layout: statement
 ---
 
-# The thing no one likes to talk about...
+# The big thing no one likes to talk about...
 
 ---
 layout: statement
 ---
 
-# Distributed data
+<span class="text-8xl">🤮</span>
+
+# Accessing data from distributed compute
 
 ---
 layout: statement
 ---
 
-# Edge compute isn't<br>always better 
+# Edge compute isn't<br>always the right choice
 
 💻: client<br>
 🤵: origin server<br>
@@ -554,6 +528,8 @@ vs.
 
 <!-- </v-clicks> -->
 
+<br>
+
 ---
 
 # There are solutions
@@ -561,7 +537,7 @@ vs.
 <v-clicks>
 
 - Edge Key-Value stores
-- Replica databases
+- Read-replica DB instances
 - Distributed cache
 
 </v-clicks>
@@ -597,49 +573,106 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 layout: statement
 ---
 
-# So maybe not for full apps
-## But good at other things...
+# Maybe not full edge apps
+## But there's several **GREAT** use-cases...
 
 ---
 
-# Common use cases
+# Example use cases
 
-<v-clicks>
-
-- Modify request/response (server-side ads)
+- Modify request/response
 - Fast static search (auto-complete, store locator)
 - Geolocation (language, policies)
 - Redirect management ([blog post](https://austingil.com/optimizing-content-migrations-with-edge-compute/))
-- Token-based personalization (A/B testing, feature flags)
+- Token-based personalization
+- A/B testing & Feature flags
 - Stateless auth (JSON Web Tokens)
 - API proxy / orchestration
+- Upstream software patches
+- Dynamic content assembly from static/cached templates
 
+---
+layout: statement
+---
+
+# It gets sweeter
+
+---
+layout: statement
+---
+
+# C.R.E.A.M.
+
+<v-clicks>
+<span>Cache</span>
+&nbsp;<span>Rules!</span>
+&nbsp;<span>Everyone</span>
+&nbsp;<span>Attending</span>
+&nbsp;<span>My</span>
+<p>(talk is about to have their mind blown)</p>
 </v-clicks>
 
 ---
 layout: statement
 ---
 
-# The next phase of web development
+# Caching: Only Origin Server + Static Response
+
+<img src="/img/edge-compute/cache1.svg">
+
+---
+layout: statement
+---
+
+# Caching: Only Origin Server + Dynamic Response
+
+<img src="/img/edge-compute/cache2.svg">
+
+---
+layout: statement
+---
+
+# Caching: Origin Server + CDN
+
+<img src="/img/edge-compute/cache3.svg">
+
+---
+layout: statement
+---
+
+# Caching: Origin Server + CDN + Edge Compute
+
+<img src="/img/edge-compute/cache4.svg">
+
+---
+layout: statement
+---
 
 <img src="/img/edge-compute/white-balance.jpg" class="block m-auto" width="400" alt="cute dog wearing a knitted, New England Patriots hat">
 
-## Dog hats for everyone!!!
+# Look to the future
+
+Edge compute will continue to grow and become a major factor in the next phase of web development
 
 ---
 
-# Available in frameworks near you 
+# Already see adoption by these folks
+
+<div class="grid grid-cols-2">
 
 - [Astro](https://astro.build/)
 - [Remix](https://remix.run/)
 - [Next.js](https://nextjs.org/)
 - [Nuxt.js](https://nuxtjs.org/)
 - [11ty](https://www.11ty.dev/docs/plugins/edge/)
+<!--  -->
 - [Sveltekit](https://kit.svelte.dev/)
 - [Fresh](https://fresh.deno.dev/)
 - [SolidStart](https://start.solidjs.com/)
 - [Qwik City](https://qwik.builder.io/docs/qwikcity/)
 - and more
+
+</div>
 
 ---
 layout: statement
@@ -659,7 +692,7 @@ layout: statement
 
 <h4 class="absolute top-35 left-16">Isn't my app fast enough?</h4>
 
-<h4 class="absolute top-32 right-16">How much does 300 milliseconds matter?</h4>
+<h4 class="absolute top-32 right-16">How much does 100 milliseconds matter?</h4>
 
 <h4 class="absolute bottom-28 left-48">Is all the effort worth it?</h4>
 
@@ -669,7 +702,7 @@ layout: statement
 layout: statement
 ---
 
-# Does 300ms really matter?
+# Does 100ms really matter?
 
 ---
 
@@ -687,61 +720,44 @@ layout: statement
 Source: [Akamai's 2017 Online Retail Performance Report](https://www.akamai.com/newsroom/press-release/akamai-releases-spring-2017-state-of-online-retail-performance-report)
 
 ---
-
-# Visualization
-
-In 2008, Amazon found 100ms in load hurt sales by 1%<br>
-($513.98b annual revenue x 1% = >$5b)
-<v-clicks>
-
-They could hire **SIXTY THOUSAND** developers and still profit<br>
-(2023 average = $83k)
-
-More case studies of performance vs. UX/biz metrics at wpostats.com
-
-</v-clicks>
-
----
 layout: statement
 ---
 
 # Is it worth it?
 
-<v-click>
+---
 
-## It depends 💩
+# It depends 😘
+<v-clicks>
 
-(but when you need it, give [Akamai EdgeWorkers](https://www.akamai.com/products/serverless-computing-edgeworkers) a try)
+Building for distributed systems is hard.
 
-</v-click>
+Edge compute adds complexity.
+
+Small projects may not benefit from tradeoffs.
+
+The important thing is to understand distributed systems and architecture.
+
+Build applications for **today**, in such a way that can scale tomorrow.
+
+And if tomorrow you tip those scales, give [Akamai EdgeWorkers](https://www.akamai.com/products/serverless-computing-edgeworkers) a try.
+
+</v-clicks> 
 
 ---
 
 # Akamai EdgeWorkers
 
-- Most distributed network (>300k servers, >4k POPs)
-- More customizable lifecycle hooks
-  - After client request, before origin request, after origin response, before client response
-- Integrates with CDN's cached content
+- Largest distributed network (>300k servers, >4k POPs)
+- Fine-tuned lifecycle hooks
+  - On client request
+  - Before origin request
+  - On origin response
+  - Before client response
+- Integrates with CDN's cache
 - Protected by industry-leading security
 - Canary-deployment rollouts
 - No per-region/per-server limits (only per-request)
-
----
-
-# Key Takeaways
-
-<v-clicks>
-
-Distributed systems are hard.
-
-Edge compute adds complexity.
-
-Many projects don't need to be distributed.
-
-But understanding distributed systems allows you to build and launch your application today and scale it tomorrow.
-
-</v-clicks> 
 
 ---
 layout: image
