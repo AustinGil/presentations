@@ -411,7 +411,9 @@ Dynamic responses with...
 layout: statement
 ---
 
-# The big thing no one likes to talk about...
+<span class="text-8xl">😱</span>
+
+# The big, scary thing no one likes to talk about...
 
 ---
 layout: statement
@@ -561,36 +563,10 @@ layout: statement
 - Distributed cache
 
 ---
-
-# Where do we run compute?
-
-It's hard considering latency, bundle size, device capabilities, data location etc.
-
-<v-click>
-
-<h3 class="mt-10">Before</h3>
-
-Client-side JS -> Client-side service worker -> Cloud functions -> Traditional servers
-
-</v-click>
-<v-click>
-
-<h3 class="mt-12">After</h3>
-
-Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functions -> Traditional servers
-
-<!-- <div class="mt-12">Smart folks are exploring these issues:
-<br><br>
-<a href="https://astro.build/">Astro</a>, <a href="https://remix.run/">Remix</a>, <a href="https://nuxtjs.org/">Nuxt</a>, <a href="https://nextjs.org/">Next</a>, and more
--->
-
-</v-click>
-
----
 layout: statement
 ---
 
-# Maybe not full edge apps
+# Maybe no full fl(edge)d apps
 ## But there's several **GREAT** use-cases...
 
 ---
@@ -612,7 +588,7 @@ layout: statement
 layout: statement
 ---
 
-# It gets tastier
+# You know what would go really well on top of that?
 
 ---
 layout: statement
@@ -626,7 +602,7 @@ layout: statement
 &nbsp;<span>Everyone</span>
 &nbsp;<span>Attending</span>
 &nbsp;<span>My</span>
-<p>(talk should check their socks)</p>
+<p>(talk should hold onto your socks)</p>
 </v-clicks>
 
 ---
@@ -651,11 +627,46 @@ layout: statement
 layout: statement
 ---
 
+# This all raises a <br>difficult question
+
+---
+
+# Where should your application run?
+
+Remember to consider latency, size, devices, location, data etc.
+
+<v-click>
+
+<h3 class="mt-10">Before</h3>
+
+Client-side JS -> Client-side service worker -> Cloud functions -> Traditional servers
+
+</v-click>
+<v-click>
+
+<h3>Now</h3>
+
+Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functions -> Traditional servers
+
+<!-- <div class="mt-12">Smart folks are exploring these issues:
+<br><br>
+<a href="https://astro.build/">Astro</a>, <a href="https://remix.run/">Remix</a>, <a href="https://nuxtjs.org/">Nuxt</a>, <a href="https://nextjs.org/">Next</a>, and more
+-->
+
+</v-click>
+
+---
+layout: statement
+---
+
 <img src="/img/edge-compute/white-balance.jpg" class="block m-auto" width="400" alt="cute dog wearing a knitted, New England Patriots hat">
 
-# Looking to the future
+# Is Edge Compute the future?
 
-Edge compute will continue to grow and become a major factor in the next phase of web development
+<v-click>
+
+I believe it will continue to grow and become a major factor in the next phase of web development, but it needs to be easier.
+</v-click>
 
 ---
 
@@ -693,11 +704,11 @@ layout: statement
 
 <h1 class="font-sans">(ಥ﹏ಥ)</h1>
 
-<h4 class="absolute top-35 left-16">Isn't my app fast enough?</h4>
+<h4 class="absolute top-35 left-16">My app is already pretty fast.</h4>
 
-<h4 class="absolute top-32 right-16">How much does 100 milliseconds matter?</h4>
+<h4 class="absolute top-32 right-16">How much difference can it posssibly make?</h4>
 
-<h4 class="absolute bottom-28 left-48">Is all the effort worth it?</h4>
+<h4 class="absolute bottom-28 left-48">That sounds like a lot of work.</h4>
 
 <h4 class="absolute bottom-40 right-12">Do dogs even like wearing hats?</h4>
 
@@ -721,6 +732,22 @@ layout: statement
 - Performance impact's revenue, perception, loyalty, & engagement
 
 Source: [Akamai's 2017 Online Retail Performance Report](https://www.akamai.com/newsroom/press-release/akamai-releases-spring-2017-state-of-online-retail-performance-report)
+
+---
+layout: statement
+---
+
+# Amazon could hire **60,000** developers and STILL profit
+
+if they shaved off 100ms.
+
+<v-click>
+
+(Based on 1% of Amazon's revenue and average developer salary for 2023)
+
+(More legit case studies of performance vs. UX/biz metrics at wpostats.com)
+
+</v-click>
 
 ---
 layout: statement

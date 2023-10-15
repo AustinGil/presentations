@@ -1,21 +1,6 @@
 
 ---
 
-# Visualization
-
-In 2008, Amazon found 100ms in load hurt sales by 1%<br>
-($513.98b annual revenue x 1% = >$5b)
-<v-clicks>
-
-They could hire **SIXTY THOUSAND** developers and still profit<br>
-(2023 average = $83k)
-
-More case studies of performance vs. UX/biz metrics at wpostats.com
-
-</v-clicks>
-
----
-
 # The speed-of-light-problem
 
 Technology continues to get faster, but the speed of light remains the same.
