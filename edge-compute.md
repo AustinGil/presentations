@@ -83,14 +83,14 @@ image: /img/edge-compute/cute.jpg
 
 ## What:
 
-Compute = bleeps & bloops -> HTML (or other stuff)
+Compute = bleeps & bloops -> stuff (like HTML)
 </div>
 <div>
 
 ## Where: 
-- Servers-Side
-- Client-Side
-- Static-Site-Generators
+- Servers-Side (SSR)
+- Client-Side (CSR)
+- Static-Site-Generators (SSG)
 </div>
 </v-clicks>
 
@@ -99,9 +99,10 @@ layout: statement
 ---
 
 # Server-Side
-(on-prem, VPS, cloud functions)
 
 User request travels to a machine (own/rent) in a specific location which runs your code and return the HTML that's rendered on the page.
+
+(on-prem, VPS, cloud functions)
 
 <!-- <v-clicks>
 
@@ -128,9 +129,10 @@ layout: statement
 --- 
 
 # Client-Side
-(JavaScript, service workers, WASM)
 
-User downloads JavaScript that runs on **THEIR** machine to generate HTML.
+User downloads your code to run on **THEIR** machine to generate HTML.
+
+(JavaScript, service workers, WASM)
 
 <!--
 
@@ -156,9 +158,10 @@ layout: statement
 --- 
 
 # Static-Site-Generators
-(aka SSG, technically still SSR)
 
 Machine you control builds website ahead of time into static folders and files, allowing for immediate HTML response.
+
+(technically still SSR)
 
 <!--
 
@@ -183,6 +186,8 @@ layout: statement
 --- 
 
 # Ok, that's compute
+
+(mostly)
 
 ---
 layout: statement
@@ -209,8 +214,7 @@ By putting resources as close to users as possible, we can reduce latency, there
 layout: statement
 --- 
 
-# Content Delivery Network
-(CDN)
+# Content Delivery Network (CDN)
 
 Network of globally distributed computers that deliver **STATIC** assets closer to users, reducing latency and improving performance.
 
@@ -227,6 +231,16 @@ layout: statement
 # 🏪<br>Convenience stores
 
 <img src="/img/edge-compute/two-hat-dogs.jpg" class="block m-auto" width="350" alt="two cute dogs wearing a knitted hats">
+
+---
+layout: statement
+---
+
+# Edge isn't always CDNs
+
+Can be IoT, cell networks, ISPs, you and your friend's Raspberry Pis.
+
+But usually, for the web it's CDNs.
 
 ---
 layout: statement
@@ -267,9 +281,9 @@ layout: statement
 
 ---
 
-# But we're often left picking 2 of 3:
+# Unfortunately, you can only pick 2:
 
-1. Fast Device
+1. Powerful Processing
 2. Low Latency
 3. Dynamic Data
 
@@ -278,23 +292,23 @@ layout: statement
 <div>
 
 ## SSR
-😀 Device + Data
+😀 Powerful + Dynamic
 
 😟 Latency
 </div>
 <div>
 
 ## CSR + CDN
-😀 Latency + Data
+😀 Latency + Dynamic
 
-😟 Device
+😟 Powerful
 </div>
 <div>
 
 ## SSG + CDN
-😀 Device + Latency
+😀 Powerful + Latency
 
-😟 Data
+😟 Dynamic
 </div>
 </v-clicks>
 </div>
@@ -303,7 +317,7 @@ layout: statement
 layout: statement
 ---
 
-# But what if...
+# But what if you want all 3?
 
 ---
 layout: statement
@@ -321,32 +335,33 @@ layout: statement
 <v-clicks>
 <span>Programmable runtimes (like cloud functions)...</span>
 <span>that are globally distributed (within a CDN)...</span>
-<span>and can integrate with caches (like SSG).</span>
+<span>and can cache content (like SSG).</span>
 </v-clicks>
 </p>
 <p>
 <v-clicks>
 <span>Dynamic server-side functionality...</span>
 <span>that executes as close to users as possible...</span>
-<span>and <b>CAN</b> reduce repeat work.</span>
+<span>and may avoid repeat work.</span>
 </v-clicks>
 </p>
 
-<v-click>
-<div class="mt-12">
+---
 
-## Plus:
+# Also important to note
 
-- Reliable location information
-- Access to key-value stores 
-</div>
-</v-click>
+They sit <b>BETWEEN</b> a client and origin server and have access to the client request and the server response.
+
+Plus access to:
+
+- Location information
+- Key-value data storage 
 
 ---
 
 # For Users
 
-Dynamic content with...
+Dynamic responses with...
 
 <v-clicks>
 
@@ -404,7 +419,7 @@ layout: statement
 
 <span class="text-8xl">🤮</span>
 
-# Accessing data from distributed compute
+# Managing data from distributed compute
 
 ---
 layout: statement
@@ -531,27 +546,29 @@ vs.
 <br>
 
 ---
+layout: statement
+---
+
+# And that's only reads
+## Writes are even harder
+
+---
 
 # There are solutions
-
-<v-clicks>
 
 - Edge Key-Value stores
 - Read-replica DB instances
 - Distributed cache
 
-</v-clicks>
-
 ---
 
-# An addition, not a replacement
+# Where do we run compute?
 
-Where to run compute becomes a tough question<br>
-(latency, bundle size, device capabilities, data location etc).
+It's hard considering latency, bundle size, device capabilities, data location etc.
 
 <v-click>
 
-<h3 class="mt-12">Before</h3>
+<h3 class="mt-10">Before</h3>
 
 Client-side JS -> Client-side service worker -> Cloud functions -> Traditional servers
 
@@ -578,7 +595,7 @@ layout: statement
 
 ---
 
-# Example use cases
+# Great use cases
 
 - Modify request/response
 - Fast static search (auto-complete, store locator)
@@ -595,7 +612,7 @@ layout: statement
 layout: statement
 ---
 
-# It gets sweeter
+# It gets tastier
 
 ---
 layout: statement
@@ -609,40 +626,26 @@ layout: statement
 &nbsp;<span>Everyone</span>
 &nbsp;<span>Attending</span>
 &nbsp;<span>My</span>
-<p>(talk is about to have their mind blown)</p>
+<p>(talk should check their socks)</p>
 </v-clicks>
 
 ---
-layout: statement
----
 
-# Caching: Only Origin Server + Static Response
+# Caching: Only Origin Server
 
-<img src="/img/edge-compute/cache1.svg">
+<img src="/img/edge-compute/cache-origin.svg">
 
 ---
-layout: statement
----
 
-# Caching: Only Origin Server + Dynamic Response
+# Caching: Origin + CDN
 
-<img src="/img/edge-compute/cache2.svg">
+<img src="/img/edge-compute/cache-cdn.svg">
 
 ---
-layout: statement
----
 
-# Caching: Origin Server + CDN
+# Caching: Origin + CDN + Edge Compute
 
-<img src="/img/edge-compute/cache3.svg">
-
----
-layout: statement
----
-
-# Caching: Origin Server + CDN + Edge Compute
-
-<img src="/img/edge-compute/cache4.svg">
+<img src="/img/edge-compute/cache-edge.svg">
 
 ---
 layout: statement
@@ -650,7 +653,7 @@ layout: statement
 
 <img src="/img/edge-compute/white-balance.jpg" class="block m-auto" width="400" alt="cute dog wearing a knitted, New England Patriots hat">
 
-# Look to the future
+# Looking to the future
 
 Edge compute will continue to grow and become a major factor in the next phase of web development
 
