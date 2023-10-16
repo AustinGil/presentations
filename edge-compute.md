@@ -256,7 +256,7 @@ layout: statement
 
 - **Distance**: How far does the payload have to travel?
 - **Device**: How fast can the hardware build the payload?
-- **Download**: How big is the payload is being sent?
+- **Download**: How big is the payload that's being sent?
 </v-clicks>
 
 <!-- <v-click>
@@ -352,10 +352,13 @@ layout: statement
 
 They sit <b>BETWEEN</b> a client and origin server and have access to the client request and the server response.
 
+<v-click>
+
 Plus access to:
 
 - Location information
 - Key-value data storage 
+</v-click>
 
 ---
 
@@ -386,7 +389,7 @@ Dynamic responses with...
 
 --- 
 
-# For Website owners
+# For Website Owners
 
 <v-clicks>
 
@@ -607,19 +610,19 @@ layout: statement
 
 ---
 
-# Caching: Only Origin Server
+# Caching: Origin Server Only
 
 <img src="/img/edge-compute/cache-origin.svg">
 
 ---
 
-# Caching: Origin + CDN
+# Caching: Origin & CDN
 
 <img src="/img/edge-compute/cache-cdn.svg">
 
 ---
 
-# Caching: Origin + CDN + Edge Compute
+# Caching: Origin, CDN, Edge Compute
 
 <img src="/img/edge-compute/cache-edge.svg">
 
@@ -656,6 +659,21 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 </v-click>
 
 ---
+layout: image
+image: /img/edge-compute/ecommerce.jpeg
+---
+
+<!-- # Ecommerce Example
+
+<img src="/img/edge-compute/ecommerce.jpeg" alt="Screenshot of https://shop.rosecityrollers.com/product/rainbow-tie-dye-tee-w-rose-design/593"> -->
+
+<!-- Before any requests: code changes push product templates to origin server and data changes push product details to edge KV store.
+
+On initial user request: Edge compute pulls template from origin server and caches it, then inserts product data from KV. Price and quantity are injected on the client.
+
+After initial request: Same as above excpet Edge worker pulls template from cache -->
+
+---
 layout: statement
 ---
 
@@ -665,7 +683,7 @@ layout: statement
 
 <v-click>
 
-I believe it will continue to grow and become a major factor in the next phase of web development, but it needs to be easier.
+I think it will be, but it needs to be easier.
 </v-click>
 
 ---
@@ -716,7 +734,7 @@ layout: statement
 layout: statement
 ---
 
-# Does 100ms really matter?
+# Does 300ms really matter?
 
 ---
 
@@ -737,9 +755,9 @@ Source: [Akamai's 2017 Online Retail Performance Report](https://www.akamai.com/
 layout: statement
 ---
 
-# Amazon could hire **60,000** developers and STILL profit
+# If Amazon hired **60,000** to shave 100ms
 
-if they shaved off 100ms.
+It would cost $5b and they would **STILL** make a profit
 
 <v-click>
 
@@ -764,7 +782,7 @@ Building for distributed systems is hard.
 
 Edge compute adds complexity.
 
-Small projects may not benefit from tradeoffs.
+Small projects may not get as good of an ROI.
 
 The important thing is to understand distributed systems and architecture.
 
@@ -845,26 +863,30 @@ image: /img/edge-compute/pretty-chihuahua.jpg
 style: color:black
 ---
 
-<v-click>
-
 <div class="grid grid-cols-2">
+<v-click>
 <div>
 
 # How'd I do?
 <p class="text-4xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
 </div>
+</v-click>
+<v-click>
 <div>
 
 # $100 Cloud Credit
 <p class="text-4xl"><a href="https://linode.com/austingil">linode.com/austingil</a></p>
 </div>
+</v-click>
 </div>
 <br>
+<v-click>
 
 ## Let's talk: 
 Edge compute, web development, <br>career, chiweenies, whatever :D
-
+</v-click>
 <!-- <span class="font-mono">ヽ(⌐■_■)ノ♪♬</span> -->
+<v-click>
 
 ## Let's connect:
 
