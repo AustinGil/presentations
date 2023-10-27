@@ -414,7 +414,6 @@ layout: statement
 
 ---
 
-
 - Type checking != TypeScript
 <v-clicks>
 

@@ -1,23 +1,31 @@
 ---
-src: intro.md
----
-
----
 layout: statement
 ---
 
 # JSDocs
 It's like TypeScript for the rest of us
 
+Requirements:
+
+Node.js + NPM
+VS Code
+
 ---
+src: intro.md
+---
+
+---
+
+<div class="grid grid-cols-2 gap-8">
+<div>
 
 # JavaScript is cool
 
 - Runs everywhere
 - Minimal tooling
 - Huge community
-
----
+</div>
+<div v-click>
 
 # ...except when it isn't
 
@@ -25,6 +33,8 @@ It's like TypeScript for the rest of us
 - Difficult refactors
 - Type mismatches
 - Code changes (internal/external)
+</div>
+</div>
 
 ---
 layout: statement
@@ -34,6 +44,9 @@ layout: statement
 
 ---
 
+<div class="grid grid-cols-2 gap-8">
+<div>
+
 # TypeScript is cool
 
 - Typos & errors (red squigglies)
@@ -42,8 +55,8 @@ layout: statement
 - CI/CD quality checks
 - Maintenance
 - Automated Documentation
-
----
+</div>
+<div v-click>
 
 # ...except when it isn't
 
@@ -51,6 +64,15 @@ layout: statement
 - Learning curve
 - Complexity
 - Doesn’t work everywhere
+- Source map woes
+</div>
+</div>
+
+---
+layout: statement
+---
+
+# Let's write some JS
 
 ---
 layout: statement
@@ -62,14 +84,10 @@ Code editor with Intellisense built in (via TypeScript)
 (https://code.visualstudio.com/)
 
 ---
-layout: statement
----
 
-# Let's write some JS
+# Type checking a file
 
----
-
-# Enable TypeChecking in a file
+`npm init -y`
 
 ```js
 // @ts-check
@@ -77,7 +95,15 @@ layout: statement
 
 ---
 
-# Enable TypeChecking in a project
+# Type checking your project
+
+```json
+"javascript.implicitProjectConfig.checkJs": true
+```
+
+---
+
+# Type checking some team's project
 
 ```json
 // tsconfig.json
@@ -103,7 +129,7 @@ layout: statement
 
 ---
 
-# Integrating TypeScript into CI/CD
+# Type checking whole team's project
 
 `npm install --save-dev typescript`
 
@@ -128,6 +154,30 @@ layout: statement
 }
 ```
 
+</div>
+
+---
+
+# Integrating CI/CD
+<div class="text-18px">
+
+```yml
+# ./.github/workflows/ci.yml
+name: Type Check
+on:
+  push:
+    branches: [ '**' ]
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install
+        run: npm ci
+      - name: TS
+        run: npm run ts
+```
 </div>
 
 ---
@@ -159,87 +209,65 @@ layout: statement
 
 ---
 
-JSDocs benefits
+# Why I love
 
-Simpler to add comments and examples to type definitions
-Old history means rich ecosystem
-
----
-
-# Why I love JSDocs > TS
-
-As a developer, I can copy/paste parts of my code in the browser/Node
-As a writer, people can more easily use my code in their projects
-As a teacher, students have a simpler setup and a bit less to learn
-As an OS maintainer, people can more easily make codesandbox reproductions
-As a reviewer, I prefer NOT mixing code and types (highly subjective)
-As a team lead, I want strong types without the learning overhead for new devs
+- As a developer - copy/paste my code anywhere
+- As a writer - people can easily use my code
+- As a teacher - simpler setup and less to learn
+- As an OS maintainer - quicker sandbox reproductions
+- As a team lead - strong types without the learning overhead for new devs
+- As a debugger - fewer issues with source maps
+- As a reviewer - no mixing code and types (subjective)
 
 ---
 
-# What I don't love about JSDocs
+# What I don't love
 
-It's verbose. `as const` is flat-out gross 🤮
+Type Assertions in TS: 🙂
 
-```js
-/**
- * @param {string}  p1 - A string param.
- * @param {string=} p2 - An optional param (Closure syntax)
- * @param {string} [p3] - Another optional param (JSDoc syntax).
- * @param {string} [p4="test"] - An optional param with a default value
- * @return {string} This is the result
- */
-function stringsStringStrings(p1, p2, p3, p4="test") {
-    // TODO
-}
-```
-And here's the equivalent TypeScript syntax enabled by this proposal.
-```js
-function stringsStringStrings(p1: string, p2?: string, p3?: string, p4 = "test"): string {
-    // TODO
-}
+```ts
+const canvas1 = 
+  document.querySelector("canvas") as HTMLCanvasElement;
+const canvas2 =
+  <HTMLCanvasElement>document.querySelector("canvas");
 ```
 
----
+<v-click>
 
-# Arguments against TS
+Type Assertions in JSDocs: 🤮
 
-It's harder to set up.
-- Not really
-- `ts-node` is fine
-- Deno is fine
-
----
-
-It's not one or the other
-
-JSDocs is only good BECAUSE TypeScript exists
-
-It's just a different syntax for authoring
-
-We still use `.d.ts` files and the CLI
+```ts
+const canvas1 = /** @type {HTMLCanvasElement} */ (
+  document.querySelector("canvas")
+);
+```
+</v-click>
 
 ---
 
-Commments
+# Closing
 
-"Like to keep the source I author the same as the source at runtime because debugging is way faster when it isn't a murder mystery." - @brianleroux https://twitter.com/brianleroux/status/1684571157188706304
+- Type checking != TypeScript
+<v-clicks>
 
-"verbose comment - terse code" - @myfonj https://twitter.com/myfonj/status/1501956653981175810
+- It's not one or the other
+- JSDocs is good BECAUSE TypeScript exists
+- We still use `.d.ts` files and the CLI
+- It's mostly just syntactical difference in authoring
+- For me, verbose comments + terse code is better than verbose code
+- TS is an important testing ground for JS proposals & paves cow paths
 
----
-
-TypeScript is still a good thing
-
-I still want the CLI for checking my code
-
-It's a great testing ground for JS proposals
-
-It paves the cowpaths
+</v-clicks>
 
 ---
 
-https://tc39.es/proposal-type-annotations/
+# Community Support for JSDocs
+
+"My position is, types are fantastic, TypeScript is a bit of a pain … as soon as you use a .ts file, then you have to have the tooling to support that … there’s all of these points of friction when you use a non-standard language like TypeScript that I have come to believe makes it not worth it." - [Rich Harris](https://www.youtube.com/watch?v=MJHO6FSioPI)
+
+"Like to keep the source I author the same as the source at runtime because debugging is way faster when it isn't a murder mystery." - [@brianleroux](https://twitter.com/brianleroux/status/1684571157188706304)
+
+"verbose comment - terse code" - [@myfonj](https://twitter.com/myfonj/status/1501956653981175810)
 
 ---
 
