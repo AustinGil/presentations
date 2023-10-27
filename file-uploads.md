@@ -6,154 +6,262 @@ layout: statement
 
 ---
 
-# Start With Communication: HTTP
+# Background: HTTP
 
 The Language of the Web
 
-The vast majority of website communicate over HTTP (Hypertext Transfer Protocol)
+All website communicate over HTTP (Hypertext Transfer Protocol)
 
-HTTP functions as a request–response protocol in the client–server model. A web browser, for example, may be the client whereas a process, named web server, running on a computer hosting one or more websites may be the server. 
+HTTP functions as a request–response protocol in the client–server model.
+
+<div class="grid grid-cols-2">
+<div>
+
+Client:
+Browser
+</div>
+<div>
+
+Server:
+Node.js
+</div> 
+</div> 
 
 ---
 
-HTTP version type
-a URL
-an HTTP method
-HTTP request headers
-Optional HTTP body.
+# Make an HTTP Request
 
-```http
+Required: Method (`GET`, `POST`, `PUT`, etc), Path, HTTP version
+Optional: Headers, Body
+
+```http {none|1|2-5|7}
 GET / HTTP/1.1
-Host: www.example.com
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
-Accept-Encoding: gzip, deflate, br
+Host: austingil.com
+Accept: */*
+Accept-Encoding: gzip
 Connection: keep-alive
-```
 
-```http
-HTTP/1.1 200 OK
-Content-Type: text/html; charset=UTF-8
-Content-Length: 155
-ETag: "3f80f-1b6-3e1cb03b"
-Connection: close
-
-<html>
-  <head>
-    <title>An Example Page</title>
-  </head>
-  <body>
-    <p>Hello World, this is a very simple HTML document.</p>
-  </body>
-</html>
+Say hi to your dog for me
 ```
 
 ---
 
-```http
+# Sending Data With HTTP
+
+Must include a `POST` method and the body.
+
+Should also include the `Conten-Type`, and the `Content-Length`.
+
+```http {none|1|6}
 POST / HTTP/1.1
-[[ Less interesting headers ... ]]
-Content-Type: multipart/form-data; boundary=---------------------------735323031399963166993862150
-Content-Length: 834
+Host: austingil.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+
+field1=value1&field2=value2
+```
+
+---
+layout: statement
+---
+
+# You Don't Need To Know That
+
+---
+
+# Browsers are HTTP clients
+
+Make HTTP requests on our behalf.
+
+Convert HTTP responses into websites.
+
+Provide tools to send files via HTML or JavaScript.
+
+---
+layout: statement
+---
+
+# Upload Files with HTML
+
+---
+
+# Steps
+
+1. Construct an HTTP request
+2. Set method to `POST`
+2. Get access to files
+3. Attach file in request body
+
+---
+
+# Construct an HTTP request
+
+```html
+<form>
+  <button>Upload</button>
+</form>
+```
+
+---
+
+# Send Data As Request Body
+
+```html {1}
+<form method="post">
+  <button>Upload</button>
+</form>
+```
+
+---
+
+# Access Files
+
+```html {3}
+<form method="post">
+  File:
+  <input type="file" />
+  <button>Upload</button>
+</form>
+```
+
+---
+
+# Make it accessible
+
+```html {2,3}
+<form method="post">
+  <label for="file">File:</label>
+  <input type="file" id="file" />
+  <button>Upload</button>
+</form>
+```
+
+---
+
+# Include File Contents
+
+```html {1,3}
+<form method="post" enctype="multipart/form-data">
+  <label for="file">File:</label>
+  <input type="file" id="file" name="file" />
+  <button>Upload</button>
+</form>
+```
+
+---
+
+# Behold The HTML File Upload Form
+
+```html
+<form method="post" enctype="multipart/form-data">
+  <label for="file">File:</label>
+  <input type="file" id="file" name="file" />
+  <button>Upload</button>
+</form>
+```
+
+---
+
+# Translated To HTTP
+
+```http {all|2-3|6,11|7-8|10}
+POST / HTTP/1.1
+Content-Type: multipart/form-data;boundary=
+  ---------------------------735323031399963166993862150
+Content-Length: 17
 
 -----------------------------735323031399963166993862150
-Content-Disposition: form-data; name="text1"
-
-text default
------------------------------735323031399963166993862150
-Content-Disposition: form-data; name="text2"
-
-aωb
------------------------------735323031399963166993862150
-Content-Disposition: form-data; name="file1"; filename="a.txt"
+Content-Disposition: form-data; name="file"; filename="nugget.txt"
 Content-Type: text/plain
 
-Content of a.txt.
-
------------------------------735323031399963166993862150
-Content-Disposition: form-data; name="file2"; filename="a.html"
-Content-Type: text/html
-
-<!DOCTYPE html><title>Content of a.html.</title>
-
------------------------------735323031399963166993862150
-Content-Disposition: form-data; name="file3"; filename="binary"
-Content-Type: application/octet-stream
-
-aωb
+Who's a good boy?
 -----------------------------735323031399963166993862150--
 ```
 
 ---
 
-# You Don't Need to know HTTP
+# We're Uploading Files
 
-On your computer is an application called a browser.
+- Fast
+- Secure (for users)
+- Accessible
+<!--  -->
+- Browser reloads every time
 
-It makes HTTP requests on your behalf, and renders HTML into nice pictures and text and cat memes and flamewars.
+---
+layout: statement
+---
+
+# Improve UX with JavaScript
 
 ---
 
-How to Upload Files with HTML
-- Access Files
- - `<input type="file" />`
+# Requirements
+
+- Still need access to the file system
+- Still need an HTTP request (`fetch` or `XMLHttpRequest`)
+- Still need a POST method
+- Still need to put the file in the body
+
+---
+
+# This Works
+
+<div class="mb-8">
 ```html
-<form>
-  <label for="file">File</label>
-  <input id="file" type="file" />
-  <button>Upload</button>
+<input type="file" onchange="handleFileChange">
+```
+</div>
+
+```js
+function handleFileChange(event) {
+  fetch('/some-url', {
+    method: 'post',
+    body: event.target.files[0],
+  });
+}
+```
+
+---
+layout: statement
+---
+
+# Don't do that
+
+---
+layout: statement
+---
+
+# Continue using `<form>`
+
+---
+
+```html {1,4,5,7}
+<form
+  method="post"
+  enctype="multipart/form-data"
+  onsumit="handleSubmit"
+>
+  <!-- content -->
 </form>
 ```
 
-- Include a Request Body
-  - method="post"
-- Set the Content-Type
-  - `application/x-www-form-urlencoded`
-  - `multipart/form-data`
-  - enctype="multipart/form-data"
-
-How to Upload Files with JavaScript
-- Still need to do the same steps
-  - Access to the file system using a file type input.
-  - Construct an HTTP request using the Fetch (or XMLHttpRequest) API.
-  - Set the request method to POST.
-  - Include the file in the request body.
-  - Set the HTTP Content-Type header to multipart/form-data.
-- Still good to use forms
-  - Progressive enhancement
-  - `FormData`
-- event handler
-  - prevent default
-  - Fetch API
-- Request body
-
 ```js
-/** @param {SubmitEvent} event */
-function handleSubmit(event) {
-  const url = new URL(form.action);
-  const formData = new FormData(form);
-
-  /** @type {Parameters<fetch>[1]} */
-  const fetchOptions = {
-    method: form.method,
-    body: formData,
-  };
-
-  event.preventDefault();
-
-  return fetch(url, fetchOptions);
+async function handleSubmit(event) {
+  const request = submitFormWithJs(event.currentTarget)
+  event.preventDefault()
+  const response = await request
 }
 ```
-- Make it reusable
-```js
-/** @param {Event} event */
-function handleSubmit(event) {
-  /** @type {HTMLFormElement} */
-  const form = event.currentTarget;
+
+---
+
+```js {all|2|3|4|6-8|10-15|12|14|16-18|20}
+function submitFormWithJs(form) {
   const url = new URL(form.action);
   const formData = new FormData(form);
   const searchParams = new URLSearchParams(formData);
 
-  /** @type {Parameters<fetch>[1]} */
   const fetchOptions = {
     method: form.method,
   };
@@ -168,69 +276,115 @@ function handleSubmit(event) {
     url.search = searchParams;
   }
 
-  event.preventDefault();
-
   return fetch(url, fetchOptions);
 }
 ```
 
-Handling File Uploads on the Backend in Node.js
-- Dealing with multipart/form-data in Node.js
-  - “chunks”
-  - “stream“
+---
+
+# Why?
+
+<v-clicks>
+
+- Works on slow connections
+- Works if JS fails
+- Maintains existing browser features
+- Maintains accessibility
+- Makes your live easier
+- Allows for declarative HTML logic
+- Allows for reusable logic
+</v-clicks>
+
+---
+
+# Next problem
+
+What if we're not the ones sending files?
+
+---
+layout: statement
+---
+
+# Receive Files in Node.js
+
+---
+
+# First, some vocab
+
+- chunks:
+- streams:
+- buffers: A buffer is a storage in physical memory used to temporarily store data while it is being transferred from one place to another. - MDN
+
+---
+
+# Parsing data in Node
+
 ```js
-  /**
- * @param {import('http').IncomingMessage} req
- */
-function doSomethingWithNodeRequest(req) {
-  req.on("data", (data) => {
+function processNodeRequest(request) {
+  request.on("data", (data) => {
     console.log(data);
   }
 }
 ```
-  - “buffers”:
-  <img src="/img/file-uploads/buffers.png">
-  > A buffer is a storage in physical memory used to temporarily store data while it is being transferred from one place to another.
-  MDN
+<img src="/img/file-uploads/buffers.png">
 
-```js
-/**
- * @param {import('http').IncomingMessage} req
- */
-function doSomethingWithNodeRequest(req) {
+---
+
+```js {all|3|4-6|7-10}
+function processNodeRequest(request) {
   return new Promise((resolve, reject) => {
-    /** @type {any[]} */
     const chunks = [];
-    req.on('data', (data) => {
+    request.on('data', (data) => {
       chunks.push(data);
     });
-    req.on('end', () => {
+    request.on('end', () => {
       const payload = Buffer.concat(chunks).toString()
       resolve(payload);
     });
-    req.on('error', reject);
+    request.on('error', reject);
   });
 }
 ```
-<img src="/img/file-uploads/file-contents.png">
 
-If I upload a more basic example, like a .txt file with some plain text in it, the body might look like this:
+---
+
+# Wanna see a cute pic of Nugget?
+
+<img src="/img/file-uploads/file-contents.png" v-click>
+
+---
+
+# A Plain Text File
+
+```http {all|2-3,10}
+POST / HTTP/1.1
+Content-Type: multipart/form-data;boundary=
+  ---------------------------WebKitFormBoundary4Ay52hDeKB5x2vXP
+Content-Length: 19
 
 Content-Disposition: form-data; name="file"; filename="dear-nugget.txt"
 Content-Type: text/plain
 
-I love you!
+I love you, Nugget!
 ------WebKitFormBoundary4Ay52hDeKB5x2vXP--
-- Use a library to stream data onto disk: formidable
-```js
-/**
- * @param {import('http').IncomingMessage} req
- */
-function doSomethingWithNodeRequest(req) {
+```
+
+---
+
+# We've made a terrible mistake...
+
+- Whole file contents in memory?
+- How do we manage form boundaries?
+
+---
+
+# Use a library (formidable)
+
+```js {3-10}
+function processNodeRequest(request) {
   return new Promise((resolve, reject) => {
-    /** @see https://github.com/node-formidable/formidable/ */
     const form = formidable({ multiples: true })
-    form.parse(req, (error, fields, files) => {
+    form.parse(request, (error, fields, files) => {
       if (error) {
         reject(error);
         return;
@@ -241,60 +395,217 @@ function doSomethingWithNodeRequest(req) {
 }
 ```
 
-Stream File Uploads to S3 Object Storage and Reduce Costs
-- What is Object Storage
-  - It’s a single, central place to store and access all of your uploads.
-  - It’s designed to be highly available, easily scalable, and super cost-effective.
-- What is S3
-  - `npm install @aws-sdk/client-s3 @aws-sdk/lib-storage`
-- Modify formidable
+---
+
 ```js
-/** @param {import('formidable').File} file */
-function fileWriteStreamHandler(file) {
-  // TODO
+{
+  file: PersistentFile {
+    lastModifiedDate: 2023-03-21T22:57:42.332Z,
+    filepath: '/tmp/d53a9fd346fcc1122e6746600',
+    newFilename: 'd53a9fd346fcc1122e6746600',
+    originalFilename: 'dear-nugget.txt',
+    mimetype: 'text/plain',
+    hashAlgorithm: false,
+    size: 19,
+    hash: null,
+  }
 }
+```
+
+---
+
+# Lessons
+
+- Don't store files in memory, use streams
+- Don't reinvent the wheel
+- Abstractions are good
+- But keep access to underlying runtime
+
+---
+layout: statement
+---
+
+# Reduce Costs with Object Storage
+
+---
+
+# What is Object Storage
+
+Object Storage is a single, central place to store and access all of your uploads.
+
+It's designed to be highly available, easily scalable, and super cost-effective.
+
+Ideally should be S3 compatible.
+
+---
+
+# What is S3?
+
+S3 stands for "Simple Storage Service", and it’s an Object Storage product originally developed at AWS.
+
+Along with their product, AWS came up with a standard communication protocol for interacting with their Object Storage solution.
+
+`npm install @aws-sdk/client-s3 @aws-sdk/lib-storage`
+
+---
+
+# Make it work with formidable
+
+```js {all|3,6-8}
 const form = formidable({
   multiples: true,
   fileWriteStreamHandler: fileWriteStreamHandler,
 });
+
+function fileWriteStreamHandler(file) {
+  // TODO
+}
 ```
-- Caveats
-  - signed URLs
-  Here’s how the flow generally works:
 
-Frontend makes a request to the backend for a signed URL.
-Backend makes an authenticated request to the Object Storage provider for a signed URL with a given expiry.
-Object Storage provider provides a signed URL to the backend.
-Backend returns the signed URL to the frontend.
-Frontend uploads the file directly to Object Storage thanks to the signed URL.
-Optional: Frontend may make another request to the Backend if you need to update a database that the upload completed.
-This flow requires a little more choreography than Frontend -> Backend -> Object Storage, but it has some benefits.
+---
 
-It moves work off your servers, which can reduce load and improve performance.
-It moves the file upload bandwidth off your server. If you pay for ingress and have several large file uploads all the time, this could add up.
-It also comes with its own costs.
+# This gets a lil convoluted
 
-You have much less control over what users can upload. This might include malware.
-If you need to perform functions on the files like optimizing, you can’t do that with signed URLs.
-The complex flow makes it much harder to build an upload flow with progressive enhancement in mind.
+- formidable needs a writable stream to send chunks to.
+- S3 upload body needs to be a readable stream.
+- So we use a passthrough stream.
+- We need to store the file's location in the metadata.
+- We need to track all upload requests in case of multiples.
 
+---
 
-CDNs: Speed Up Performance by Reducing Latency
-- What is a CDN?
-<img src="/img/file-uploads/webpagetest1.png">
-<img src="/img/file-uploads/webpagetest2.png">
+```js {all|4|5-14|12|15-17|1,18}
+const s3Uploads = [];
+
+function fileWriteStreamHandler(file) {
+  const body = new stream.PassThrough();
+  const upload = new Upload({
+    client: s3Client,
+    params: {
+      Bucket: 'austins-bucket',
+      Key: `files/${file.newFilename}`,
+      ContentType: file.mimetype,
+      ACL: 'public-read',
+      Body: body,
+    },
+  });
+  const uploadRequest = upload.done().then((response) => {
+    file.location = response.Location;
+  });
+  s3Uploads.push(uploadRequest);
+  return body;
+}
+```
+
+---
+
+```js {8,11}
+file: {
+  lastModifiedDate: null,
+  filepath: '/tmp/93374f13c6cab7a01f7cb5100',
+  newFilename: '93374f13c6cab7a01f7cb5100',
+  originalFilename: 'nugget.jpg',
+  mimetype: 'image/jpeg',
+  hashAlgorithm: false,
+  createFileWriteStream: [Function: fileWriteStreamHandler],
+  size: 82298,
+  hash: null,
+  location: 'https://austins-bucket.us-southeast-1.linodeobjects.com/files/nugget.jpg',
+}
+```
+
+---
+
+# The MAJOR Caveat
+
+You pay twice for the bandwidth.
+
+Once on the way in (to your server).
+
+Once on the way out (to S3).
+
+---
+
+# Alternative Solution: Signed URLs
+
+- Frontend request asks for a signed URL.
+- Backend gets it from Object Storage provider.
+- Backend gives signed URL to the frontend.
+- Frontend uploads directly to provider.
+
+<div class="mt-8 grid grid-cols-2">
+<div>
+
+## Pros
+- Moves work off your servers.
+- Moves bandwidth off your server.
+- Simpler architecture.
+</div>
+<div>
+
+## Cons
+- Harder to coordinate database.
+- Less control (malware protection, optimized images).
+- No progressive enhancement.
+</div>
+</div>
+
+---
+
+# Review
+
+Object Storage can be 10 cheaper than server upgrades
+
+You can use either upload streams or signed URLs
+
+But they still get saved in one region, which is slow
+
+---
+layout: statement
+---
+
+# Speed Up Delivery
+
+---
+
+# Content Delivery Networks (CDNs)
+
+---
+
+<img src="/img/file-uploads/webpagetest1.png" width="600" class="block m-auto">
+
+---
+
+<img src="/img/file-uploads/webpagetest2.png" width="600" class="block m-auto">
+
+---
+
+# CDNs are nothing new but...
 
 - The compounding returns of CDNs
 - Where to host your CDN domain? subpath vs subdomain cookies, etc
 
+---
+layout: statement
+---
 
-File Upload Security and Malware Protection
--  OWASP.org. Conveniently, they have a File Upload Cheat Sheet,
-  - Extension Validation
-  - Filename Sanitization
-  - Upload and Download Limits
-  - File Storage Location
-  - Content-Type Validation
-  - File Content Validation
-  - Malware Scanning Architecture
-  - Block Malware at the Edge
+# Security and <br>Malware Protection
+
+---
+
+OWASP.org. Conveniently, they have a File Upload Cheat Sheet,
+
+- Extension Validation
+- Filename Sanitization
+- Upload and Download Limits
+- File Storage Location
+- Content-Type Validation
+- File Content Validation
+- Malware Scanning Architecture
+- Block Malware at the Edge
+
+---
+
+# Blog & Video Series
+
+https://austingil.com/uploading-files-with-html/
