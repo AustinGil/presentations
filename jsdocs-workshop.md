@@ -87,8 +87,6 @@ Code editor with Intellisense built in (via TypeScript)
 
 # Type checking a file
 
-`npm init -y`
-
 ```js
 // @ts-check
 ```
@@ -131,25 +129,27 @@ Code editor with Intellisense built in (via TypeScript)
 
 # Type checking whole team's project
 
+`npm init -y`
+
 `npm install --save-dev typescript`
 
 <div class="grid grid-cols-2 gap-2">
-
-```json
-// tsconfig.json
-{
-  "compilerOptions": {
-    "checkJs": true,
-    "noEmit": true,
-  }
-}
-```
 
 ```json
 // package.json
 {
   "scripts": {
     "ts": "tsc"
+  }
+}
+```
+
+```json {1,5}
+// tsconfig.json
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "noEmit": true,
   }
 }
 ```
@@ -187,21 +187,22 @@ jobs:
 <div class="grid grid-cols-2 gap-2">
 
 ```json
+// package.json
+{
+  "types": "types"
+}
+```
+
+```json {1,5-8}
 // tsconfig.json
 {
  "compilerOptions": {
   "checkJs": true,
+   ̶"̶n̶o̶E̶m̶i̶t̶"̶:̶ ̶t̶r̶u̶e̶,̶
   "declaration": true,
   "emitDeclarationOnly": true,
   "outDir": "./types",
  }
-}
-```
-
-```json
-// package.json
-{
-  "types": "types"
 }
 ```
 
