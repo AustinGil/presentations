@@ -15,13 +15,13 @@ HTTP functions as a request–response protocol in the client–server model.
 <div class="grid grid-cols-2">
 <div>
 
-Client:
+## Client:
 
 Browser
 </div>
 <div>
 
-Server:
+## Server:
 
 Node.js
 </div> 
@@ -35,7 +35,7 @@ Required: Method (`GET`, `POST`, `PUT`, etc), Path, HTTP version
 
 Optional: Headers, Body
 
-```http {none|1|2-5|7}
+```http {none|1|2-7}
 GET / HTTP/1.1
 Host: austingil.com
 Accept: */*
@@ -53,7 +53,7 @@ Must include a `POST` method and the body.
 
 Should also include the `Conten-Type`, and the `Content-Length`.
 
-```http {none|1|6}
+```http {none|1,6|3-4}
 POST / HTTP/1.1
 Host: austingil.com
 Content-Type: application/x-www-form-urlencoded
@@ -139,7 +139,7 @@ layout: statement
 
 ---
 
-# Include File Contents
+# Actually Send File Contents
 
 ```html {1,3}
 <form method="post" enctype="multipart/form-data">
@@ -186,7 +186,7 @@ Who's a good boy?
 <div class="mt-20 grid grid-cols-2">
 <div>
 
-## Great
+## Yes!
 - Fast
 - Secure (for users)
 - Accessible
@@ -215,7 +215,7 @@ layout: statement
 
 ---
 
-# This Works
+# Technically, this works
 
 <div class="mb-8">
 ```html
@@ -236,13 +236,13 @@ function handleFileChange(event) {
 layout: statement
 ---
 
-# Don't do that
+# ...But don't do that
 
 ---
 layout: statement
 ---
 
-# Continue using `<form>`
+# Keep using `<form>`
 
 ---
 
@@ -266,12 +266,13 @@ async function handleSubmit(event) {
 
 ---
 
-```js {all|2|3|4|6-8|10|11,12|14|16-18|20}
+<div class="text-16px">
+
+```js {all|2|3|4|5-7|9|10,11|13|15-17|18}
 function submitFormWithJs(form) {
   const url = new URL(form.action);
   const formData = new FormData(form);
   const searchParams = new URLSearchParams(formData);
-
   const fetchOptions = {
     method: form.method,
   };
@@ -285,10 +286,10 @@ function submitFormWithJs(form) {
   } else {
     url.search = searchParams;
   }
-
   return fetch(url, fetchOptions);
 }
 ```
+</div>
 
 ---
 
@@ -312,7 +313,7 @@ function submitFormWithJs(form) {
 <div class="mt-20 grid grid-cols-2">
 <div>
 
-## Great
+## Yes!
 - User doesn't wait for page refresh
 - Progressive enhancement
 </div>
@@ -457,7 +458,7 @@ function processNodeRequest(request) {
 <div class="mt-20 grid grid-cols-2">
 <div>
 
-## Great
+## Yes!
 - Access to file metadata
 - Using streams instead of memory
 - Not reinventing the wheel
@@ -511,84 +512,6 @@ Libraries: `@aws-sdk/client-s3 @aws-sdk/lib-storage`
 
 ---
 
-# Streaming through formidable
-
-```js {all|3,6-8}
-const form = formidable({
-  multiples: true,
-  fileWriteStreamHandler: fileWriteStreamHandler,
-});
-
-function fileWriteStreamHandler(file) {
-  // TODO
-}
-```
-
----
-
-# Getting into the weeds
-
-<v-clicks>
-
-- formidable needs a writable stream to send chunks to.
-- S3 upload body needs to be a readable stream.
-- So we use a passthrough stream.
-- We need to store the file's location somewhere.
-- We need to track pending upload requests.
-</v-clicks>
-
----
-
-```js {all|4|5-14|4,12|15-17|1,18|4,12,19}
-const s3Uploads = [];
-
-function fileWriteStreamHandler(file) {
-  const fileStream = new stream.PassThrough();
-  const upload = new Upload({
-    client: s3Client,
-    params: {
-      Bucket: 'austins-bucket',
-      Key: `files/${file.newFilename}`,
-      ContentType: file.mimetype,
-      ACL: 'public-read',
-      Body: fileStream,
-    },
-  });
-  const uploadRequest = upload.done().then((response) => {
-    file.location = response.Location;
-  });
-  s3Uploads.push(uploadRequest);
-  return fileStream;
-}
-```
-
----
-
-```js {8,11}
-file: {
-  lastModifiedDate: null,
-  filepath: '/tmp/93374f13c6cab7a01f7cb5100',
-  newFilename: '93374f13c6cab7a01f7cb5100',
-  originalFilename: 'nugget.jpg',
-  mimetype: 'image/jpeg',
-  hashAlgorithm: false,
-  createFileWriteStream: [Function: fileWriteStreamHandler],
-  size: 82298,
-  hash: null,
-  location: 'https://austins-bucket.us-southeast-1.linodeobjects.com/files/nugget.jpg',
-}
-```
-
----
-layout: statement
----
-
-# The MAJOR Caveat
-
-Double the bandwidth: in to your server and out to Object Storage.
-
----
-
 # Signed URLs
 
 <v-clicks>
@@ -620,12 +543,92 @@ Double the bandwidth: in to your server and out to Object Storage.
 
 ---
 
+# Streaming through formidable
+
+```js {all|3,6-8}
+const form = formidable({
+  multiples: true,
+  fileWriteStreamHandler: fileWriteStreamHandler,
+});
+
+function fileWriteStreamHandler(file) {
+  // TODO
+}
+```
+
+---
+
+# Getting into the weeds
+
+<v-clicks>
+
+- formidable needs a writable stream to send chunks to.
+- S3 upload body needs to be a readable stream.
+- So we use a passthrough stream.
+- We need to store the file's location somewhere.
+- We need to track pending upload requests.
+</v-clicks>
+
+---
+
+<div class="text-17px">
+
+```js {all|4-13|3,11,18|14-16|1,17}
+const s3Uploads = [];
+function fileWriteStreamHandler(file) {
+  const fileStream = new stream.PassThrough();
+  const upload = new Upload({
+    client: s3Client,
+    params: {
+      Bucket: 'austins-bucket',
+      Key: `files/${file.newFilename}`,
+      ContentType: file.mimetype,
+      ACL: 'public-read',
+      Body: fileStream,
+    },
+  });
+  const uploadRequest = upload.done().then((response) => {
+    file.location = response.Location;
+  });
+  s3Uploads.push(uploadRequest);
+  return fileStream;
+}
+```
+</div>
+
+---
+
+```js {8,11}
+file: {
+  lastModifiedDate: null,
+  filepath: '/tmp/93374f13c6cab7a01f7cb5100',
+  newFilename: '93374f13c6cab7a01f7cb5100',
+  originalFilename: 'nugget.jpg',
+  mimetype: 'image/jpeg',
+  hashAlgorithm: false,
+  createFileWriteStream: [Function: fileWriteStreamHandler],
+  size: 82298,
+  hash: null,
+  location: 'https://austins-bucket.us-southeast-1.linodeobjects.com/files/nugget.jpg',
+}
+```
+
+---
+layout: statement
+---
+
+# The MAJOR Caveat
+
+Double the bandwidth: in to your server and out to Object Storage.
+
+---
+
 # We're Using Object Storage
 
 <div class="mt-20 grid grid-cols-2">
 <div>
 
-## Great
+## Yes!
 - Get more space for much less cost
 - All files stored in single place
 - Separation between server and files 
@@ -674,11 +677,11 @@ Results in fast transfer of static assets like HTML, CSS, JavaScript, images, fo
 <v-clicks>
 
 - Consider the impact with render blocking resources
-- Spend time on strategy
+- Caching strategy is really hard to get right
   - Cache duration
   - Invalidation
   - URL (subpath vs subdomain)
-- Learn up on latest developments 
+- CDNs have learned some new tricks 
   - DDoS protection
   - Automatic media optimization
   - Edge compute
@@ -690,11 +693,10 @@ Results in fast transfer of static assets like HTML, CSS, JavaScript, images, fo
 
 # We're Delivering Files Quickly
 
-
 <div class="mt-20 grid grid-cols-2">
 <div>
 
-## Great
+## Yes!
 - Faster responses
 - Less bandwidth
 - Higher availability
@@ -869,10 +871,6 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 
 ---
 
-<img src="/img/file-uploads/security-dash.png">
-
----
-
 <img src="/img/file-uploads/malware-dash.png">
 
 <!-- I configured the Malware Protection policy to just deny any request containing malware or a content type mismatch. -->
@@ -884,7 +882,7 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 
 ---
 
-# Pros and Cons
+# App & API Protector Pros and Cons
 
 <div class="grid grid-cols-2">
 <div>
@@ -892,9 +890,9 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 
 - Convenient to set up and modify
 - No changes to application
+- Files are scanned off my server
 - Does its job well
 - I don't have to maintain it
-- Files are scanned off my server
 </v-clicks>
 </div>
 <div>
@@ -903,6 +901,25 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 - Time and resource restrictions
 - Limit to scanable file size
 </v-clicks>
+</div>
+</div>
+
+---
+
+# We've secured our files
+
+<div class="mt-20 grid grid-cols-2">
+<div>
+
+## Yes!
+- Files are quarantined
+- Users still have fast responses
+- Scans happen in the background
+</div>
+<div v-click>
+
+## But...
+- You weren't paying attention
 </div>
 </div>
 
