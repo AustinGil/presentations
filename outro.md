@@ -11,7 +11,6 @@
 </div>
 </div>
 <br>
-<br>
 
 ## Let's talk: 
 Edge compute, JavaScript, Akamai, a11y, build tools, Chiweenies, whatever :D

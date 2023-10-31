@@ -859,22 +859,61 @@ layout: statement
 
 ---
 
-Akamai customer, you actually have access to a malware protection feature as part of the web application firewall products
+# App & API Protector
 
-IP/Geo Firewall, Denial of Service protection, WAF, and Malware Protection
+Akamai customers have access to [App & API Protector](https://www.akamai.com/products/app-and-api-protector) which provides:
+- IP/Geo Firewall
+- Denial of Service (DoS) protection
+- Web Application Firewall (WAF)
+- **Malware Protection**
 
-I configured the Malware Protection policy to just deny any request containing malware or a content type mismatch.
+---
 
-To be clear, that’s logic I didn’t actually write into my application. That’s happening thanks to Akamai’s malware protection, and I really like this product for a number of reasons.
+<img src="/img/file-uploads/security-dash.png">
 
-It’s convenient and easy to set up and modify from within the Akamai UI.
-I love that I don’t have to modify my application to integrate the product.
-It does its job well and I don’t have to manage maintenance on it.
-Last, but not least, the files are scanned on Akamai’s edge servers, which means it’s not only faster, but it also keeps blocked malware from ever even reaching my servers. This is probably my favorite feature.
-Due to time and resource restrictions, I think Malware Protection can only scan files up to a certain size, so it won’t work for everything, but it’s a great addition for blocking some files from even getting into your system.
+---
 
+<img src="/img/file-uploads/malware-dash.png">
+
+<!-- I configured the Malware Protection policy to just deny any request containing malware or a content type mismatch. -->
+
+---
+
+<img src="/img/file-uploads/malware-example.png">
+<!-- Logic I didn't actually write into my application. -->
+
+---
+
+# Pros and Cons
+
+<div class="grid grid-cols-2">
+<div>
+<v-clicks>
+
+- Convenient to set up and modify
+- No changes to application
+- Does its job well
+- I don't have to maintain it
+- Files are scanned off my server
+</v-clicks>
+</div>
+<div>
+<v-clicks>
+
+- Time and resource restrictions
+- Limit to scanable file size
+</v-clicks>
+</div>
+</div>
+
+---
+layout: statement
 ---
 
 # Blog & Video Series
 
-https://austingil.com/uploading-files-with-html/
+[austingil.com/uploading-files-with-html](https://austingil.com/uploading-files-with-html/)
+
+---
+src: outro.md
+---
