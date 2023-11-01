@@ -8,7 +8,7 @@ layout: statement
 
 # Background: HTTP
 
-All website communicate over HTTP (Hypertext Transfer Protocol)
+All websites communicate over HTTP (Hypertext Transfer Protocol)
 
 HTTP functions as a request–response protocol in the client–server model.
 
@@ -51,7 +51,7 @@ Say hi to your dog for me
 
 Must include a `POST` method and the body.
 
-Should also include the `Conten-Type`, and the `Content-Length`.
+Should also include the `Content-Type`, and the `Content-Length`.
 
 ```http {none|1,6|3-4}
 POST / HTTP/1.1
@@ -301,7 +301,7 @@ function submitFormWithJs(form) {
 - Works if JS fails
 - Maintains existing browser features
 - Maintains accessibility
-- Makes your live easier
+- Makes your life easier
 - Allows for declarative HTML
 - Allows for reusable logic
 </v-clicks>
