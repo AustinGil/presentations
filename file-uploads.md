@@ -12,7 +12,7 @@ All websites communicate over HTTP (Hypertext Transfer Protocol)
 
 HTTP functions as a request–response protocol in the client–server model.
 
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-2 mt-20 text-center">
 <div>
 
 ## Client:
@@ -29,7 +29,7 @@ Node.js
 
 ---
 
-# Make an HTTP Request
+# Here's What HTTP Looks Like
 
 Required: Method (`GET`, `POST`, `PUT`, etc), Path, HTTP version
 
@@ -46,23 +46,6 @@ Say hi to your dog for me
 ```
 
 ---
-
-# Sending Data With HTTP
-
-Must include a `POST` method and the body.
-
-Should also include the `Content-Type`, and the `Content-Length`.
-
-```http {none|1,6|3-4}
-POST / HTTP/1.1
-Host: austingil.com
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 27
-
-field1=value1&field2=value2
-```
-
----
 layout: statement
 ---
 
@@ -72,11 +55,9 @@ layout: statement
 
 # Browsers are HTTP clients
 
-Make HTTP requests on our behalf.
-
-Convert HTTP responses into websites.
-
-Provide APIs to send files via HTML or JavaScript.
+- Make HTTP requests on our behalf.
+- Convert HTTP responses into websites.
+- Provide APIs to send files via HTML or JavaScript.
 
 ---
 layout: statement
@@ -86,12 +67,12 @@ layout: statement
 
 ---
 
-# Steps
+# HTML tells browser what to do
 
 1. Construct an HTTP request
-2. Set method to `POST`
+2. Set HTTP method to `POST`
 2. Get access to files
-3. Attach file in request body
+3. Include file in request body
 
 ---
 
@@ -206,11 +187,11 @@ layout: statement
 
 ---
 
-# Requirements
+# Same same but different
 
 - Still need access to the file system
 - Still need an HTTP request (`fetch` or `XMLHttpRequest`)
-- Still need a POST method
+- Still need a `POST` method
 - Still need to put the file in the body
 
 ---
@@ -237,12 +218,6 @@ layout: statement
 ---
 
 # ...But don't do that
-
----
-layout: statement
----
-
-# Keep using `<form>`
 
 ---
 
@@ -279,9 +254,9 @@ function submitFormWithJs(form) {
 
   if (form.method.toLowerCase() === 'post') {
     if (form.enctype === 'multipart/form-data') {
-      fetchOptions.body = formData;
+      fetchOptions.body = formData; // multipart/form-data
     } else {
-      fetchOptions.body = searchParams;
+      fetchOptions.body = searchParams; // application/x-www-form-urlencoded
     }
   } else {
     url.search = searchParams;
@@ -295,20 +270,28 @@ function submitFormWithJs(form) {
 
 # Why?
 
-<v-clicks>
+<div class="grid grid-cols-2 gap-4 mt-20">
+<div v-click>
 
-- Works on slow connections
-- Works if JS fails
-- Maintains existing browser features
+## Progressive Enhancement
+
+- Works with or without JS
+- Maintains browser features
 - Maintains accessibility
-- Makes your life easier
-- Allows for declarative HTML
-- Allows for reusable logic
-</v-clicks>
+</div>
+<div v-click>
+
+## Simplicity
+
+- Reusable function
+- Declarative HTML logic
+- More resilient & maintainable
+</div>
+</div>
 
 ---
 
-# Next problem
+# We've improved the UX
 
 <div class="mt-20 grid grid-cols-2">
 <div>
@@ -320,7 +303,7 @@ function submitFormWithJs(form) {
 <div v-click>
 
 ## But...
-- How do we handle the sent files?
+- What do we do with the sent files?
 </div>
 </div>
 
@@ -347,8 +330,6 @@ layout: statement
 
 During HTTP requests, each chunk triggers the `request.on()` method.
 
-<v-click>
-
 ```js
 function processNodeRequest(request) {
   request.on("data", (data) => {
@@ -356,12 +337,11 @@ function processNodeRequest(request) {
   }
 }
 ```
-</v-click>
 <img v-click src="/img/file-uploads/buffers.png">
 
 ---
 
-```js {all|3|4-6|7-10}
+```js {all|2,12|3|4-6|7-10}
 function processNodeRequest(request) {
   return new Promise((resolve, reject) => {
     const chunks = [];
@@ -412,7 +392,7 @@ I love you, Nugget!
 <v-clicks>
 
 - Whole file contents in memory?
-- How do we manage form boundaries?
+- Manually handler form boundaries?
 </v-clicks>
 
 ---
@@ -485,7 +465,7 @@ A single, central place to store and access all of your uploads.
 
 <v-clicks>
 
-Highly available, easily scalable, and super cost-effective.
+Highly available, easily scalable, and often 10x cheaper than server space.
 
 Ideally should be S3-compatible.
 </v-clicks>
@@ -576,7 +556,7 @@ function fileWriteStreamHandler(file) {
 ```js {all|4-13|3,11,18|14-16|1,17}
 const s3Uploads = [];
 function fileWriteStreamHandler(file) {
-  const fileStream = new stream.PassThrough();
+  const fileStream = new PassThrough(); // from 'stream' module
   const upload = new Upload({
     client: s3Client,
     params: {
@@ -619,7 +599,9 @@ layout: statement
 
 # The MAJOR Caveat
 
-Double the bandwidth: in to your server and out to Object Storage.
+## 🚨 Double the bandwidth 🚨
+
+In to your server and out to Object Storage.
 
 ---
 
@@ -657,7 +639,7 @@ Globally distributed network of servers that caches content close to users.
 
 Initial requests pass through CDN node, pull content from origin server, and cache it. Subsequent requests get cached content.
 
-Results in fast transfer of static assets like HTML, CSS, JavaScript, images, fonts, videos, etc.
+Faster deliver of static assets (HTML, CSS, JavaScript, images, fonts, etc.)
 </v-clicks>
 
 ---
@@ -672,13 +654,13 @@ Results in fast transfer of static assets like HTML, CSS, JavaScript, images, fo
 
 ---
 
-# CDNs are not new but...
+# Things to consider...
 
 <v-clicks>
 
-- Consider the impact with render blocking resources
+- Multiplied impact for render blocking resources
 - Caching strategy is really hard to get right
-  - Cache duration
+  - Duration
   - Invalidation
   - URL (subpath vs subdomain)
 - CDNs have learned some new tricks 
@@ -731,7 +713,7 @@ layout: statement
 
 # Filename Sanitization
 
-Prevent long file names or disallowed characters.  
+Prevent long file names or dangerous characters for OS.  
 
 <v-click>
 
@@ -779,7 +761,7 @@ const form = formidable({
 });
 ```
 
-(formidable defaults to temp folder)
+(formidable defaults to OS's temp folder)
 </v-click>
 
 ---
@@ -818,6 +800,8 @@ const form = formidable({
   }
 });
 ```
+
+(formidable bases `file.mimetype` from file extension)
 </v-click>
 
 ---
@@ -882,25 +866,28 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 
 ---
 
-# App & API Protector Pros and Cons
+# App & API Protector Review
 
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-2 mt-20">
 <div>
-<v-clicks>
 
+<v-click>
+
+## Pros
 - Convenient to set up and modify
 - No changes to application
-- Files are scanned off my server
+- Files scanned at the edge
 - Does its job well
 - I don't have to maintain it
-</v-clicks>
+</v-click>
 </div>
 <div>
-<v-clicks>
+<v-click>
 
+## Cons
 - Time and resource restrictions
-- Limit to scanable file size
-</v-clicks>
+- Limited max file size
+</v-click>
 </div>
 </div>
 

@@ -96,3 +96,8 @@ code {
 .dark #slide-content {
   color: var(--pen);
 }
+.mermaid {
+  display: flex;
+  place-content: center;
+  background-color: white;
+}

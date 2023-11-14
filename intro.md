@@ -8,17 +8,15 @@ layout: image-right
 image: /img/austin-gil-bio.png
 ---
 
-<h1 class="text-4xl mt-10">Hey 👋<br>I'm Austin Gil</h1>
-<p class="mt-0 !mb-16">austingil.com | <logos-twitter/>@heyAustinGil</p>
+<h1 class="text-4xl mt-8">Hey 👋<br>I'm Austin Gil</h1>
+<p class="mt-0">austingil.com | <logos-twitter/>@heyAustinGil</p>
 
-<!-- <h4 class="mb-4">Dev Advocate @<a href="https://akamai.com">akamai.com</a></h4> -->
-<h4 class="mb-4">Hacking on websites since 2013</h4>
-<!-- <h4 class="mb-4">Frontend & Backend</h4> -->
-<!-- <h4 class="mb-4">Open-sourcer (<a href="https://vuetensils.austingil.com">Vuetensils</a>)</h4> -->
-<h4 class="mb-4">Teach folks how to build better websites</h4>
-<h4 class="mb-4">Have a cool chiweenie named Nugget</h4>
-<!-- <div class="text-16px">
-- Content creator
-- Open-sourcer
-- Presenter
-</div> -->
+<div class="text-1.25rem mt-10">
+
+- Hacking on websites since 2013
+- Dev Advocate @<a href="https://akamai.com">akamai.com</a>
+- Teach how to build better websites
+- Like to ride bikes, play soccer, run
+- Big roller derby fan (let's go RCR)
+- Have a cool chiweenie named Nugget
+</div>

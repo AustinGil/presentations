@@ -996,8 +996,8 @@ layout: statement
 <span class="inline-block">"Dependency Resolution" ->&nbsp;</span>
 <span class="inline-block">bundle ->&nbsp;</span>
 <span class="inline-block">package ->&nbsp;</span>
-<span class="inline-block">uploaded to prod ->&nbsp;</span>
-<span class="inline-block">URL ->&nbsp;</span>
+<span class="inline-block">upload to prod ->&nbsp;</span>
+<span class="inline-block">open URL ->&nbsp;</span>
 <span class="inline-block">Browser ->&nbsp;</span>
 <span class="inline-block">OS ->&nbsp;</span>
 <span class="inline-block">Wifi ->&nbsp;</span>
@@ -1025,7 +1025,7 @@ layout: statement
 <span class="inline-block">Layout ->&nbsp;</span>
 <span class="inline-block">Paint ->&nbsp;</span>
 <span class="inline-block">Composite ->&nbsp;</span>
-<span class="inline-block">celebrate that you somehow managed to make this all work!!! 🥳</span>
+<span class="inline-block">celebrate you somehow got this all to work!!! 🥳</span>
 </v-clicks>
 </div>
 
@@ -1033,12 +1033,20 @@ layout: statement
 layout: statement
 ---
 
-## Kind of a lot, actually...
+# Kind of a lot, actually...
+
+---
+layout: statement
+---
+
+# The Big Takeaway
+
 <v-clicks>
 
-# Be kind to others
+## This stuff is hard
+## So be kind to others
+## & be kind to yourself
 
-# And be kind to yourself
 </v-clicks>
 
 <!-- # Resources: 
