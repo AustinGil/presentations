@@ -2,9 +2,19 @@
 layout: statement
 ---
 
+<div class="grid grid-cols-2 gap-4">
+<div class="grid place-content-center">
+
 # Full Spectrum <br>File Uploads
 
-([uploads-talk.austingil.com](https://uploads-talk.austingil.com/))
+</div>
+<div class="text-center">
+
+[uploads-talk.austingil.com](https://uploads-talk.austingil.com/)
+
+<img src="/img/file-uploads/qr.png" alt="" class="w-full">
+</div>
+</div>
 
 ---
 
@@ -213,11 +223,10 @@ async function handleSubmit(event) {
 
 <div class="text-16px">
 
-```js {all|2|3|4|5-7|9|10,11|13|15-17|18}
+```js {all|2|3|4-6|8|9,10|12|14-16|17}
 function submitFormWithJs(form) {
   const url = new URL(form.action);
   const formData = new FormData(form);
-  const searchParams = new URLSearchParams(formData);
   const fetchOptions = {
     method: form.method,
   };
@@ -226,10 +235,10 @@ function submitFormWithJs(form) {
     if (form.enctype === 'multipart/form-data') {
       fetchOptions.body = formData; // multipart/form-data
     } else {
-      fetchOptions.body = searchParams; // application/x-www-form-urlencoded
+      fetchOptions.body = new URLSearchParams(formData); // application/x-www-form-urlencoded
     }
   } else {
-    url.search = searchParams;
+    url.search = new URLSearchParams(formData);
   }
   return fetch(url, fetchOptions);
 }
@@ -254,7 +263,7 @@ function submitFormWithJs(form) {
 ## Simplicity
 
 - Reusable function
-- Declarative HTML logic
+- Declarative logic from HTML
 - More resilient & maintainable
 </div>
 </div>
@@ -359,7 +368,7 @@ I love you, Nugget!
 
 ---
 
-# Use a library (formidable)
+# Use streaming library (formidable)
 
 ```js {3-10}
 function processNodeRequest(request) {
@@ -487,7 +496,7 @@ Libraries: `@aws-sdk/client-s3 @aws-sdk/lib-storage`
 
 # Streaming through formidable
 
-```js {all|3,6-8}
+```js
 const form = formidable({
   multiples: true,
   fileWriteStreamHandler: fileWriteStreamHandler,
@@ -504,9 +513,8 @@ function fileWriteStreamHandler(file) {
 
 <v-clicks>
 
-- formidable needs a writable stream to send chunks to.
-- S3 upload body needs to be a readable stream.
-- So we use a passthrough stream.
+- formidable wants to write chunks to a stream.
+- S3 upload wants to read chunks from a stream.
 - We need to store the file's location somewhere.
 - We need to track pending upload requests.
 </v-clicks>
@@ -833,15 +841,12 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 <div class="grid grid-cols-2 mt-20">
 <div>
 
-<v-click>
-
 ## Pros
 - Convenient to set up and modify
 - No changes to application
 - Files scanned at the edge
 - Does its job well
 - I don't have to maintain it
-</v-click>
 </div>
 <div>
 <v-click>

@@ -9,7 +9,7 @@
 </div>
 <div>
 
-## Appreciation for me!
+## Props for me!
 <p class="text-4xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
 </div>
 </v-clicks>
