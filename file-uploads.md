@@ -29,7 +29,7 @@ Say hi to your dog for me
 layout: statement
 ---
 
-# We don't need to know that
+# We don't need to worry about that
 
 ---
 
@@ -285,16 +285,14 @@ layout: statement
 
 ---
 
-# First, some vocab
+<!-- # First, some vocab
 
 <v-clicks>
 
 - "chunks": bits of data sent over HTTP as part of a larger stream.
 - "streams": a sequence of data chunks made available to process over time.
 - "buffers": a place in memory for temporarily storing data.
-</v-clicks>
-
----
+</v-clicks> -->
 
 # Node is event-driven
 
@@ -849,7 +847,6 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 <v-click>
 
 ## Cons
-- Time and resource restrictions
 - Limited max file size
 </v-click>
 </div>
