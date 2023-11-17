@@ -4,38 +4,18 @@ layout: statement
 
 # Full Spectrum <br>File Uploads
 
----
-
-# Background: HTTP
-
-All websites communicate over HTTP (Hypertext Transfer Protocol)
-
-HTTP functions as a request–response protocol in the client–server model.
-
-<div class="grid grid-cols-2 mt-20 text-center">
-<div>
-
-## Client:
-
-Browser
-</div>
-<div>
-
-## Server:
-
-Node.js
-</div> 
-</div> 
+([uploads-talk.austingil.com](https://uploads-talk.austingil.com/))
 
 ---
 
-# Here's What HTTP Looks Like
+# HTTP: The language of the internet
 
-Required: Method (`GET`, `POST`, `PUT`, etc), Path, HTTP version
+Protocol for hypermedia communication between distributed computers.
 
+Required: Method, Path, HTTP version<br>
 Optional: Headers, Body
 
-```http {none|1|2-7}
+```http
 GET / HTTP/1.1
 Host: austingil.com
 Accept: */*
@@ -49,7 +29,7 @@ Say hi to your dog for me
 layout: statement
 ---
 
-# You Don't Need To Know That
+# We don't need to know that
 
 ---
 
@@ -64,15 +44,6 @@ layout: statement
 ---
 
 # Upload Files with HTML
-
----
-
-# HTML tells browser what to do
-
-1. Construct an HTTP request
-2. Set HTTP method to `POST`
-2. Get access to files
-3. Include file in request body
 
 ---
 
@@ -146,7 +117,7 @@ layout: statement
 
 # Translated To HTTP
 
-```http {all|1|2-3|6,11|7-10}
+```http {all|1|2-3,6,11|7-10}
 POST / HTTP/1.1
 Content-Type: multipart/form-data;boundary=
   ---------------------------735323031399963166993862150
@@ -168,9 +139,8 @@ Who's a good boy?
 <div>
 
 ## Yes!
-- Fast
-- Secure (for users)
-- Accessible
+- Users can select a file
+- Browser is sending the file
 </div>
 <div v-click>
 
@@ -321,7 +291,7 @@ layout: statement
 
 - "chunks": bits of data sent over HTTP as part of a larger stream.
 - "streams": a sequence of data chunks made available to process over time.
-- "buffers": a region in memory used to temporarily store data while it is being transferred from one place to another.
+- "buffers": a place in memory for temporarily storing data.
 </v-clicks>
 
 ---
@@ -359,17 +329,10 @@ function processNodeRequest(request) {
 
 ---
 
-# Wanna see a cute photo of my dog?
-
 ```js
 console.log(await processNodeRequest(request))
 ```
-
-<img src="/img/file-uploads/file-contents.png" v-click>
-
----
-
-# A Plain Text File
+<v-click>
 
 ```http {all|2-3,6,11|7-10}
 POST / HTTP/1.1
@@ -384,6 +347,7 @@ Content-Type: text/plain
 I love you, Nugget!
 ------WebKitFormBoundary4Ay52hDeKB5x2vXP--
 ```
+</v-click>
 
 ---
 
@@ -392,7 +356,7 @@ I love you, Nugget!
 <v-clicks>
 
 - Whole file contents in memory?
-- Manually handler form boundaries?
+- Manually parsing HTTP requests?
 </v-clicks>
 
 ---
@@ -446,8 +410,8 @@ function processNodeRequest(request) {
 <div v-click>
 
 ## But...
-- What about distributed systems
 - What happens when space runs out
+- What if we have a distributed system
 </div>
 </div>
 
@@ -694,7 +658,7 @@ Faster deliver of static assets (HTML, CSS, JavaScript, images, fonts, etc.)
 layout: statement
 ---
 
-# Security and <br>Malware Protection
+# Secure our application
 
 ---
 

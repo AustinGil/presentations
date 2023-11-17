@@ -64,7 +64,7 @@ layout: statement
 
 <v-clicks>
 <div class="grid gap-4 grid-cols-2">
-<img src="/img/make-div/Notepad.png">
+<img src="/img/make-div/Notepad.png" class="bg-white">
 <img src="/img/make-div/FileZilla.png">
 </div>
 </v-clicks>
@@ -118,6 +118,7 @@ Deploy previews? We didn't even have staging sites. Just edited in production. C
 ---
 layout: image
 image: /img/make-div/logos.svg
+class: bg-white
 ---
 
 <!-- # WTF have we done!?!? -->
@@ -1039,7 +1040,7 @@ layout: statement
 layout: statement
 ---
 
-# The Big Takeaway
+# The one thing to remember
 
 <v-clicks>
 

@@ -80,8 +80,11 @@ code, kbd, samp, pre, .slidev-layout blockquote {
   opacity: unset;
 }
 pre,
-code {
-  color: var(--light)!important;
+:not(pre) > code {
+  color: var(--paper)!important;
+}
+:not(pre) > code {
+  background: var(--pen);
 }
 /* .dark #slide-content .slidev-code.language-js code {
   color: aqua !important;
