@@ -1,4 +1,8 @@
 ---
+src: intro.md
+---
+
+---
 layout: statement
 ---
 
@@ -607,7 +611,7 @@ Globally distributed network of servers that caches content close to users.
 
 <v-clicks>
 
-Initial requests pass through CDN node, pull content from origin server, and cache it. Subsequent requests get cached content.
+Initial requests pass through CDN node, grab content from origin, and get cached. Subsequent requests use cached content.
 
 Faster deliver of static assets (HTML, CSS, JavaScript, images, fonts, etc.)
 </v-clicks>
@@ -628,13 +632,13 @@ Faster deliver of static assets (HTML, CSS, JavaScript, images, fonts, etc.)
 
 <v-clicks>
 
-- Multiplied impact for render blocking resources
+- Compounding impact for render blocking resources
 - Caching strategy is really hard to get right
   - Duration
   - Invalidation
-  - URL (subpath vs subdomain)
-- CDNs have learned some new tricks 
-  - DDoS protection
+  - Host URL (subpath vs subdomain, cookies, etc)
+- CDNs have evolved in the last 25 years
+  - Edge-layer security (DDoS, bots, etc)
   - Automatic media optimization
   - Edge compute
 </v-clicks>
@@ -683,7 +687,7 @@ layout: statement
 
 # Filename Sanitization
 
-Prevent long file names or dangerous characters for OS.  
+Prevent excessively long file names or invalid characters for OS.  
 
 <v-click>
 
@@ -701,9 +705,9 @@ const form = formidable({
 
 ---
 
-# Upload and Download Limits
+# File Size Limits
 
-Reasonable file size limits can avoid storage and bandwidth issues/costs.
+File upload & download size impacts storage, bandwidth, and performance.
 
 <v-click>
 
@@ -883,6 +887,15 @@ layout: statement
 # Blog & Video Series
 
 [austingil.com/uploading-files-with-html](https://austingil.com/uploading-files-with-html/)
+
+---
+
+# Relevant Akamai Products
+
+- VPS - Host your application
+- Object Storage - Store uploads cheaply and reliably
+- CDN - Deliver files faster
+- Malware Protection - Pretty obvious, no?
 
 ---
 src: outro.md

@@ -20,3 +20,15 @@ image: /img/austin-gil-bio.png
 - Big roller derby fan (let's go RCR)
 - Have a cool chiweenie named Nugget
 </div>
+
+---
+layout: statement
+---
+
+# 🚧 DISCLOSURE 🚧
+
+---
+layout: statement
+---
+
+# 🤝 ASSURANCE 😘

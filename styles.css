@@ -82,10 +82,10 @@ code, kbd, samp, pre, .slidev-layout blockquote {
 pre,
 :not(pre) > code,
 div[class*='language-'], pre[class*='language-'], code[class*='language-'] {
-  color: var(--paper)!important;
+  color: var(--light)!important;
 }
 :not(pre) > code {
-  background: var(--pen);
+  background: var(--dark);
 }
 /* .dark #slide-content .slidev-code.language-js code {
   color: aqua !important;
