@@ -62,12 +62,10 @@ layout: statement
 
 # We had two tools
 
-<v-clicks>
 <div class="grid gap-4 grid-cols-2">
 <img src="/img/make-div/Notepad.png" class="bg-white">
 <img src="/img/make-div/FileZilla.png">
 </div>
-</v-clicks>
 
 ---
 layout: statement
@@ -129,7 +127,10 @@ layout: statement
 
 # What's a dev gotta do to make a \<div\> around here!?
 
-(make-div.austingil.com)
+<img class="block m-auto" src="/img/make-div/qr.png">
+
+[make-div.austingil.com](https://make-div.austingil.com/)
+
 
 <!-- A journey following your code from the editor
 through build processes <br> 
@@ -139,7 +140,7 @@ and finally rendered in a user's browser -->
 
 ---
 
-# Start with a bit of magic
+# Before we event start...
 
 What's the first thing you do before you start writing code?
 
@@ -399,17 +400,17 @@ layout: statement
 JS program:
 <div class="grid">
 
-<div class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'poop'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+<div class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Nugget!'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
 
-<div v-click="6" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code class="opacity-30"><span class="line slidev-vclick-target highlighted">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'poop'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+<div v-click="6" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code class="opacity-30"><span class="line slidev-vclick-target highlighted">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Nugget!'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
 
-<div v-click="7" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="opacity-30 token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="opacity-30 token string">'poop'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+<div v-click="7" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="opacity-30 token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="opacity-30 token string">'Nugget!'</span><span class="token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
 
-<div v-click="8" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="opacity-30 token punctuation">.</span><span class="opacity-30 token function">log</span><span class="opacity-30 token punctuation">(</span><span class="opacity-30 token string">'poop'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+<div v-click="8" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted">console<span class="opacity-30 token punctuation">.</span><span class="opacity-30 token function">log</span><span class="opacity-30 token punctuation">(</span><span class="opacity-30 token string">'Nugget!'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
 
-<div v-click="9" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted"><span class="opacity-30">console</span><span class="opacity-30 token punctuation">.</span><span class="token function">log</span><span class="opacity-30 token punctuation">(</span><span class="opacity-30 token string">'poop'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+<div v-click="9" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted"><span class="opacity-30">console</span><span class="opacity-30 token punctuation">.</span><span class="token function">log</span><span class="opacity-30 token punctuation">(</span><span class="opacity-30 token string">'Nugget!'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
 
-<div v-click="10" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted"><span class="opacity-30">console</span><span class="opacity-30 token punctuation">.</span><span class="opacity-30 token function">log</span><span class="opacity-30 token punctuation">(</span><span class="token string">'poop'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
+<div v-click="10" class="col-start-1	row-start-1	slidev-code-wrapper relative group"><pre class="slidev-code language-js"><code><span class="line slidev-vclick-target highlighted"><span class="opacity-30">console</span><span class="opacity-30 token punctuation">.</span><span class="opacity-30 token function">log</span><span class="opacity-30 token punctuation">(</span><span class="token string">'Nugget!'</span><span class="opacity-30 token punctuation">)</span></span></code></pre><button class="slidev-code-copy absolute top-0 right-0 transition opacity-0 group-hover:opacity-20 hover:!opacity-100" title="Copy"><svg class="slidev-icon p-2 w-8 h-8" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256" width="1.2em" height="1.2em"><path fill="currentColor" d="M200 32h-36.3a47.8 47.8 0 0 0-71.4 0H56a16 16 0 0 0-16 16v168a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Zm-72 0a32.1 32.1 0 0 1 32 32H96a32.1 32.1 0 0 1 32-32Zm72 184H56V48h26.8A47.2 47.2 0 0 0 80 64v8a8 8 0 0 0 8 8h80a8 8 0 0 0 8-8v-8a47.2 47.2 0 0 0-2.8-16H200Z"></path></svg></button></div>
 
 </div>
 </div>
@@ -438,7 +439,7 @@ AST representation (by [shift-js](https://github.com/shift-js/shift-js)):
         "arguments": [
           {
             "type": "LiteralStringExpression",
-            "value": "poop"
+            "value": "Nugget!"
           }
         ]
       }
@@ -860,8 +861,8 @@ class: text
 <div class="grid grid-cols-3 gap-4">
 
 <div v-click="1">
-<h2 class="-mb-4 text-center">Browser</h2>
-<span class="block text-10xl text-center">💻 </span>
+<h2 class="text-center mb-4">Browser</h2>
+<span class="block text-7xl text-center mb-9">💻 </span>
 <div class="text-sm">
 
 ```sh
@@ -872,25 +873,22 @@ Connection: close
 ```
 </div>
 
-Request using Hypertext Transfer Protocol (HTTP).
+Request using Hypertext Transfer Protocol (HTTP)
 </div>
 
 <div v-click="3">
 <div class="text-center text-4xl">
-  <h2 class="-mb-4 text-center">Edge Compute</h2>
-  <logos-akamai class="text-10xl -mb-20 -mt-6"/>
-  <p>EdgeWorkers</p>
-  <vscode-icons:file-type-http class="text-8xl"/>
-  <!-- <material-symbols-edit-outline class="text-8xl"/> -->
-  <!-- <material-symbols-edit-road-outline class="text-8xl"/> -->
-  <gis-modify-line class="text-8xl"/>
+  <h2 class="text-center mb-8">Edge Compute</h2>
+  <vscode-icons:file-type-http class="text-4xl"/>
+  <gis-modify-line class="text-4xl"/>
 </div>
 <p>Modify request and/or response between client and server</p>
+<p class="text-center">(talk to me)</p>
 </div>
 
 <div v-click="2">
 <h2 class="text-center">Server</h2>
-<logos-linode class="block text-8xl mt-4 mb-6 mx-auto"/>
+<logos-akamai class="block text-8xl mx-auto"/>
 <div class="text-sm">
 
 ```sh
@@ -935,7 +933,7 @@ layout: statement
 ---
 
 # Step 3 - Rendering 
-# <span class="font-mono"> 💩 🖌️ლ( ͡°෴ ͡° )</span>
+# <span class="font-mono">🖌️ლ( ͡°෴ ͡° )</span>
 
 ---
 
@@ -952,8 +950,8 @@ layout: statement
 - <span class="text-purple-500">Calculate styles</span>
 - <span class="text-purple-500">Generate layout</span>
 - Create animations layers
-- <span class="text-green-500">Paint content as px to respective layer</span>
-- <span class="text-green-500">Composite (flatten everythings onto the screen)</span>
+- <span class="text-green-500">Put pixels on respective layers (Paint)</span>
+- <span class="text-green-500">Flatten layers to make the screen (Composite)</span>
 
 </v-clicks>
 
@@ -983,22 +981,29 @@ layout: statement
 # 🤮
 
 ---
+layout: statement
+---
 
-# So what's it take to make a div?
+# Congrats!
+## You just made a `<div>`
+
+---
+
+# Let's recap: From the beginning...
 
 <div class="leading-loose">
 <v-clicks>
 <span class="inline-block">Start dev server ->&nbsp;</span>
-<span class="inline-block">write the <code>&lt;div&gt;</code> ->&nbsp;</span>
-<span class="inline-block">git commit ->&nbsp;</span>
-<span class="inline-block">git push ->&nbsp;</span>
+<span class="inline-block">Write the <code>&lt;div&gt;</code> ->&nbsp;</span>
+<span class="inline-block">Git commit ->&nbsp;</span>
+<span class="inline-block">Git push ->&nbsp;</span>
 <span class="inline-block">CI/CD pipeline ->&nbsp;</span>
-<span class="inline-block">transpile ->&nbsp;</span>
+<span class="inline-block">Transpile ->&nbsp;</span>
 <span class="inline-block">"Dependency Resolution" ->&nbsp;</span>
-<span class="inline-block">bundle ->&nbsp;</span>
-<span class="inline-block">package ->&nbsp;</span>
-<span class="inline-block">upload to prod ->&nbsp;</span>
-<span class="inline-block">open URL ->&nbsp;</span>
+<span class="inline-block">Bundle ->&nbsp;</span>
+<span class="inline-block">Package ->&nbsp;</span>
+<span class="inline-block">Upload to prod ->&nbsp;</span>
+<span class="inline-block">Open URL ->&nbsp;</span>
 <span class="inline-block">Browser ->&nbsp;</span>
 <span class="inline-block">OS ->&nbsp;</span>
 <span class="inline-block">Wifi ->&nbsp;</span>
@@ -1006,18 +1011,17 @@ layout: statement
 <span class="inline-block">Modem ->&nbsp;</span>
 <span class="inline-block">ISP ->&nbsp;</span>
 <span class="inline-block">DNS resolution ->&nbsp;</span>
-<span class="inline-block">server's IP ->&nbsp;</span>
+<span class="inline-block">Server's IP ->&nbsp;</span>
 <span class="inline-block">TCP handshake ->&nbsp;</span>
 <span class="inline-block">TLS handshake ->&nbsp;</span>
 <span class="inline-block">HTTP request ->&nbsp;</span>
-<span class="inline-block">through EdgeWorker ->&nbsp;</span>
-<span class="inline-block">Linode server ->&nbsp;</span>
+<span class="inline-block">Through EdgeWorker ->&nbsp;</span>
+<span class="inline-block">Akamai server ->&nbsp;</span>
 <span class="inline-block">HTTP response ->&nbsp;</span>
-<span class="inline-block">through EdgeWorker ->&nbsp;</span>
+<span class="inline-block">Through EdgeWorker ->&nbsp;</span>
 <span class="inline-block">Browser ->&nbsp;</span>
-<span class="inline-block">download HTML ->&nbsp;</span>
-<span class="inline-block">download CSS ->&nbsp;</span>
-<span class="inline-block">download JS ->&nbsp;</span>
+<span class="inline-block">Download HTML ->&nbsp;</span>
+<span class="inline-block">Repeats for CSS, JS, img, etc. ->&nbsp;</span>
 <span class="inline-block">Construct DOM ->&nbsp;</span>
 <span class="inline-block">Construct CSSOM ->&nbsp;</span>
 <span class="inline-block">Run JS ->&nbsp;</span>
@@ -1026,7 +1030,7 @@ layout: statement
 <span class="inline-block">Layout ->&nbsp;</span>
 <span class="inline-block">Paint ->&nbsp;</span>
 <span class="inline-block">Composite ->&nbsp;</span>
-<span class="inline-block">celebrate you somehow got this all to work!!! 🥳</span>
+<span class="inline-block">Celebrate that somehow we got this all to work!!! 🥳</span>
 </v-clicks>
 </div>
 
@@ -1034,19 +1038,19 @@ layout: statement
 layout: statement
 ---
 
-# Kind of a lot, actually...
+# It's kind of a lot!
+## But there's only one important thing to remember...
 
 ---
 layout: statement
 ---
 
-# The one thing to remember
+# What we do is hard
 
 <v-clicks>
 
-## This stuff is hard
-## So be kind to others
-## & be kind to yourself
+## Be kind to others 😍
+## & Be kind to yourself 🥰
 
 </v-clicks>
 

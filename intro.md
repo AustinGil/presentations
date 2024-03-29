@@ -15,10 +15,8 @@ image: /img/austin-gil-bio.png
 
 - Hacking on websites since 2013
 - Dev Advocate @<a href="https://akamai.com">akamai.com</a>
-- Teach how to build better websites
-- Like to ride bikes, play soccer, run
-- Big roller derby fan (let's go RCR)
-- Have a cool chiweenie named Nugget
+- Help folks build better websites
+- Likes: bikes, soccer, camping, pinball, roller derby, my chiweenie
 </div>
 
 ---
@@ -27,8 +25,18 @@ layout: statement
 
 # 🚧 DISCLOSURE 🚧
 
+I work for a company that sells developer products
+
 ---
 layout: statement
 ---
 
 # 🤝 ASSURANCE 😘
+
+I'm not here to sell developer products
+
+I'm here to teach
+
+Sometimes there's overlap
+
+I'll try to be clear
