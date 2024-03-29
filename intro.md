@@ -33,10 +33,10 @@ layout: statement
 
 # 🤝 ASSURANCE 😘
 
-I'm not here to sell developer products
+This is not a sales pitch
 
 I'm here to teach
 
-Sometimes there's overlap
+Sometimes there's overlap (we do a lot!)
 
-I'll try to be clear
+It'll be clear and unimpactful

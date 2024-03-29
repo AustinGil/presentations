@@ -1,13 +1,11 @@
 ---
-src: intro.md
----
-
----
 layout: statement
 ---
 
 <div class="grid grid-cols-2 gap-4">
 <div class="grid place-content-center">
+
+<p class="text-6xl">🌈📄⬆️💩</p>
 
 # Full Spectrum <br>File Uploads
 
@@ -19,6 +17,10 @@ layout: statement
 <img src="/img/file-uploads/qr.png" alt="" class="w-full">
 </div>
 </div>
+
+---
+src: intro.md
+---
 
 ---
 
@@ -672,7 +674,7 @@ layout: statement
 
 ---
 
-# [OWASP.org File Upload Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html)
+# [OWASP File Upload Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html)
 
 - Extension Validation
 - Filename Sanitization
@@ -681,7 +683,6 @@ layout: statement
 - Content-Type Validation
 - File Content Validation
 - Malware Scanning Architecture
-- Block Malware at the Edge
 
 ---
 
@@ -817,6 +818,8 @@ layout: statement
 
 # Block Malware at the Edge
 
+(**WARNING**: Uniquely Akamai Product Content)
+
 ---
 
 # App & API Protector
@@ -884,9 +887,11 @@ Akamai customers have access to [App & API Protector](https://www.akamai.com/pro
 layout: statement
 ---
 
-# Blog & Video Series
+# Blog & Video Tutorial Series
 
 [austingil.com/uploading-files-with-html](https://austingil.com/uploading-files-with-html/)
+
+Covers HTML, JavaScript, Node.js (Nuxt), Object Storage, CDNs, Malware
 
 ---
 
