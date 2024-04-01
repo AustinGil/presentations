@@ -661,7 +661,44 @@ Client-side JS -> Client-side service worker -> **Edge compute** -> Cloud functi
 ---
 layout: image
 image: /img/edge-compute/ecommerce.jpeg
+classes: "text-black"
+style: "color: black;"
 ---
+
+<div v-click="[1,2]">
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-0 w-210 h-10 border-red-500 bg-red-100 bg-opacity-80">Breadcrumb Wrapper</div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-12 w-145 h-125 border-red-500 bg-red-100 bg-opacity-80">Image Wrapper</div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-12 w-63 h-15 border-red-500 bg-red-100 bg-opacity-80">Title Wrapper</div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-30 w-63 h-85 border-red-500 bg-red-100 bg-opacity-80">Dynamic Wrapper</div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-117 w-63 h-20 border-red-500 bg-red-100 bg-opacity-80">Description Wrapper</div>
+  <h1 class="relative">Origin:<br>HTML Template</h1>
+</div>
+
+<div v-click="[2,3]">
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-0 w-210 h-10 border-orange-500"></div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-12 w-145 h-125 border-orange-500 bg-orange-100 bg-opacity-80">Image URLs</div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-12 w-63 h-15 border-orange-500"></div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-80 w-63 h-15 border-orange-500"></div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-117 w-63 h-20 border-orange-500"></div>
+  <h1 class="relative">Edge:<br>Static Data</h1>
+</div>
+
+<div v-click="[3,4]">
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-0 w-210 h-137 border-yellow-500"></div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-50 top-20 w-92 h-85 border-yellow-500"></div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-25 w-60 h-90 border-white bg-gray-100 bg-opacity-100"></div>
+  <h1 class="relative">CDN:<br>Static Files</h1>
+</div>
+
+<div v-click="[4,5]">
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-25 w-60 h-90 border-lime-500"></div>
+  <h1 class="relative">Client JS:<br>Dynamic Functionality</h1>
+</div>
+
+<div v-click="[5,6]">
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-50 top-20 w-92 h-85 border-cyan-500"></div>
+  <h1 class="relative">Web Worker:<br>Client compute</h1>
+</div>
 
 <!-- # Ecommerce Example
 
@@ -757,7 +794,7 @@ layout: statement
 
 # If Amazon hired **60,000** to shave 100ms
 
-It would cost $5b and they would **STILL** make a profit
+It could cost them $5b and they would **STILL** make a profit
 
 <v-click>
 
