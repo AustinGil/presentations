@@ -366,49 +366,37 @@ Plus access to:
 
 Dynamic responses with...
 
-<v-clicks>
-
 - Less latency (compared to SSR)
 - Less data usage (compared to CSR)
 - Less work on the client (better batt. & perf.)
-</v-clicks>
 
 --- 
 
 # For Developers
 
-<v-clicks>
-
-- Low barrier for POC
+- Fast POC development
 - Consistent execution environment (no x-browser issues)
 - Location-based logic
-- Secrets stay secret (compared to client-side)
+- Server-side benefits (secrets)
 - Common programming language (JavaScript)
 - No servers/infrastructure to manage
-</v-clicks>
 
 --- 
 
 # For Website Owners
 
-<v-clicks>
-
 - Reduce load on origin servers (performance, reliability, cost)
 - Automatic scaling
 - Only pay for what you use
-</v-clicks>
 
 --- 
 
 <h1>The rough edges 😏</h1>
 
-<v-clicks>
-
 - Limited platform features (V8 isolates != Node.js)
 - Limited compute resources
 - Limited time resources
 - Limited networking protocols (HTTP != TCP/IP)
-</v-clicks>
 
 ---
 layout: statement
@@ -422,7 +410,7 @@ layout: statement
 layout: statement
 ---
 
-<span class="text-8xl">🤮</span>
+<span class="text-8xl">😵</span>
 
 # Managing data from distributed compute
 
@@ -591,22 +579,22 @@ layout: statement
 layout: statement
 ---
 
-# You know what would go really well on top of that?
+<span class="text-8xl">🤨</span>
+
+# The big, awesome thing more folks should talk about
 
 ---
 layout: statement
+preload: false
 ---
 
-# C.R.E.A.M.
+<audio autoplay>
+  <source src="/img/edge-compute/chaching.mp3" type="audio/mpeg">
+</audio>
 
-<v-clicks>
-<span>Cache</span>
-&nbsp;<span>Rules!</span>
-&nbsp;<span>Everyone</span>
-&nbsp;<span>Attending</span>
-&nbsp;<span>My</span>
-<p>(talk should hold onto your socks)</p>
-</v-clicks>
+<span class="text-8xl">🤑</span>
+
+# Caching
 
 ---
 
