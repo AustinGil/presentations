@@ -14,9 +14,8 @@ image: /img/austin-gil-bio.png
 <div class="text-1.25rem mt-10">
 
 - Hacking on websites since 2013
-- Dev Advocate @<a href="https://akamai.com">akamai.com</a>
 - Help folks build better websites
-- Likes: bikes, soccer, camping, pinball, roller derby, my chiweenie
+- Interests: bikes, soccer, camping, pinball, roller derby, my chiweenie
 </div>
 
 ---
@@ -25,7 +24,11 @@ layout: statement
 
 # 🚧 DISCLOSURE 🚧
 
-I work for a company that sells developer products
+I work at <a href="https://akamai.com">Akamai (akamai.com)</a>
+
+We offer a lot of relevant services
+
+It's really hard not to mention (kind of my job)
 
 ---
 layout: statement
@@ -35,8 +38,6 @@ layout: statement
 
 This is not a sales pitch
 
-I'm here to teach
+I'm here to teach practical & generic concepts
 
-Sometimes there's overlap (we do a lot!)
-
-It'll be clear and unimpactful
+Specific Akamai products are only used as examples

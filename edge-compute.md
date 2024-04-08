@@ -672,9 +672,8 @@ style: "color: black;"
 </div>
 
 <div v-click="[3,4]">
-  <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-0 w-210 h-137 border-yellow-500"></div>
   <div class="border border-4 rounded absolute grid place-content-center text-black left-50 top-20 w-92 h-85 border-yellow-500"></div>
-  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-25 w-60 h-90 border-white bg-gray-100 bg-opacity-100"></div>
+  <div class="absolute grid place-content-center text-black left-50 top-110 text-yellow-500 font-bold">Images, CSS, JS, Fonts, etc.</div>
   <h1 class="relative">CDN:<br>Static Files</h1>
 </div>
 
