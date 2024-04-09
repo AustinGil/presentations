@@ -657,9 +657,12 @@ style: "color: black;"
   <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-0 w-210 h-10 border-red-500 bg-red-100 bg-opacity-80">Breadcrumb Wrapper</div>
   <div class="border border-4 rounded absolute grid place-content-center text-black left-20 top-12 w-145 h-125 border-red-500 bg-red-100 bg-opacity-80">Image Wrapper</div>
   <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-12 w-63 h-15 border-red-500 bg-red-100 bg-opacity-80">Title Wrapper</div>
-  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-30 w-63 h-85 border-red-500 bg-red-100 bg-opacity-80">Dynamic Wrapper</div>
+  <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-30 w-63 h-85 border-red-500 bg-red-100 bg-opacity-80">Selection Wrapper</div>
   <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-117 w-63 h-20 border-red-500 bg-red-100 bg-opacity-80">Description Wrapper</div>
-  <h1 class="relative">Origin:<br>HTML Template</h1>
+  <div class="relative inline-block p-1 bg-red-100 bg-opacity-75">
+    <h1 class="m-0!">Origin Server:</h1>
+    Provide HTML Template (empty content wrappers)
+  </div>
 </div>
 
 <div v-click="[2,3]">
@@ -668,23 +671,34 @@ style: "color: black;"
   <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-12 w-63 h-15 border-orange-500"></div>
   <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-80 w-63 h-15 border-orange-500"></div>
   <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-117 w-63 h-20 border-orange-500"></div>
-  <h1 class="relative">Edge:<br>Static Data</h1>
+  <div class="relative inline-block p-1 bg-orange-100 bg-opacity-75">
+    <h1 class="m-0!">Edge Compute:</h1>
+    Construct Page w/ Data (breadcrumbs, title, store location, desc. img urls)
+  </div>
 </div>
 
 <div v-click="[3,4]">
   <div class="border border-4 rounded absolute grid place-content-center text-black left-50 top-20 w-92 h-85 border-yellow-500"></div>
-  <div class="absolute grid place-content-center text-black left-50 top-110 text-yellow-500 font-bold">Images, CSS, JS, Fonts, etc.</div>
-  <h1 class="relative">CDN:<br>Static Files</h1>
+  <div class="relative inline-block p-1 bg-yellow-100 bg-opacity-75">
+    <h1 class="m-0!">CDN:</h1>
+    Deliver Static Files (images, CSS, JS, fonts, etc.)
+  </div>
 </div>
 
 <div v-click="[4,5]">
   <div class="border border-4 rounded absolute grid place-content-center text-black left-167 top-25 w-60 h-90 border-lime-500"></div>
-  <h1 class="relative">Client JS:<br>Dynamic Functionality</h1>
+  <div class="relative inline-block p-1 bg-lime-100 bg-opacity-75">
+    <h1 class="m-0!">Client JS:</h1>
+    Dynamic Compute (price, quantity, size, shipping, cart)
+  </div>
 </div>
 
 <div v-click="[5,6]">
   <div class="border border-4 rounded absolute grid place-content-center text-black left-50 top-20 w-92 h-85 border-cyan-500"></div>
-  <h1 class="relative">Web Worker:<br>Client compute</h1>
+  <div class="relative inline-block p-1 bg-cyan-100 bg-opacity-75">
+    <h1 class="m-0!">Web Worker:</h1>
+    Heavy Compute (image resize, transcoding)
+  </div>
 </div>
 
 <!-- # Ecommerce Example
