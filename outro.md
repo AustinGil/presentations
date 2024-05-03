@@ -1,7 +1,6 @@
-# Thanks, but before I go...
+# This is the final slide (stop!)
 
 <div class="grid grid-cols-2 mt-20">
-<v-clicks>
 <div>
 
 ## $100 for you!
@@ -9,18 +8,15 @@
 </div>
 <div>
 
-## Help for me!
+## A tweet for me?
 <p class="text-4xl"><a href="https://bit.ly/thanks-austin">bit.ly/thanks-austin</a></p>
 </div>
-</v-clicks>
 </div>
 <br>
 
 <!-- <span class="font-mono">ヽ(⌐■_■)ノ♪♬</span> -->
 
-<v-click>
-
-## Keep in touch?
+## Let's connect
 
 <div class="grid grid-cols-3 gap-2">
 <div><pepicons-internet/><a href="https://austingil.com">austingil.com</a></div>
@@ -31,4 +27,3 @@
 <div><logos-twitch/><a href="https://twitch.tv/heyAustinGil">@heyAustinGil</a></div>
 <div><bi-github/><a href="https://github.com/AustinGil">@AustinGil</a></div>
 </div>
-</v-click>

@@ -30,14 +30,18 @@ We offer a lot of relevant services
 
 It's really hard not to mention (kind of my job)
 
+Impossible to be 100% unbiased
+
 ---
 layout: statement
 ---
 
 # 🤝 ASSURANCE 😘
 
-This is not a sales pitch
+This is not a sales pitch in disguise
 
 I'm here to teach practical & generic concepts
 
-Specific Akamai products are only used as examples
+I may mention Akamai because it's what I'm close to
+
+But this info applies anywhere
