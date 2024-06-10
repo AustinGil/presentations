@@ -1,4 +1,4 @@
-# This is the final slide (stop!)
+# This is the last slide (stop clicking)
 
 <div class="grid grid-cols-2 mt-20">
 <div>

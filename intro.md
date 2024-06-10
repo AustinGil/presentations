@@ -28,7 +28,7 @@ I work at <a href="https://akamai.com">Akamai (akamai.com)</a>
 
 We offer a lot of relevant services
 
-It's really hard not to mention (kind of my job)
+Really hard not to mention (kind of my job)
 
 Impossible to be 100% unbiased
 
@@ -40,8 +40,8 @@ layout: statement
 
 This is not a sales pitch in disguise
 
-I'm here to teach practical & generic concepts
+I'm here to teach practical, general concepts
 
-I may mention Akamai because it's what I'm close to
+I may mention Akamai because it's familiar
 
 But this info applies anywhere
