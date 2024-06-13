@@ -49,7 +49,7 @@ h3 {
 code, kbd, samp, pre, .slidev-layout blockquote {
   font-size: inherit;
 }
-#slide-content {
+#app #slide-content {
   font-family: 'Manrope';
   color: var(--pen);
   background-color: var(--paper);
@@ -82,7 +82,7 @@ code, kbd, samp, pre, .slidev-layout blockquote {
 pre,
 :not(pre) > code,
 div[class*='language-'], pre[class*='language-'], code[class*='language-'] {
-  color: var(--light)!important;
+  color: var(--pen);
 }
 :not(pre) > code {
   background: var(--dark);

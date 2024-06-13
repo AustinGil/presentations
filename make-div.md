@@ -58,22 +58,22 @@ preload: false
 layout: statement
 ---
 
-# 🤔
 # Version control?
+<div class="text-9xl">🤔</div>
 
 ---
 layout: statement
 ---
 
-# 🤨
 # CI/CD?
+<div class="text-9xl">🤨</div>
 
 ---
 layout: statement
 ---
 
-# 🤣
 # Deploy previews?
+<div class="text-9xl">🤣</div>
 
 ---
 
@@ -88,43 +88,43 @@ layout: statement
 layout: statement
 ---
 
-# 😁
 # Those were good times...
+<div class="text-9xl">😁</div>
 
 ---
 layout: statement
 ---
 
-# 😃
 # Simple times...
+<div class="text-9xl">😃</div>
 
 ---
 layout: statement
 ---
 
-# 😐
 # But things had to change...
+<div class="text-9xl">😐</div>
 
 ---
 layout: statement
 ---
 
-# 😑
 # The internet changed...
+<div class="text-9xl">😑</div>
 
 ---
 layout: statement
 ---
 
-# 😒
 # It got complicated...
+<div class="text-9xl">😒</div>
 
 ---
 layout: statement
 ---
 
-# 😔
 # So here we are...
+<div class="text-9xl">😔</div>
 
 <!-- CD was the thing the internet came on
 
@@ -221,6 +221,8 @@ layout: statement
 
 # Compiling, Transpiling, Bundling...what?
 
+---
+class: dark
 ---
 
 # More Magic When You Save
@@ -462,7 +464,7 @@ AST representation (by [shift-js](https://github.com/shift-js/shift-js)):
 
 ---
 
-# Great! But what can I do with it?
+# Great! But why do I need one?
 
 <v-clicks>
 
@@ -484,6 +486,8 @@ AST representation (by [shift-js](https://github.com/shift-js/shift-js)):
 
 </v-click>
 
+---
+class: dark
 ---
 
 # Putting it all together
@@ -537,10 +541,14 @@ image: img/make-div/createElement.png
 
 <v-clicks>
 
-- Code in editor != code in the browser
-- Dev artifacts != production artifacts
 - A lot has to happen between `ctrl+s` and reload
+- Code in the browser is a freaky mutant version of your code
+- Production code is the mega version of the final evolution
 </v-clicks>
+
+<v-click>
+<p class="ml-7">If you're lucky, it's also <span aria-hidden="true">✨</span>shiny<span aria-hidden="true">✨</span></p>
+</v-click>
 
 ---
 layout: statement
@@ -554,7 +562,7 @@ layout: statement
 class: text-5xl
 ---
 
-# How my code gets to production
+# I don't know about you, but for me...
 
 <v-clicks>
 
@@ -631,7 +639,7 @@ layout: statement
 
 <v-click>
 
-(wait, what do the `build` and `deploy` commands do again!?)
+(wait... what do the `build` and `deploy` commands do again!?)
 </v-click>
 
 ---
@@ -664,7 +672,7 @@ layout: statement
   2. **Testing** (e.g. Vitest)
   3. **CI/CD** (e.g. GitHub Actions)
   4. **Production** (e.g. Linode)
-- Dev != Testing != CI/CD != Prod
+- Development != Testing != CI/CD != Production
 </v-clicks>
 
 ---
@@ -708,13 +716,13 @@ layout: statement
 
 ---
 
-# To load [austingil.com](https://austingil.com)
+# In order to load [austingil.com](https://austingil.com)
 
-Browser need the IP address
+Browser needs the IP address
 <v-clicks>
 
 1. Check browser cache.
-2. Check local hosts file.
+2. Check local hosts cache.
 3. Check network stack.
     - Router cache?
     - ISP cache?
@@ -793,11 +801,11 @@ layout: statement
 
 # 2.1 Prepare a packet
 
-**Packet**: a small chunck of data from a larger message.
+With the IP, browser can prepare packet.
 
 <v-click>
 
-With the IP, browser can prepare packet.
+**Packet**: a small chunk of data which is part of a larger message.
 </v-click>
 
 
@@ -979,35 +987,40 @@ layout: statement
 
 ---
 
-# Remember...
-
-How you write CSS and JS impacts Style, Layout, Paint
-<img src="/img/make-div/crp.jpg" width="600">
-
-<br>
+<img src="/img/make-div/crp.jpg">
 
 <v-click>
-<div class="grid grid-cols-2">
+<div class="flex justify-between mt-8">
 
-Explore Critical Render Path
+Devtools Performance tab
 
-<img src="/img/make-div/devtools-perf.png">
+<img src="/img/make-div/devtools-perf.png" width="550">
 </div>
 </v-click>
+
+---
+
+# Remember...
+
+<v-clicks>
+
+- Render performance is determined by Critical Render Path
+- How you author CSS and JS impacts Critical Render Path
+</v-clicks>
 
 ---
 layout: statement
 ---
 
-# That's it
-# 🤮
+<div class="text-9xl">🤮</div>
 
+# (Everything)
 ---
 layout: statement
 ---
 
 # Congrats!
-## You just made a `<div>`
+## Now we know how to make a `<div>`
 
 ---
 
@@ -1052,7 +1065,7 @@ layout: statement
 <span class="inline-block">Layout ->&nbsp;</span>
 <span class="inline-block">Paint ->&nbsp;</span>
 <span class="inline-block">Composite ->&nbsp;</span>
-<span class="inline-block">Celebrate that somehow we got this all to work!!! 🥳</span>
+<span class="inline-block">Celebrate that somehow we managed to get it to work!!! 🥳</span>
 </v-clicks>
 </div>
 
@@ -1061,16 +1074,17 @@ layout: statement
 ---
 
 # It's a lot!
-## But you really only need to remember ONE thing...
+## But if you remember ONE thing, let it be this...
 
 ---
 layout: statement
 ---
 
-# What we do is hard
+# What we do is not easy
 
 <v-clicks>
 
+## If it was, it wouldn't be a privilege
 ## Be kind to others 😍
 ## & Be kind to yourself 🥰
 
