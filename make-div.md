@@ -542,8 +542,8 @@ image: img/make-div/createElement.png
 <v-clicks>
 
 - A lot has to happen between `ctrl+s` and reload
-- Code in the browser is a freaky mutant version of your code
-- Production code is the mega version of the final evolution
+- Code in the browser is a freaky mutated version of your code
+- Production code is the mega final evolution version of your code
 </v-clicks>
 
 <v-click>
