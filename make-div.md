@@ -849,9 +849,9 @@ Browser->>Server: ACK packet to confirm the process
 
 **Secure Socket Layers (SSL)**: cryptographic protocol to encrypt data and authenticate a connection on the Internet
 
-**Transport Layer Security (TLS)**: cryptographic protocol to encrypt data and authenticate a connection on the Internet
+"Um, actually..."
 
-"Um, actually SSL != TLS"
+**Transport Layer Security (TLS)**: cryptographic protocol to encrypt data and authenticate a connection on the Internet
 
 For HTTPS green lock, you need SSL (or TLS)
 
