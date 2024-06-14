@@ -658,7 +658,7 @@ layout: statement
 - Create container image & send to a registry (Docker + Kunernetes?)
 - Run code quality checks (`TypeScript`, `ESLint`, `Vitest`?).
 - Build static site & distribute to CDN ([Akamai](https://www.akamai.com/solutions/content-delivery-network)?)
-- Run a bunch of esoteric command line scripts (`bash` + some dude named 'Larry' that left the company like five years ago you're too afraid to touch)
+- Run a bunch of esoteric command line scripts (`bash` + some dude named 'Larry' wrote five years ago then left and now you're too afraid to touch)
 </v-clicks>
 
 ---
